@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo from '../Assests/logo.png'
 
 export const Login = () => {
-const [loginformdata, setloginformdata]=useState(false)
+const [loginformdata, setloginformdata]=useState(false);
 
 
 const Handlelogin=()=>{
