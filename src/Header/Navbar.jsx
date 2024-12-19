@@ -26,7 +26,7 @@ export const Navbar = () => {
                 
                  <li className='flex flex-col items-center group'><p className='flex items-center gap-1 hover:text-[#4D28D4]'>LIVE SCORES <FaCaretDown className='text-[16px]' /> </p> 
                 <ul className=' min-w-100vw min-h-100vh grid flex-col bg-[white] absolute top-[65px] font-semibold rounded-md border invisible group-hover:visible ease-out delay-300'>
-                    <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>MATCHES</li>
+                    <Link to={"/live-match"}><li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>MATCHES</li></Link>
                     <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>TOURNAMENTS</li>
                     <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>ASSOCIATIONS</li>
                 </ul>                
