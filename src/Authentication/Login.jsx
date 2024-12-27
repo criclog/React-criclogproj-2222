@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import logo from '../Assests/logo.png'
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
-const [loginformdata, setloginformdata]=useState(false)
+const [loginformdata, setloginformdata]=useState(false);
 
 
 const Handlelogin=()=>{
@@ -17,80 +18,81 @@ const Handleregister=()=>{
 
 
 return (
-<div className='w-full min-h-[100vh] bg-[#4D28D4] flex' >
-{loginformdata ? (<div className='w-[50%] min-h-[100vh] bg-[white] flex flex-col justify-center items-center gap-[35px] rounded-r-[15px]'>
-    <img src={logo} alt="couldn't load image" width="100px" height="100px"/>
-    <h2 className='text-[26px] font-semibold'>Sign in to continue</h2>
-    <form className="flex flex-col gap-[20px] ">
+<div className='w-full min-h-[100vh] bg-[#4D28D4] flex ' >
+{loginformdata ? 
+(<div className='lg:w-[50%] w-[100%] mx-[25px] lg:mt-[0px] lg:mx-[0px] mt-[40px] min-h-[100vh] bg-[white] flex flex-col justify-center items-center gap-[35px] py-[20px] lg:rounded-r-[15px] rounded-t-[15px]'>
+    <img src={logo} alt="couldn't load image" className='sm:w-[100px] w-[70px]'/>
+    <h2 className='sm:text-[26px] text-[22px] font-semibold'>Sign in to continue</h2>
+    <form className="flex flex-col  gap-[20px] px-[10px] ">
         <div>
-                <label className='font-semibold text-[20px]'>Email ID </label>
-                <input className="py-[1px] px-3 w-[250px] ml-[30px] text-[18px]  border-[#4D28D4] border-[2px] rounded-xl outline-none" type="text"
+                <label className='font-semibold sm:text-[20px] text-[16px]'>Email ID </label>
+                <input className="py-[1px] sm:px-3 px-2 sm:w-[250px] w-[170px] sm:text-[18px] text-[13px] ml-[10px] border-[#4D28D4] border-[2px] sm:rounded-xl rounded-lg outline-none" type="text"
                     name="email"
                     placeholder="Enter Your Email ID"  
                     required />
         </div>
         <div>
-                <label className='font-semibold text-[20px]'>Password </label>
-                <input className=" mt-[26px] py-[1px] px-3 w-[250px] text-[18px] ml-[20px]  border-[#4D28D4] border-[2px] rounded-xl outline-none" type="Password"
+                <label className='font-semibold sm:text-[20px] text-[16px]'>Password </label>
+                <input className="py-[1px] sm:px-3 px-2 sm:w-[250px] w-[170px] sm:text-[18px] text-[13px] ml-[4px] border-[#4D28D4] border-[2px] sm:rounded-xl rounded-lg outline-none" type="Password"
                     name="Password"
                     placeholder="Enter your Password"
                     required />
         </div>
-        <p className='text-[#4D28D4] underline-offset-2 underline cursor-pointer flex justify-end'>Forgot password</p>
+       <Link to={"/forgot"}> <p className='text-[#4D28D4] sm:text-[14px] text-[12px] underline-offset-2 underline cursor-pointer flex justify-end'>Forgot password</p></Link>
         
         <div className='w-full flex justify-center'>
-        <button type="submit" className="mt-[20px] py-[2px] w-[100px] bg-[#00FFCF] flex justify-center rounded-xl font-semibold text-[18px] shadow-md shadow-[#404443b0] hover:text-[#00FFCF] hover:bg-black hover:shadow-[#2b2e2d] cursor-pointer">
+        <button type="submit" className="py-[2px] sm:w-[100px] w-[70px] bg-[#00FFCF] flex justify-center sm:rounded-xl rounded-lg font-semibold sm:text-[18px] text-[14px] shadow-md shadow-[#404443b0] hover:text-[#00FFCF] hover:bg-black hover:shadow-[#2b2e2d] cursor-pointer">
                        Login
                     </button>
                     </div>
            </form>
-    <p className='text-[18px] font-medium'>You don't have an account? <span className='text-[#4D28D4] underline-offset-2 underline cursor-pointer'  onClick={Handleregister}>Sign up</span></p>
+    <p className='sm:text-[18px] text-[13px] font-medium'>You don't have an account? <span className='text-[#4D28D4] underline-offset-2 underline cursor-pointer'  onClick={Handleregister}>Sign up</span></p>
 </div>): 
-(<div className='w-[50%] min-h-[100vh] bg-[white] flex flex-col justify-center items-center gap-[30px] rounded-r-[15px]'>
-    <img src={logo} alt="couldn't load image" width="100px" height="100px"/>
-    <h2 className='text-[26px] font-semibold'>Create your account</h2>
-    <form className="flex flex-col gap-[30px] ">
+(<div className='lg:w-[50%] w-[100%] mx-[25px] lg:mt-[0px] lg:mx-[0px] mt-[40px] min-h-[100vh] bg-[white] flex flex-col justify-center items-center sm:gap-[30px] gap-[25px] py-[20px] lg:rounded-r-[15px] rounded-t-[15px]'>
+    <img src={logo} alt="couldn't load image" className='sm:w-[100px] w-[70px]'/>
+    <h2 className='sm:text-[26px] text-[20px] font-semibold'>Create your account</h2>
+    <form className="flex flex-col justify-center items-center gap-[30px] px-[10px]">
         <div>
-                <label className='font-semibold text-[20px]'>Name </label>
-                <input className="py-[1px] px-3 w-[250px] ml-[50px] text-[18px]  border-[#4D28D4] border-[2px] rounded-xl outline-none" type="text"
+                <label className='font-semibold sm:text-[20px] text-[16px]'>Name </label>
+                <input className="py-[1px] sm:px-3 px-2 sm:w-[250px] w-[160px] sm:text-[18px] text-[13px] ml-[40px] border-[#4D28D4] border-[2px] sm:rounded-xl rounded-lg outline-none" type="text"
                     name="Name"
                     placeholder="Enter Your name"  
                     required />
         </div>
         <div>
-                <label className='font-semibold text-[20px]'>Email ID </label>
-                <input className="py-[1px] px-3 w-[250px] text-[18px] ml-[30px]  border-[#4D28D4] border-[2px] rounded-xl outline-none" type="email"
+                <label className='font-semibold sm:text-[20px] text-[16px] '>Email ID </label>
+                <input className="py-[1px] sm:px-3 px-2 sm:w-[250px] w-[160px] sm:text-[18px] text-[13px] ml-[20px] border-[#4D28D4] border-[2px] sm:rounded-xl rounded-lg outline-none" type="email"
                     name="email"
                     placeholder="Enter your Email ID"
                     required />
         </div>
         <div>
-                <label className='font-semibold text-[20px]'>Mobile No </label>
-                <input className="py-[1px] px-3 w-[250px] text-[18px] ml-[10px] border-[#4D28D4] border-[2px] rounded-xl outline-none" type="Number"
+                <label className='font-semibold sm:text-[20px] text-[16px]'>Mobile No </label>
+                <input className="py-[1px] sm:px-3 px-2 sm:w-[250px] w-[160px] sm:text-[18px] text-[13px] ml-[5px] border-[#4D28D4] border-[2px] sm:rounded-xl rounded-lg outline-none" type="Number"
                     name="Mobile"
                     placeholder="Enter your Mobile No"
                     required />
         </div>
-        <p className='text-[16px]'><input type="checkbox" className=''/>  I have read and agree to the <span className='text-[#4D28D4]'> terms and conditions </span> <br />  and <span className='text-[#4D28D4]'>Privacy policy.</span> </p>
+        <p className='sm:text-[15px] text-[12px] px-[10px]'><input type="checkbox" className='w-[20px] accent-[#4D28D4]'/>  I have read and agree to the <span className='text-[#4D28D4]'> terms and conditions </span> and <span className='text-[#4D28D4]'>Privacy policy.</span> </p>
         <div className='w-full flex justify-center'>
-        <button type="submit" className="py-[2px] w-[110px] bg-[#00FFCF] flex justify-center rounded-xl font-semibold text-[18px] shadow-md shadow-[#404443b0] hover:text-[#00FFCF] hover:bg-black hover:shadow-[#2b2e2d] cursor-pointer">
+        <button type="submit" className="py-[2px] sm:w-[110px] w-[75px] bg-[#00FFCF] flex justify-center sm:rounded-xl rounded-lg font-semibold sm:text-[18px] text-[14px] shadow-md shadow-[#404443b0] hover:text-[#00FFCF] hover:bg-black hover:shadow-[#2b2e2d] cursor-pointer">
                        Sign Up
                     </button>
                     </div>
            </form>
     
-    <p className='text-[18px] font-medium'>Do you have an account? <span className='text-[#4D28D4] underline-offset-2 underline cursor-pointer'  onClick={Handlelogin}>Login</span></p>
+    <p className='sm:text-[18px] text-[13px] font-medium'>Do you have an account? <span className='text-[#4D28D4] underline-offset-2 underline cursor-pointer'  onClick={Handlelogin}>Login</span></p>
 </div>)
 }
 
 
-<div className='w-[50%] min-h-[100vh] flex flex-col justify-center items-center gap-[10px]'>
-    <div className='w-[140px] h-[140px] bg-black rounded-full px-5 py-8 border-2 border-[#00FFCF]'>
-<img src={logo} alt="couldn't load image" width="120px" height="120px"/>
+<div className='lg:w-[50%] w-[0%] min-h-[100vh] flex flex-col justify-center items-center gap-[10px]'>
+    <div className='lg:w-[140px] lg:h-[140px] w-[0px] h-[0px] bg-black rounded-full lg:px-5 lg:py-8 lg:border-2 border-[#00FFCF]'>
+<img src={logo} alt="couldn't load image" className='lg:w-[120px]  w-[0px]'/>
 </div>
-<h1 className='text-[34px] font-semibold text-[#00FFCF]'>CRICLOG</h1>
-<p className='text-[32px] font-medium text-[white] px-[90px] text-center pt-[70px]'>WORLD'S BIGGEST CRICKET NETWORK</p>
-<p className='text-[24px] font-medium text-[#00FFCF] text-center pt-[70px] pb-[100px]'>10M+  CRICKETERS</p>
+<h1 className='lg:text-[34px]  text-[0px] font-semibold text-[#00FFCF]'>CRICLOG</h1>
+<p className='lg:text-[32px] text-[0px]  font-medium text-[white] lg:px-[90px] text-center pt-[70px]'>WORLD'S BIGGEST CRICKET NETWORK</p>
+<p className='lg:text-[24px] text-[0px] font-medium text-[#00FFCF] text-center pt-[70px] pb-[100px]'>10M+  CRICKETERS</p>
 </div>
     </div>
   )

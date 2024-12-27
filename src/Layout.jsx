@@ -14,3 +14,15 @@ export const Layout=()=>{
 
     )
 }
+
+export const Layout1=()=>{
+    return(<div className="w-full h-screen">
+        <Navbar/>
+        <div className="w-full min-h-100vh absolute top-[65px]">
+            <Outlet/>
+        </div>
+        
+    </div>
+
+    )
+}
