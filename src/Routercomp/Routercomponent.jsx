@@ -27,6 +27,33 @@ import Cricketphysiotherapist from '../Academy page/Physiotherapistcomponent';
 import CricketCoach from '../Academy page/Personalcoachcomponent';
 import CricketIndoorNets from '../Academy page/Indoornetcomponent';
 import YourApp from '../Yourapp page/YourApp'
+import Faqs from '../Faqs/Faqs'
+import LiveStreamingBanner from '../Live streaming/Live'
+import Market from '../Market/Market'
+import FilterComponent from '../Tourment/Tourment'
+import { ScoreTickerPage } from '../Score ticker/ScoreTickerPage'
+import Association from '../Association/Association'
+import MemberAssociation from '../Association/MemberAssociation'
+import IccAssoication from '../Association/IccAssociation'
+import StateAssoication from '../Association/StateCricket'
+
+
+import DistrictAssoication from '../Association/DistrictAssociation'
+import ClubAssoication from '../Association/CricketClub'
+import OthersAssoication from '../Association/OthersAssociation'
+import Marketdashboard from '../Market/Marketdashboard'
+
+import { ToastContainer} from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+import {OrganizeTournment} from '../organizetournament/Organizetournament'
+import SuperSponsor from '../Super Sponosr/SuperSponsor'
+import CricketAppPromo from '../Super Sponosr/Getapp'
+import LocationFilter from '../Looking/Looking'
+import { Newsnavbar } from '../News/Local'
+import { Localdetails } from '../News/Localdetails'
+import { Internationaldetails } from '../News/internationaldetails'
+import Crickettips from '../CricketTips/CricketTipscomponent'
+
 
 
 
@@ -39,6 +66,18 @@ export const Routercomponent = () => {
         <Route path="/jobs" element={<Jobs/>}/>
         <Route path="/live-match" element={<Matchlocation/>}/>
         <Route path='/score-match' element={<Matchlive/>}/>
+        <Route path="/Faqs"element={<Faqs/>} />
+        <Route path="/Market"element={<Market/>} />
+        <Route path="/tournament"element={<FilterComponent/>} />
+        <Route path="/Marketdashboard/:id"element={<Marketdashboard/>} />
+        <Route path="/looking"element={<LocationFilter/>} />        
+        <Route path="/news"element={<Newsnavbar/>} />      
+        <Route path="/localnews/:id"element={<Localdetails/>} />      
+        <Route path="/internationalnews/:id"element={<Internationaldetails/>} />      
+        <Route path="/crickettips"element={<Crickettips/>} />      
+
+       
+        
         {/* Academy */}
 <Route path="/academy" element={< CricketCommunity/>}/>
 <Route path="/academies/:id" element={<Academies />} />
@@ -55,6 +94,15 @@ export const Routercomponent = () => {
 <Route path="/cricket/physiotherapist/:id" element={<Cricketphysiotherapist />} />
 <Route path="/cricket/coach/:id" element={<CricketCoach />} />
 <Route path="/cricket/indoor-nets/:id" element={<CricketIndoorNets />} />
+{/* Association */}
+<Route path='/assoication/member-assoication' element={<MemberAssociation/>}/>
+       <Route path='/icc' element={<IccAssoication/>}/>
+       <Route path='/state' element={<StateAssoication/>}/>
+       <Route path='/district' element={<DistrictAssoication/>}/>
+       <Route path='/club' element={<ClubAssoication/>}/>
+       <Route path='/other' element={<OthersAssoication/>}/>
+  
+
 
 </Route>
 
@@ -64,11 +112,20 @@ export const Routercomponent = () => {
      <Route path="/Powerpromote" element={<Powerpromote/>}/>
      <Route path='/Cricllog' element={<Cricllog/>}/>
      <Route path='/yourapp' element={<YourApp/>}/>
+     <Route path="/livestream"element={<LiveStreamingBanner/>} />
+     <Route path="/scoreticker"element={<ScoreTickerPage/>} />
+     <Route path='/association' element={<Association/>}/>
+     <Route path='/organizetournament' element={<OrganizeTournment/>}/>
+     <Route path='/supersponsor' element={<SuperSponsor/>}/>
      </Route>
+
+
+
       <Route path='/Login' element={<Login/>}/>
       <Route path='/forgot' element={<Forgot/>}/>
+      <Route path='/super-sponsor/get-app' element={<CricketAppPromo/>}/>
       </Routes>
-      
+      <ToastContainer/>
     </>
   )
 }

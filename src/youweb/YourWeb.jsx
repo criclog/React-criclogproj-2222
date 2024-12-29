@@ -6,9 +6,9 @@ export const YourWeb = () => {
   return (
     <div>
       
-      <div className="h-[150px] md:h-[120px] w-full bg-[#4A2EB0] py-8 md:py-6 text-white text-center">
-        <h1 className="text-2xl md:text-xl font-bold">YOUR WEB FROM CRICSLOG</h1>
-        <p className="mt-2 text-sm">Your League. Your Brand. Your Website</p>
+      <div className=" min-h-100vh w-full bg-[#4A2EB0] py-[40px] md:py-[60px] text-white text-center">
+        <h1 className="text-2xl md:text-[26px] font-bold">YOUR WEB FROM CRICSLOG</h1>
+        <p className="mt-2 text-[18px]">Your League. Your Brand. Your Website</p>
       </div>
 
       

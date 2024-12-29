@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
 
 export const Homesect = () => {
   return (
-    <div>
+    <div className="">
         <Herosect/>
         <Whycriclogsect/>
         <Homedressroom/>

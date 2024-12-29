@@ -6,46 +6,77 @@ import { Link } from 'react-router-dom';
 
 export const Matchlocation = () => {
 
-  const[Filteropt,setFilteropt]=useState(true)
+  const [showFilter, setShowFilter] = useState(false);
+  const [filters, setFilters] = useState([]);
   
 
-  const handlenav=()=>{
-    setFilteropt(false)
-    
-    
-  }
- 
   const handleFilterToggle = () => {
-    setFilteropt(!Filteropt);
-    
+    setShowFilter(!showFilter);
+  };
+
+  const handleApplyFilters = (selectedCities) => {
+    setFilters(selectedCities);
+    setShowFilter(false);
   };
 
 
   return (
-    <div className='w-full min-h-100vh py-[40px] bg-[#ebebec] flex flex-col gap-[30px] justify-center items-center'>
-        <p className='lg:text-[22px] text-[18px] font-semibold text-[#4d4d4d]'>Live Cricket Matches In <span className='lg:text-[20px] text-[16px] italic text-[#4D28D4] cursor-pointer'onClick={handlenav}>(Location)</span></p>
-       <Link to={'/score-match'}> <div className='w-full flex flex-col gap-[30px] justify-center items-center'>
-        <div className='w-[85%] sm:w-[90%] xl:w-[75%] lg:w-[80%] md:w-[90%] min-h-100vh md:grid-cols-2 grid-flow-rows   grid grid-cols-1 grid-flow-rows justify-center items-center gap-[40px] xl:gap-[60px] lg:gap-[25px] md:gap-[20px] py-[30px] cursor-pointer '>
-          <Livematchcard/></div> </div></Link>
-        <div className={`w-full h-full absolute top-0  ${Filteropt ? 'hidden' : 'block'}`}><MatchFilter
-         handleFilterToggle={handleFilterToggle}/></div>
+    <div className="w-full min-h-100vh py-[40px] bg-[#ebebec] flex flex-col gap-[30px] justify-center items-center">
+  {/* Title and Filter Toggle */}
+  <p className="lg:text-[22px] text-[18px] font-semibold text-[#4d4d4d]">
+    Live Cricket Matches In{" "}
+    <span
+      className="lg:text-[20px] text-[16px] italic text-[#4D28D4] cursor-pointer"
+      onClick={handleFilterToggle}
+    >
+      (Location)
+    </span>
+  </p>
+
+  {/* Match Filter Component */}
+  <h1 className='w-full min-h-100vh absolute top-0'>{showFilter && (
+    <MatchFilter
+      handleFilterToggle={handleFilterToggle}
+      onApplyFilters={handleApplyFilters}
+    />
+  )}</h1>
+
+  {/* Match Cards */}
+  <Link to={"/score-match"}>
+    <div className="w-full flex gap-[30px] justify-center items-center">
+      <div className="w-[85%] sm:w-[90%] xl:w-[90%] lg:w-[80%] md:w-[90%] min-h-100vh grid md:grid-cols-2 grid-cols-1 grid-flow-rows justify-center items-center gap-[40px] xl:gap-[60px] lg:gap-[25px] md:gap-[20px] py-[30px] cursor-pointer">
+        <Livematchcard filters={filters} />
+      </div>
     </div>
+  </Link>
+</div>
   )
 }
 
 
 
-export const Livematchcard = () => {
-const matchlive=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", locaion:"Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field" },
+export const Livematchcard = ({filters}) => {
+const matchlive=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", locaion:"Jawaharlal Lal Nehru Cricket Stadium, chennai, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field" },
+{matchname:"OLD IS GOLD SEASON -09 (COMMITTEE TOURNAMENT)", locaion:"Rander Sultania Ground, Surat, 27-Dec-24, 7 Ov.,", matchtype:"LEAGUE MATCHES", batteam:"Nanwala tigers", score:"40/5", over:"(6.3)", bowling:"R.K Eagle", bowlingstatus:"yet to bat", tosswin:"R.K Eagle", tossstatus:"won the toss and elected to bat" },
+{matchname:"VPL 3(Vishv Umiyadham Premier League)", locaion:"Nikol Khodaldham, Ahmedabad, 27-Dec-24, 12 Ov.,", matchtype:"Round Three", batteam:"Shreedhar group", score:"4/2", over:"(1.0)", bowling:"Devnagar lions", bowlingstatus:"yet to bat", tosswin:"evnagar lion", tossstatus:"won the toss and elected to field" },
 {matchname:"HDFC LIFE IDPL 2024", locaion:"Turf 2, mumbai, 18-Dec-24, 7 Over,", matchtype:"PRE QUATER FINAL", batteam:"Spartans", score:"80/5", over:"(6.3)", bowling:"Dynamos", bowlingstatus:"yet to bat", tosswin:"Spartans", tossstatus:"won the toss and elected to bat" },
-{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", locaion:"Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field" },
-{matchname:"HDFC LIFE IDPL 2024", locaion:"Turf 2, mumbai, 18-Dec-24, 7 Over,", matchtype:"PRE QUATER FINAL", batteam:"Spartans", score:"80/5", over:"(6.3)", bowling:"Dynamos", bowlingstatus:"yet to bat", tosswin:"Spartans", tossstatus:"won the toss and elected to bat" },
-{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", locaion:"Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field" },
-{matchname:"HDFC LIFE IDPL 2024", locaion:"Turf 2, mumbai, 18-Dec-24, 7 Over,", matchtype:"PRE QUATER FINAL", batteam:"Spartans", score:"80/5", over:"(6.3)", bowling:"Dynamos", bowlingstatus:"yet to bat", tosswin:"Spartans", tossstatus:"won the toss and elected to bat" },]
-
-    return (<>
+{matchname:"Vankar Samaj Cricket Tournament", locaion:"The Capital Box Cricket, Bhavnagar, 25-Dec-24, 10 Ov.,", matchtype:"Final", batteam:"Boricha", score:"4/2", over:"(1.0)", bowling:"Yadav", bowlingstatus:"yet to bat", tosswin:"Boricha", tossstatus:"won the toss and elected to field" },
+{matchname:"womens indoor league T10", locaion:"Sevy Sports Club, Jamnagar, Limited Overs, 10 Ov.,", matchtype:"PRE QUATER FINAL", batteam:"BLITZ AND GLITZ", score:"80/5", over:"(6.3)", bowling:"Ferocious Divas", bowlingstatus:"yet to bat", tosswin:"Ferocious Divas", tossstatus:"won the toss and elected to bat" },]
+const filteredMatches = filters.length
+    ? matchlive.filter((match) =>
+        filters.some((city) =>
+          match.locaion.toLowerCase().includes(city.toLowerCase())
+        )
+      )
+    : matchlive;
+    return (<>{filteredMatches.length === 0 ? (
+      <div className="w-full p-4 bg-white border rounded-md shadow-md flex justify-center">
+        <p className="text-gray-500">No matching data found. Please try a different filter.</p>
+      </div>
+    ):(
+    <>
       { 
-        matchlive.map((livecard,id)=>(
+        filteredMatches.map((livecard,id)=>(
         
       
          <div key={id} className='w-full min-h-100vh  border-[1px] bg-[white]  border-[#bdbcbc] divide-y-[1px]  divide-[#c9c4c4] rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
@@ -82,31 +113,37 @@ const matchlive=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25",
       
       
     ))}
-    </>
+    </>)}</>
     )
   }
 
 
 
-export const MatchFilter=({  handleFilterToggle })=>{  
-
+export const MatchFilter=({ handleFilterToggle, onApplyFilters })=>{  
   const filterdata=["Ahmedabad", "Alwar", "Ankleshvar", "Bharuch", "Bhavnagar", "Jamnagar", "Junagadh", "Gandhidham", "Nadiad", "Gandhinagar", "Anand", "Morbi",
     "Surendranagar","Surat", "Vadodara", "Rajkot", "Vapi", "Navsari", "chennai", "mumbai", "delhi", "Veraval", "Porbandar", "Godhra", "Bhuj", "Botad", "Palanpur", "Dahod", "Valsad", "Gondal", "Amreli",
     "Mehsana", "Modasa", "Abu Road", "Asind", "Bahror", "Barmer", "Bhadasar", "Bhadra", "Bhalariya"
   ]
 
-  const [Search, setsearch]=useState("")
+  const [search, setSearch] = useState("");
+  const [selectedCities, setSelectedCities] = useState([]);
+
+  const handleCheckboxChange = (city) => {
+    setSelectedCities((prev) =>
+      prev.includes(city)
+        ? prev.filter((item) => item !== city)
+        : [...prev, city]
+    );
+  };
 
   const resetCheckboxes = () => {
-    const inputs = document.querySelectorAll('.filterreset');
+    setSelectedCities([]);
+  };
 
-    inputs.forEach(input => (input.checked = false));
-  }
+  const filterCities = filterdata.filter((filterValue) =>
+    filterValue.toLowerCase().includes(search.toLowerCase())
+  );
 
-
-  const filtercities=filterdata.filter(filtervalue=>
-    filtervalue.toLowerCase().includes(Search.toLowerCase())
-  )
 
 
 
@@ -117,23 +154,27 @@ export const MatchFilter=({  handleFilterToggle })=>{
           <RxCross2 className='text-[20px] font-semibold cursor-pointer' onClick={handleFilterToggle}/>
         </div >
         <div className='w-full min-h-100vh text-[16px] text-[#3d3c3c]  bg-white py-[8px] px-[15px] border-b-[1px] border-[#d1d0d0]'>
-           <input type="text" placeholder='search cities' value={Search} 
-           onChange={e=>setsearch(e.target.value)} 
+           <input type="text" placeholder='search cities' value={search} 
+           onChange={e=>setSearch(e.target.value)} 
            className='w-full border-[1px] border-[#a7a5a5] rounded-md px-3 py-[2px] outline-none'/>
         </div>
         <div className="w-full h-[322px] text-[14px] overflow-y-scroll px-[15px] py-[8px]">
-        {filtercities.map((filtervalue, id) => (
+        {filterCities.map((filtervalue, id) => (
        <div key={id} className="flex items-center py-2">
-      <input type="checkbox" name="cities" id={`city-${id}`} className=" filterreset mr-2 cursor-pointer accent-[#4D28D4] outline-none" />
+      <input type="checkbox" name="cities" id={`city-${id}`} className=" filterreset mr-2 cursor-pointer accent-[#4D28D4] outline-none" 
+      checked={selectedCities.includes(filtervalue)}
+      onChange={() => handleCheckboxChange(filtervalue)}/>
       <label htmlFor={`city-${id}`}>{filtervalue}</label>
     </div>
   ))}</div>
         <div className='w-full min-h-100vh '>
           <button className='w-[50%] bg-[#e2e4e4] text-[18px] py-1 font-semibold text-[#333232] cursor-pointer' onClick={resetCheckboxes}>Reset</button>
-          <button className='w-[50%] bg-[#00FFCF] text-[18px] py-1 font-semibold text-[#333232] cursor-pointer'>Apply</button>
+          <button className='w-[50%] bg-[#00FFCF] text-[18px] py-1 font-semibold text-[#333232] cursor-pointer' onClick={() => onApplyFilters(selectedCities)}>Apply</button>
         </div>
 
     </div>
      </div>
      )
   }
+
+// 

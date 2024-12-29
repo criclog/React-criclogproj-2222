@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -55,9 +56,10 @@ const Contact = () => {
       At CricHeroes, we are building a culture where passionate people (like
       you) can grow.
     </p>
+    <Link to={'/jobs'}>
     <button className="bg-[#4A2EB0] text-white px-4 py-2 rounded-md hover:bg-[#4a2eb0cb]">
       SEE ALL OPEN POSITIONS
-    </button>
+    </button></Link>
   </div>
 
  

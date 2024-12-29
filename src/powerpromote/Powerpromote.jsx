@@ -6,7 +6,7 @@ export const Powerpromote = () => {
   
   <div className="h-[200px] w-full bg-[#4A2EB0] py-6 sm:py-10 text-white text-center">
   <h1 className="text-xl sm:text-2xl md:text-4xl font-semibold">
-    Power Promote From CricHeroes
+    Power Promote From criclog
   </h1>
   <p className="mt-2 sm:mt-3 text-sm sm:text-lg md:text-2xl font-light px-4">
     The most powerful way to promote your Cricket Tournament or Brand.
