@@ -3,6 +3,7 @@ import phone from "../Assests/goodphone (1).png";
 import wifi from "../Assests/4gwifi.png";
 import powerbank from "../Assests/powerbank.png";
 import tripod from "../Assests/tripod.png";
+import { IoIosArrowDown } from "react-icons/io";
 
 const MainCompontent = () => {
   return (
@@ -15,7 +16,7 @@ const MainCompontent = () => {
         *Stream unlimited matches in Daily, Monthly, Yearly Plans
       </h2>
       <div className="flex justify-center mt-8">
-        <button className="bg-sky-700 text-white font-semibold px-6 py-2 rounded hover:bg-white hover:text-black transition">
+        <button className="bg-[#4A2EB0] text-white font-semibold px-6 py-2 rounded hover:bg-white hover:text-black transition">
           PURCHASE LIVE STREAM
         </button>
       </div>
@@ -26,7 +27,7 @@ const MainCompontent = () => {
 const Cards = ({ data }) => {
   const { title, price } = data ?? {};
   return (
-    <div className="bg-slate-400 w-full max-w-[220px] h-[150px] flex flex-col justify-center items-center rounded shadow-lg">
+    <div className="bg-gray-900 w-full max-w-[220px] h-[150px] flex flex-col justify-center items-center rounded shadow-lg">
       <h1 className="font-bold text-lg">{title}</h1>
       <h2 className="text-xl mt-2">{price}</h2>
     </div>
@@ -86,7 +87,7 @@ export const Video = () => {
   return (
     <div className="w-full bg-white py-10 flex flex-col items-center">
       <h1 className="text-xl sm:text-2xl font-bold mb-6">
-        Example CricHeroes Live Streams
+        Example criclog Live Streams
       </h1>
       <iframe
         width="560"
@@ -108,9 +109,9 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: "Can I purchase CricHeroes Live Streaming in advance for my match?",
+      question: "Can I purchase criclog Live Streaming in advance for my match?",
       answer:
-        "Yes, absolutely. In fact, we recommend it. Just schedule your match and purchase CricHeroes Live Stream for that. You can do actual live streaming whenever the match starts.",
+        "Yes, absolutely. In fact, we recommend it. Just schedule your match and purchase criclog Live Stream for that. You can do actual live streaming whenever the match starts.",
     },
     {
       question: "What do I need for quality live streaming?",
@@ -118,8 +119,8 @@ export const FAQ = () => {
         "To get the best quality, you need a stable internet connection, a good camera phone, and proper lighting conditions.",
     },
     {
-      question: "Can I use more than one camera phone for CricHeroes live streaming?",
-      answer: "Currently, CricHeroes supports only one camera phone for live streaming at a time.",
+      question: "Can I use more than one camera phone for criclog live streaming?",
+      answer: "Currently, criclog supports only one camera phone for live streaming at a time.",
     },
     {
       question: "Which phones will give the best result for live streaming?",
@@ -128,11 +129,11 @@ export const FAQ = () => {
     },
     {
       question: "Can we Live Stream the match on our own YouTube channel?",
-      answer: "No, CricHeroes streams matches to their designated platform only.",
+      answer: "No, criclog streams matches to their designated platform only.",
     },
     {
       question: "On which YouTube channel can I see my match?",
-      answer: "You can watch your match on the official CricHeroes YouTube channel.",
+      answer: "You can watch your match on the official criclog YouTube channel.",
     },
   ];
 
@@ -151,7 +152,7 @@ export const FAQ = () => {
               onClick={() => toggleFAQ(index)}
             >
               {faq.question}
-              <span>{openIndex === index ? "▲" : "▼"}</span>
+              <span>{openIndex === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}</span>
             </button>
             {openIndex === index && (
               <div className="px-4 py-2 bg-gray-50 text-gray-600">

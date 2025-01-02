@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { IoIosArrowDown } from "react-icons/io";
 
 
 
@@ -242,7 +242,7 @@ const toggleBattingDrills= (index) =>{
 
 
   return (
-    <div className='w-full bg-gray-100 min-h-screen    '>
+    <div className='w-full bg-gray-100 min-h-100vh    '>
      
      <div className='w-full min-h-100vh bg-[#4D28D4] flex flex-col justify-center items-center gap-[20px] py-[50px] px-[50px]'>
       <h2 className='text-[white] md:text-[32px] sm:text-[30px] text-[28px] font-medium text-center'>Cricket Tips</h2>
@@ -252,7 +252,7 @@ const toggleBattingDrills= (index) =>{
 
         {/* Video */}
         
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>1. Fielding</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>1. Fielding</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3 '>
             {
                 faqs.map((faq,index)=> (
@@ -267,7 +267,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700 text-[14px]  sm:text-[18px]'>{faq.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openfaq === index ? "▲" : "▼"}
+                            {openfaq === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -281,7 +281,7 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>2. Bowling</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>2. Bowling</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                 Bowling.map((Bowling,index)=> (
@@ -296,7 +296,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Bowling.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBowling === index ? "▲" : "▼"}
+                            {openBowling === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -311,7 +311,7 @@ const toggleBattingDrills= (index) =>{
             }
         </div>
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>3. The Role of the Umpire</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>3. The Role of the Umpire</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                 Umpire.map((Umpire,index)=> (
@@ -326,7 +326,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Umpire.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openUmpire === index ? "▲" : "▼"}
+                            {openUmpire === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -341,7 +341,7 @@ const toggleBattingDrills= (index) =>{
             }
         </div>
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>4. Fielding Drills</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>4. Fielding Drills</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                 Fielding.map((Fielding,index)=> (
@@ -356,7 +356,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Fielding.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openFielding === index ? "▲" : "▼"}
+                            {openFielding === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -371,7 +371,7 @@ const toggleBattingDrills= (index) =>{
             }
         </div>
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>5. Wicket keeping - Basics</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>5. Wicket keeping - Basics</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                 Basics.map((Basics,index)=> (
@@ -386,7 +386,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Basics.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBasics === index ? "▲" : "▼"}
+                            {openBasics === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -403,7 +403,7 @@ const toggleBattingDrills= (index) =>{
 
 
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>6. Wicketkeeping Drills</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>6. Wicketkeeping Drills</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Drills.map(( Drills,index)=> (
@@ -418,7 +418,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Drills.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openDrills === index ? "▲" : "▼"}
+                            {openDrills === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -434,7 +434,7 @@ const toggleBattingDrills= (index) =>{
         </div>
 
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>7. Drills to Improve your Game4. Fielding Drills</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>7. Drills to Improve your Game4. Fielding Drills</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Game.map(( Game,index)=> (
@@ -449,7 +449,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Game.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openGame === index ? "▲" : "▼"}
+                            {openGame === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -463,7 +463,7 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>8. How to Replace the Grip on Your Bat</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>8. How to Replace the Grip on Your Bat</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  YourBat.map(( YourBat,index)=> (
@@ -478,7 +478,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ YourBat.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openYourBat === index ? "▲" : "▼"}
+                            {openYourBat === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -492,7 +492,7 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>9. Learn to Knock In a New Cricket Bat</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>9. Learn to Knock In a New Cricket Bat</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Knock.map(( Knock,index)=> (
@@ -507,7 +507,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Knock.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openKnock === index ? "▲" : "▼"}
+                            {openKnock === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -522,7 +522,7 @@ const toggleBattingDrills= (index) =>{
             }
         </div>
 
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>10. How to Pitch the Stumps</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>10. How to Pitch the Stumps</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Stumps.map(( Stumps,index)=> (
@@ -537,7 +537,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Stumps.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openStumps=== index ? "▲" : "▼"}
+                            {openStumps=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -551,7 +551,7 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>11. Introduction to Cricket</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>11. Introduction to Cricket</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Introduction.map(( Introduction ,index)=> (
@@ -566,7 +566,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Introduction.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openIntroduction === index ? "▲" : "▼"}
+                            {openIntroduction === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -580,7 +580,7 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>12. Batting</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>12. Batting</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                  Batting.map(( Batting ,index)=> (
@@ -595,7 +595,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Batting.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBatting=== index ? "▲" : "▼"}
+                            {openBatting=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -609,13 +609,13 @@ const toggleBattingDrills= (index) =>{
                 ))
             }
         </div>
-        <h1 className='text-3xl font-semibold text-center my-10 text-[#4D28D4]'>13. Batting Drills</h1>
-        <div className='max-w-3xl mx-auto px-5 mb-3'>
+        <h1 className='text-3xl font-medium text-center my-10 text-[#4D28D4]'>13. Batting Drills</h1>
+        <div className='max-w-3xl mx-auto px-5 '>
             {
                 BattingDrills.map(( BattingDrills,index)=> (
                     <div
                     key={index}
-                    className='border-b border-gray-300 mb-5'
+                    className='border-b border-gray-300 pb-10'
                     >
                         <button
                         className='w-full text-left flex justify-between items-center p-4 bg-white shadow-md hover:bg-gray-50 transition-all rounded'
@@ -624,7 +624,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{BattingDrills.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBattingDrills=== index ? "▲" : "▼"}
+                            {openBattingDrills=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>

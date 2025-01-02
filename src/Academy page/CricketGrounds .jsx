@@ -81,12 +81,12 @@ const GroundCards = () => {
           </h2>
            <p>At Cricllog, our aim is to connect every stakeholder of grassroots cricket with each other to make the world's largest Cricket Network. This means equal focus on cricketers as well as any other business or service around cricket, for e.g. Cricket Grounds.</p>
            <br />
-           <p>Ground owners are always on a lookout to rent their cricket grounds to the right audience. With the CricHeroes App, you can list your cricket facilities for free and get more bookings instantly from millions of registered cricketers on CricHeroes.</p>
+           <p>Ground owners are always on a lookout to rent their cricket grounds to the right audience. With the criclog App, you can list your cricket facilities for free and get more bookings instantly from millions of registered cricketers on criclog.</p>
         </div>
         <br />
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-center text-2xl font-bold mb-4">
-          So how to register your Cricket Ground on CricHeroes?
+          So how to register your Cricket Ground on criclog?
           </h2>
           <ul className="list-disc pl-8 space-y-2">
             <li>Go to Community  Grounds  Register your ground.</li>
@@ -102,7 +102,7 @@ const GroundCards = () => {
 
           </h2>
           <br />
-          <p>Every cricketer requires a different set of facilities when it comes to choosing a cricket ground. Some like to play on a turf wicket, some like astroturf or a bigger outfield. Players can choose from a list of grounds near them on the CricHeroes App and easily connect with the ground owners directly.</p>
+          <p>Every cricketer requires a different set of facilities when it comes to choosing a cricket ground. Some like to play on a turf wicket, some like astroturf or a bigger outfield. Players can choose from a list of grounds near them on the criclog App and easily connect with the ground owners directly.</p>
            <br />
           <ul className="list-disc pl-8 space-y-2">
             <li>Know ground type and facilities.</li>
@@ -113,7 +113,7 @@ const GroundCards = () => {
             </li>
             <li>Check past matches and tournaments of that particular ground.
             </li>
-            <li>If you are a CricHeroes Pro, you’ll know CricInsights of the ground to prepare your team better.
+            <li>If you are a criclog Pro, you’ll know CricInsights of the ground to prepare your team better.
             </li>
             <li>Directly connect with ground owners.
             </li>

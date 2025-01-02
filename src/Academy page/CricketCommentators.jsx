@@ -80,9 +80,9 @@ const CricketCommentators = () => {
       <section className="bg-gray-800 text-white py-8">
       <div className="max-w-7xl mx-auto px-4">
           
-           <p>Watching a Cricket match would be very boring if not for the commentators. They keep the audience engaged by describing the game beautifully in real time and sharing interesting facts about the players, grounds, tournament, etc. To become an effective commentator you need good knowledge of the game, its history and ideally stats of the players who are playing the match. CricHeroes fills this gap for the grassroots commentators by providing them up to date stats of the players, matches and tournaments. It helps the commentators excel at their job of keeping the audience entertained for the whole match.</p>
+           <p>Watching a Cricket match would be very boring if not for the commentators. They keep the audience engaged by describing the game beautifully in real time and sharing interesting facts about the players, grounds, tournament, etc. To become an effective commentator you need good knowledge of the game, its history and ideally stats of the players who are playing the match. criclog fills this gap for the grassroots commentators by providing them up to date stats of the players, matches and tournaments. It helps the commentators excel at their job of keeping the audience entertained for the whole match.</p>
            <br />
-           <p>At the same time, CricHeroes is building a community of commentators who can list their services for free on the CricHeroes App and get more matches to commentate. All you need to do is register yourself as a commentator on the CricHeroes App.</p>
+           <p>At the same time, criclog is building a community of commentators who can list their services for free on the criclog App and get more matches to commentate. All you need to do is register yourself as a commentator on the criclog App.</p>
          
         </div>
         <br />

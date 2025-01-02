@@ -28,7 +28,7 @@ const SuperSponsor = () => {
       </div>
 
       <div className="min-w-[100vh]  my-5">
-        <h1 className=" text-[#4a2eb0] flex justify-center items-center px-[80px] font-bold text-4xl">
+        <h1 className=" text-[#4a2eb0] flex justify-center items-center px-[80px] font-medium text-4xl">
           Benefits for Your Sponsors
         </h1>
       </div>
@@ -106,15 +106,16 @@ const SuperSponsor = () => {
         </div>
       </div> 
 
-      <div className="min-w-[100vh] h-[70px] bg-gray-200 flex items-center my-[50px]  ">
-        <p className="w-[100%] flex justify-center items-center text-center text-[20px] sm:text-[24px] gap-2 px-[20px]">
-          Earn more from your Sponsors offering them these advantages. 
-          <button className="w-[29%] h-[40px] bg-[#4A2EB0] text-white text-[12px] sm:w-[10%] sm:text-[14px] rounded-[10px]">
-            CONTACT US
-          </button>
-        </p>
-      </div>  
- 
+      <div className="w-full flex flex-col lg:flex-row justify-center items-center text-center py-[20px]">
+          <p className=" flex flex-col lg:flex-row justify-center items-center gap-3 bg-[#EEEEEE] p-3 w-[90%] md:w-[60%] text-center rounded-md">
+            <h1>
+            Earn more from your Sponsors offering them these advantages.
+            </h1>
+            <button className="bg-[#4A2EB0] text-white px-2 py-1 rounded-md w-[150px] ml-5">
+              Contact us
+            </button>
+          </p>
+        </div>
    <div className="min-w-[100vh] min-h-100vh bg-gray-800 font-serif  flex flex-col py-[30px] gap-[10px] sm:px-[20px] px-[10px]">
         <p className="w-[100%] text-white text-center sm:text-[24px] text-[18px]    ">
           Make your sponsors "Super Sponsors" with CricLog.

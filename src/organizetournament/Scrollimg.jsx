@@ -59,7 +59,7 @@ const Scrollimg = () => {
               <img
                 src={pic.image}
                 alt={pic.alt}
-                className="w-40 h-44 md:w-52 md:h-56 object-cover rounded-lg shadow-md"
+                className="w-40 h-44 md:w-52 md:h-56 object-cover rounded-lg "
               />
             </div>
           ))}

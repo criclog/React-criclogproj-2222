@@ -48,7 +48,7 @@ const Contact = () => {
     </div>
   </div>
 
-  <div className="bg-[#4a2eb08a] py-5 text-center">
+  <div className="bg-[#bfb3e78a] py-5 text-center">
     <h2 className="font-bold text-2xl mb-4 text-gray-800">
       We want you to Grow With Us!
     </h2>
@@ -63,7 +63,7 @@ const Contact = () => {
   </div>
 
  
-  <div className="bg-gray-900 text-white text-center py-4 text-sm">
+  <div className="bg-gray-900 text-white text-center py-4 text-[14px]">
     <p>
       TFL (3rd Floor) Zion Z1, Nr. Avalon Hotel, Sindhu Bhavan Road,
       Bodakdev, Ahmedabad, Gujarat - 380054.

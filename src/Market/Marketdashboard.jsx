@@ -41,7 +41,7 @@ const Marketdashboard = () => {
         <hr />
         <div className="mt-4">
           <h3 className="text-[14px] sm:text-[20px] font-bold text-gray-800">Description</h3>
-          <p className="w-[50%] text-gray-600 text-[13px] sm:text-[15px] mt-2">
+          <p className="w-[90%] text-gray-600 text-[13px] sm:text-[15px] mt-2">
            {productdata.description}
           </p>
         </div>

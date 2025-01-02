@@ -46,7 +46,7 @@ export const ScoreTickerPage = () => {
         ].map((tag) => (
           <span
             key={tag}
-            className="bg-green-500 text-white px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-green-600"
+            className="bg-[#755fc5] text-white px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-[#4A2EB0]"
           >
             {tag}
           </span>
@@ -79,7 +79,7 @@ export const ScoreTickerPage = () => {
           <h3 className="text-xl font-semibold">
             Purchase a Score Ticker today!
           </h3>
-          <button className="mt-4 px-6 py-2 bg-[#4A2EB0] rounded-full text-white text-lg hover:bg-blue-500">
+          <button className="mt-4 px-6 py-2 bg-[#4A2EB0] font-semibold rounded-lg text-white text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
             Contact Us
           </button>
         </div>

@@ -97,7 +97,7 @@ useEffect(()=>{
           <img
             src={`http://localhost:7000/view/${news.filename}`}
             alt='could not load image'
-            className="w-[100%] h-[200px] px-3"
+            className="w-[100%] h-[270px] px-3"
           />
           <div className="flex flex-col gap-[10px] py-[10px]">
           <h1 className="text-[15px] font-semibold text-[#555454] px-5">{news.newsTitle}</h1>

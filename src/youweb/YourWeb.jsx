@@ -7,7 +7,7 @@ export const YourWeb = () => {
     <div>
       
       <div className=" min-h-100vh w-full bg-[#4A2EB0] py-[40px] md:py-[60px] text-white text-center">
-        <h1 className="text-2xl md:text-[26px] font-bold">YOUR WEB FROM CRICSLOG</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold">YOUR WEB FROM CRICSLOG</h1>
         <p className="mt-2 text-[18px]">Your League. Your Brand. Your Website</p>
       </div>
 

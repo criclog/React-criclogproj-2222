@@ -304,6 +304,7 @@ export const Testimonials = () => {
     autoplaySpeed: 3000,
     centerPadding: "50px",
     adaptiveHeight: true,
+    arrows:false,
     responsive: [
       {
         breakpoint: 768,

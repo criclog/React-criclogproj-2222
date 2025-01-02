@@ -32,8 +32,11 @@ const handleSubmit = async (e) => {
             await axios.post(`http://localhost:7000/v1/signin`, formdata)
                 .then((res) => {
                     toast.success(res.data.message)
+                 localStorage.setItem("userdata", JSON.stringify(res.data.findEmail))
                     Setform(initial)    
                     navigate("/")
+                   
+                    
                 })
                 .catch((err) => toast.error(err.response.data.message))
                 .finally(() => Setissumitting(false))

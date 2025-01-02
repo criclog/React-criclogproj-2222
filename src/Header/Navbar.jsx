@@ -6,6 +6,8 @@ import { FaCaretDown } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { RxCross2 } from "react-icons/rx";
 import { MdMenu } from "react-icons/md";
+import { FaCircleUser } from "react-icons/fa6";
+
 import {
     Accordion,
     AccordionItem,
@@ -19,6 +21,9 @@ import {
 export const Navbar = () => {
  const [isChecked, setIsChecked] = useState(false);
 
+
+ const checkValue = localStorage.getItem("userdata");
+
 const handleToggle =()=>{
     setIsChecked(true)
 };
@@ -26,6 +31,8 @@ const handleToggle =()=>{
  const handlemenuclose =()=> {
   setIsChecked(false)
 };
+
+
 
 
   return (<>
@@ -38,7 +45,7 @@ const handleToggle =()=>{
        <Link to={"/"}><img src={logo} alt="couldn't load image" className='sm:w-[50px] sm:h-[50px] w-[40px] h-[40px]'/></Link> 
        <Link to={"/"}><h3 className='font-bold sm:text-[18px] text-[14px] text-[#4D28D4] '>CRICLOG</h3></Link> 
        </div> </div>
-            <ul className='xl:w-[70%] w-full h-full xl:flex items-center xl:gap-[25px] gap-[25px] font-semibold text-[13px] cursor-pointer xl:visible hidden'>
+            <ul className='xl:w-[72%] w-full h-full xl:flex items-center xl:gap-[25px] gap-[25px] font-semibold text-[13px] cursor-pointer xl:visible hidden'>
                
                  <li className='flex flex-col items-center group'><p className='flex items-center gap-1 hover:text-[#4D28D4]'>LIVE SCORES <FaCaretDown className='text-[16px]' /> </p> 
                 <ul className=' min-w-100vw min-h-100vh grid flex-col bg-[white] absolute top-[65px] font-semibold rounded-md border invisible group-hover:visible ease-out delay-300'>
@@ -68,21 +75,23 @@ const handleToggle =()=>{
                 </li>
                 <li className='flex flex-col items-center group'><p className='flex items-center gap-1 hover:text-[#4D28D4]'>MORE <FaCaretDown className='text-[16px]' /> </p> 
                 <ul className=' min-w-100vw min-h-100vh grid flex-col bg-[white] absolute top-[65px] font-semibold rounded-md border invisible group-hover:visible ease-out delay-300'>
-                    <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>TOURNAMENT GUIDE</li>
                    <Link to={'/crickettips'}> <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>CRICKET TIPS</li></Link>
                     <Link to={'/news'}><li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>NEWS</li></Link>
                     <Link to={'/Faqs'}> <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>FAQS</li></Link>
                     <Link to={"/organizetournament"}><li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>ORGANIZE TOURNAMENT</li></Link>
-                    <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>AWARDS</li>
+                  <a href="https://awards.cricheroes.in/" target='Blank'>  <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>AWARDS</li></a>
                 </ul>                
                 </li>
                 
-                <li className='hover:text-[#4D28D4]'>STORE</li>
+                <a href="https://tdr.cricheroes.com/?utm_source=cricheroes_website&utm_medium=cricheroes_tdr_icon&utm_campaign=the_dressing_room" target='Blank'><li className='hover:text-[#4D28D4]'>STORE</li></a>
                <Link to ={"/jobs"}><li className=' hover:text-[#4D28D4]'>JOBS</li> </Link> 
                <Link to={"/Contact"}><li className='hover:text-[#4D28D4]'>CONTACT US</li></Link>
-                <img src={Playstore} alt="couldn't load image" width="30px" height="30px"/>
-                <img src={appstore} alt="couldn't load image" width="30px" height="30px"/>
-                <Link  to={"/Login"}><button className='py-[3px] px-[5px] text-[13px]  border-[#4D28D4] border-[2px] rounded-md text-[black] hover:text-[white] hover:bg-[#4D28D4] ease-in-out duration-300'>SIGN IN</button> </Link>  
+                <a href="https://play.google.com/store/apps/details?id=com.cricheroes.cricheroes.alpha"><img src={Playstore} alt="couldn't load image" width="30px" height="30px"/></a>
+                <a href="https://apps.apple.com/us/app/cricheroes-cricket-scoring-app/id1222844050?ls=1"><img src={appstore} alt="couldn't load image" width="30px" height="30px"/></a>
+                
+                {!checkValue?(<Link  to={"/Login"}><button className='py-[3px] px-[5px] text-[13px]  border-[#4D28D4] border-[2px] rounded-md text-[black] hover:text-[white] hover:bg-[#4D28D4] ease-in-out duration-300'>SIGN IN</button> </Link>):(
+                  <Link to={'/profile'}><p className='flex  items-center gap-[5px] group'><FaCircleUser className='text-[32px] text-[#4a2eb0]' /><p className='text-[black] text-[14px] flex justify-center rounded-b-lg invisible group-hover:visible ease-out duration-200'>PROFILE</p></p></Link>
+                )}  
                 
                 </ul>
             
@@ -92,8 +101,9 @@ const handleToggle =()=>{
     <div className={`${isChecked? 'w-[80%] h-screen py-[30px] bg-[#ffffff] fixed z-30 overflow-y-scroll':"hidden"}`}> 
    <div className='w-full px-[40px] flex flex-col text-[14px] gap-5 '>
    <p onClick={handlemenuclose} className='text-[20px]'><RxCross2/></p>
-   <Link  to={"/Login"}><button className='py-[6px] w-full text-[14px] font-medium border-[#4D28D4] border-[2px] rounded-md text-[black] hover:text-[white] hover:bg-[#4D28D4] ease-in-out duration-300'>SIGN IN</button> </Link>
-   
+   {!checkValue?(<Link  to={"/Login"}><button className='w-[95%] py-[5px] mx-[10px] text-[14px]  border-[#4D28D4] border-[2px] rounded-md text-[black] hover:text-[white] hover:bg-[#4D28D4] ease-in-out duration-300'>SIGN IN</button> </Link>):(
+                  <Link to={'/profile'}><p className='mt-[10px] flex flex-col items-center gap-[15px] '><FaCircleUser className='text-[34px] text-[#4a2eb0]' /><p className='text-[black] text-[14px] flex justify-center rounded-b-lg '>PROFILE</p></p></Link>
+                )}     
    <Link to={"/"}><p className='font-medium hover:text-[#4D28D4]'>HOME</p></Link>
     <Accordion allowZeroExpanded >
         <AccordionItem >
@@ -156,22 +166,21 @@ const handleToggle =()=>{
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <div className='flex flex-col gap-3 py-[10px] font-medium'>
-              <p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>TOURNAMENT GUIDE</p>
               <Link to={'/crickettips'}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>CRICKET TIPS</p></Link>
               <Link to={'/news'}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>NEWS</p></Link>
               <Link to={'/Faqs'}> <p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>FAQS</p></Link>
               <Link to={"/organizetournament"}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>ORGANIZE TOURNAMENT</p></Link>
-              <p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>AWARDS</p>
+              <a href="https://awards.cricheroes.in/" target='Blank'><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>AWARDS</p></a>
               </div>
               </AccordionItemPanel>
             </AccordionItem>
             </Accordion>
-            <p className='font-medium hover:text-[#4D28D4]'>STORE</p>
+            <a href="https://tdr.cricheroes.com/?utm_source=cricheroes_website&utm_medium=cricheroes_tdr_icon&utm_campaign=the_dressing_room" target='Blank'> <p className='font-medium hover:text-[#4D28D4]'>STORE</p></a>
             <Link to ={"/jobs"}><p className='font-medium hover:text-[#4D28D4]'>JOBS</p> </Link> 
             <Link to={"/Contact"}><p className='font-medium hover:text-[#4D28D4]'>CONTACT US</p></Link>
             <div className='flex gap-10'>
-            <img src={Playstore} alt="couldn't load image" width="30px" height="30px"/>
-            <img src={appstore} alt="couldn't load image" width="30px" height="30px"/>
+            <a href="https://play.google.com/store/apps/details?id=com.cricheroes.cricheroes.alpha"><img src={Playstore} alt="couldn't load image" width="30px" height="30px"/></a>
+            <a href="https://apps.apple.com/us/app/cricheroes-cricket-scoring-app/id1222844050?ls=1"><img src={appstore} alt="couldn't load image" width="30px" height="30px"/></a>
             </div>
    </div>
 </div>

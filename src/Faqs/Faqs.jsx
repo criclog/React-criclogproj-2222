@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { IoIosArrowDown } from "react-icons/io";
 
 
 
@@ -161,7 +161,7 @@ const toggletour = (index) =>{
 
         {/* Video */}
         
-        <h1 className='text-3xl font-bold text-center my-10 text-blue-700'>Video-1</h1>
+        <h1 className='text-3xl font-medium text-center my-10 text-blue-700'>Video-1</h1>
         <div className='max-w-3xl mx-auto px-5 mb-3'>
             {
                 faqs.map((faq,index)=> (
@@ -176,7 +176,7 @@ const toggletour = (index) =>{
 
                         <span className='font-semibold text-gray-700'>{faq.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openfaq === index ? "▲" : "▼"}
+                            {openfaq === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -195,7 +195,7 @@ const toggletour = (index) =>{
 
         {/* General */}
 
-        <h1 className='text-3xl font-bold text-center mb-6 text-blue-700 mt-2'>General</h1>
+        <h1 className='text-3xl font-medium text-center mb-6 text-blue-700 mt-2'>General</h1>
 
         <div className='max-w-3xl px-5 mx-auto'>
             {
@@ -213,7 +213,7 @@ const toggletour = (index) =>{
                         {Gen.Question}
                         </span>  
                       <span className='text-gray-500'>
-                        {openGen === content ?"▲" : "▼" }
+                        {openGen === content ?<IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/> }
                       </span>
                       </button>
 
@@ -231,7 +231,7 @@ const toggletour = (index) =>{
         
         {/* Scoring Related */}
 
-        <h1 className='text-3xl font-bold text-center mb-6 text-blue-700 mt-2'>Scoring Related</h1>
+        <h1 className='text-3xl font-medium text-center mb-6 text-blue-700 mt-2'>Scoring Related</h1>
 
         <div className='max-w-3xl px-5 mx-auto'>
             {
@@ -249,7 +249,7 @@ const toggletour = (index) =>{
                         {score.Question}
                         </span>  
                       <span className='text-gray-500'>
-                        {openscore === content ?"▲" : "▼" }
+                        {openscore === content ?<IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/> }
                       </span>
                       </button>
 
@@ -266,7 +266,7 @@ const toggletour = (index) =>{
                                   
         {/* Tournament Related */}
 
-        <h1 className='text-3xl font-bold text-center mb-6 text-blue-700'>Tournament Related</h1>
+        <h1 className='text-3xl font-medium text-center mb-6 text-blue-700'>Tournament Related</h1>
         <div className='max-w-3xl px-5 mx-auto'>
             {
                 tournament.map((tour,index)=> (
@@ -281,7 +281,7 @@ const toggletour = (index) =>{
 
                         <span className='font-semibold text-gray-700'>{tour.Detail}</span>   
                         <span className='text-gray-500'>
-                            {opentour === index ? "▲" : "▼"}
+                            {opentour === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
                             </span> 
 
                         </button>
@@ -299,7 +299,7 @@ const toggletour = (index) =>{
         <div className=' flex flex-col justify-center items-center gap-3 py-[50px]'>
                <h1 className='Text-2xl font-bold'>Do you have any query ?</h1>
                <p className=''>Tell us more and we'll be happy to assist you</p>
-               <button className='w-[200px] h-[50px] bg-blue-700 rounded'>Contact Us</button>
+               <button className='w-[150px] h-[40px] bg-[#4A2EB0] rounded text-[white] text-[17px]'>Contact Us</button>
         </div>
 
     </div>

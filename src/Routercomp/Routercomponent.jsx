@@ -53,6 +53,9 @@ import { Newsnavbar } from '../News/Local'
 import { Localdetails } from '../News/Localdetails'
 import { Internationaldetails } from '../News/internationaldetails'
 import Crickettips from '../CricketTips/CricketTipscomponent'
+import { Profile } from '../Profile/Profile'
+import { Tournamentdashboard } from '../Tourment/Tournamentdashboard'
+
 
 
 
@@ -69,6 +72,7 @@ export const Routercomponent = () => {
         <Route path="/Faqs"element={<Faqs/>} />
         <Route path="/Market"element={<Market/>} />
         <Route path="/tournament"element={<FilterComponent/>} />
+        <Route path="/tournamentdashboard/:id"element={<Tournamentdashboard/>} />
         <Route path="/Marketdashboard/:id"element={<Marketdashboard/>} />
         <Route path="/looking"element={<LocationFilter/>} />        
         <Route path="/news"element={<Newsnavbar/>} />      
@@ -123,6 +127,7 @@ export const Routercomponent = () => {
 
       <Route path='/Login' element={<Login/>}/>
       <Route path='/forgot' element={<Forgot/>}/>
+      <Route path='/profile' element={<Profile/>}/>
       <Route path='/super-sponsor/get-app' element={<CricketAppPromo/>}/>
       </Routes>
       <ToastContainer/>

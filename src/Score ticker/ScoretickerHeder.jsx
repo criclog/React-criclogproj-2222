@@ -17,7 +17,7 @@ const ScoreTickerheder = () => {
         <p className="mt-4 text-lg">
           Beautiful score overlays for your live cricket matches.
         </p>
-        <button className="mt-8 px-6 py-2  bg-[#4A2EB0] text-white font-semibold rounded-full shadow-md hover:bg-[#00FFCF] hover:text-[black]">
+        <button className="mt-8 px-6 py-2 border border-white w-[200px]  bg-[#4A2EB0] text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-[#4A2EB0] transition duration-300">
           VIEW PRICING
         </button>
       </div>

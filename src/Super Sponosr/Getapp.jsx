@@ -1,5 +1,7 @@
 import React from "react";
 import logo5 from '../Assests/Sponsor/apps-page-feature.gif';
+import logo from '../Assests/logo.png';
+import { Link } from "react-router-dom";
 
 
 const CricketAppPromo = () => {
@@ -7,7 +9,10 @@ const CricketAppPromo = () => {
     <div className="flex flex-col md:flex-row w-full min-h-screen">
     
       <div className="flex flex-col items-center justify-center text-center bg-gray-100 w-full md:w-1/2 p-6">
-       <img src="" alt="" />
+      <div className='w-full flex items-center justify-center gap-3 py-[30px]'>
+       <Link to={"/"}><img src={logo} alt="couldn't load image" className='sm:w-[90px] sm:h-[90px] w-[40px] h-[40px]'/></Link> 
+       <Link to={"/"}><h3 className='font-semibold sm:text-[30px] text-[20px] text-[#4D28D4] '>CRICLOG</h3></Link> 
+       </div> 
         <h1 className="text-[22px] sm:text-5xl font-bold text-gray-800 mb-4">
           Keep track of everything cricket!
         </h1>

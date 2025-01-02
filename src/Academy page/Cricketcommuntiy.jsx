@@ -74,9 +74,9 @@ const CricketCommunity = () => {
           Explore and connect with the people, who make grassroots Cricket
           possible.
         </p>
-        <button className="bg-transparent text-white border-2 border-white px-6 py-2 text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
+        <Link to={'/Contact'}><button className="bg-transparent text-white border-2 border-white px-6 py-2 text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
           REGISTER NOW
-        </button>
+        </button></Link>
       </div>
     </div>
 

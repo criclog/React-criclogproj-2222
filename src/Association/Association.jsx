@@ -117,7 +117,7 @@ export const Adv = () => {
       <p className="w-full flex flex-col justify-center items-center font-serif font-semibold absolute text-black text-[20px] sm:text-[24px]  px-[10px] text-center top-[10px] md:text-[28px] lg:text-[32px]">
         One platform to rule them all
       
-      <div className="md:w-[20%] w-[40%] border-[3px] sm:border-[4px] border-[#4A2EB0] rounded-[6px] mx-auto  z-10"></div>
+      <div className="md:w-[20%] w-[40%] border-[3px] sm:border-[4px] border-[white] rounded-[6px] mx-auto  z-10"></div>
       </p>
       <p className="w-full flex justify-center items-center font-medium text-black text-[13px] my-[90px] px-4 absolute  md:text-[20px] sm:my-[70px] md:px-[120px] lg:my-[70px]  ">
         Criclog is the all-in-one solution for Cricket Associations,

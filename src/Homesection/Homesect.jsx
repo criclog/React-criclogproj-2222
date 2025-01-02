@@ -55,8 +55,8 @@ export const Herosect = () => {
             <p className='text-[white] lg:text-[28px] md:text-[24px] sm:text-[20px] text-[18px]'>Download the app and start <span className='font-bold'>scoring for free.</span></p>
         
             <div className=" flex sm:gap-[20px] gap-[10px] cursor-pointer">
-             <img src={heroplaystore} alt="couldn't load image" className="lg:w-[200px] sm:w-[170px] w-[115px]"/>
-             <img src={heroappstore} alt="couldn't load image" className="lg:w-[200px] sm:w-[170px] w-[115px]"/>
+            <a href="https://play.google.com/store/apps/details?id=com.cricheroes.cricheroes.alpha"> <img src={heroplaystore} alt="couldn't load image" className="lg:w-[200px] sm:w-[170px] w-[115px]"/></a>
+             <a href="https://apps.apple.com/us/app/cricheroes-cricket-scoring-app/id1222844050?ls=1"><img src={heroappstore} alt="couldn't load image" className="lg:w-[200px] sm:w-[170px] w-[115px]"/></a>
           </div>
           <div className="flex sm:gap-[40px] gap-[20px] items-center cursor-pointer">
             <p className="flex gap-[10px] items-center cursor-pointer"> 
@@ -85,7 +85,7 @@ export const Herosect = () => {
    ]
     return (
         <div className='flex flex-col justify-center items-center py-[60px] gap-[40px]'>
-            <p className='font-semibold md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] '>Why CricLog?</p>
+            <p className='font-medium md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] '>Why CricLog?</p>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
 
 <div className="flex flex-col items-center gap-5 px-[20px]">
@@ -134,7 +134,7 @@ export const Homedressroom = () => {
             <img src={Dressinglogo} className="md:w-[180px] w-[150px]"/>
             <p className='sm:text-[22px] text-[20px] font-semibold text-center'>A store by CricLog to celebrate <br />
             your passion for cricket.</p>
-            <button className='px-7 py-[5px] bg-[yellow] text-[black] font-semibold sm:text-[14px] text-[12px] rounded-md cursor-pointer'>EXPLORE NOW</button>
+            <a href="https://tdr.cricheroes.com/?utm_source=cricheroes_website&utm_medium=cricheroes_tdr_icon&utm_campaign=the_dressing_room" target='Blank'> <button className='px-7 py-[5px] bg-[yellow] text-[black] font-semibold sm:text-[14px] text-[12px] rounded-md cursor-pointer'>EXPLORE NOW</button> </a>
            </div>
            <div>
              <img src={homestore}  className='md:w-[340px] w-[280px] rounded-lg' />
@@ -178,9 +178,9 @@ export const Homenumbersect = () => {
         <p className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-center">
           Become a Part of the World's Biggest Cricket Network.
         </p>
-        <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:bg-white hover:border-white hover:scale-105 hover:text-[#4D28D4] transition duration-200 ease-in-out">
+       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:bg-white hover:border-white hover:scale-105 hover:text-[#4D28D4] transition duration-200 ease-in-out">
           GET APP
-        </button>
+        </button></Link>
       </div>
     </div>
 
@@ -255,9 +255,9 @@ export const Homefeatured = () => {
 
   export const Homeuser = () => {
     const star = String.fromCodePoint(9733);
-    const userarr=[{name:"SATHISH SHARMA", image:user1, para:" It is a leading cricket website and mobile app that focuses on delivering real-time updates, live scores,  and news related to cricket. It is widely popular among cricket fans."},
+    const userarr=[{name:"SATHISH SHARMA", image:user1, para:" It is a leading cricket website and mobile app that focuses on delivering real-time updates, live scores,  and news related to cricket. "},
       {name:"ABISHEK", image:user2,  para:" It provides ball-by-ball live updates with concise and engaging commentary. The scorecards are detailed, featuring partnerships, fall of wickets."},
-      {name:"JOHNSON", image:user3, para:" A clear and user-friendly schedule section allows fans to track upcoming matches, team standings, and results. The website offers a wide range of cricket news"},
+      {name:"JOHNSON", image:user3, para:" A clear and user-friendly schedule section allows fans to track upcoming matches, team standings, and results."},
       {name:"STEPHEN", image:user4, para:" Its app is one of the most downloaded cricket apps globally. It’s lightweight, fast, and offers excellent performance even on slower internet connections."}
     ]
 
