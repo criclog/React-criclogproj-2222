@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";  
 import { toast } from "react-toastify";
-
+import nodata from '../Assests/nodata.avif'
 
 
 const categories = [
@@ -73,7 +73,7 @@ useEffect(()=>{
         </h2>
         {filteredData.length === 0 ? (
           <div className="p-4 bg-white border rounded-md shadow-md">
-            <p className="text-gray-500">No matching data found. Please try a different filter.</p>
+                   <p className=" text-gray-500 flex flex-col justify-center items-center gap-4 "> <img src={nodata} className='w-[150px] rounded-full '/>No matching data found. Please try a different filter.</p>
           </div>
         ) :(
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2">

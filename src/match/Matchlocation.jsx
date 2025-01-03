@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoMdArrowDropright } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from 'react-router-dom';
-
+import nodata from '../Assests/nodata.avif'
+import axios from "axios";  
+import { toast } from "react-toastify";
 
 export const Matchlocation = () => {
 
@@ -56,22 +58,33 @@ export const Matchlocation = () => {
 
 
 export const Livematchcard = ({filters}) => {
-const matchlive=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", locaion:"Jawaharlal Lal Nehru Cricket Stadium, chennai, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field" },
-{matchname:"OLD IS GOLD SEASON -09 (COMMITTEE TOURNAMENT)", locaion:"Rander Sultania Ground, Surat, 27-Dec-24, 7 Ov.,", matchtype:"LEAGUE MATCHES", batteam:"Nanwala tigers", score:"40/5", over:"(6.3)", bowling:"R.K Eagle", bowlingstatus:"yet to bat", tosswin:"R.K Eagle", tossstatus:"won the toss and elected to bat" },
-{matchname:"VPL 3(Vishv Umiyadham Premier League)", locaion:"Nikol Khodaldham, Ahmedabad, 27-Dec-24, 12 Ov.,", matchtype:"Round Three", batteam:"Shreedhar group", score:"4/2", over:"(1.0)", bowling:"Devnagar lions", bowlingstatus:"yet to bat", tosswin:"evnagar lion", tossstatus:"won the toss and elected to field" },
-{matchname:"HDFC LIFE IDPL 2024", locaion:"Turf 2, mumbai, 18-Dec-24, 7 Over,", matchtype:"PRE QUATER FINAL", batteam:"Spartans", score:"80/5", over:"(6.3)", bowling:"Dynamos", bowlingstatus:"yet to bat", tosswin:"Spartans", tossstatus:"won the toss and elected to bat" },
-{matchname:"Vankar Samaj Cricket Tournament", locaion:"The Capital Box Cricket, Bhavnagar, 25-Dec-24, 10 Ov.,", matchtype:"Final", batteam:"Boricha", score:"4/2", over:"(1.0)", bowling:"Yadav", bowlingstatus:"yet to bat", tosswin:"Boricha", tossstatus:"won the toss and elected to field" },
-{matchname:"womens indoor league T10", locaion:"Sevy Sports Club, Jamnagar, Limited Overs, 10 Ov.,", matchtype:"PRE QUATER FINAL", batteam:"BLITZ AND GLITZ", score:"80/5", over:"(6.3)", bowling:"Ferocious Divas", bowlingstatus:"yet to bat", tosswin:"Ferocious Divas", tossstatus:"won the toss and elected to bat" },]
+const[matchcarddata,setmatchcarddata]=useState([])
+  
+
+
+  const Fetchmatchdata=async()=>{
+    await axios.get("http://localhost:7000/getAllMatches",)
+    .then((res)=>setmatchcarddata(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+
+useEffect(()=>{
+  Fetchmatchdata();
+},[])
+
+
+
 const filteredMatches = filters.length
-    ? matchlive.filter((match) =>
+    ? matchcarddata.filter((match) =>
         filters.some((city) =>
-          match.locaion.toLowerCase().includes(city.toLowerCase())
+          match.location.toLowerCase().includes(city.toLowerCase())
         )
       )
-    : matchlive;
+    : matchcarddata;
     return (<>{filteredMatches.length === 0 ? (
-      <div className="w-full p-4 bg-white border rounded-md shadow-md flex justify-center">
-        <p className="text-gray-500">No matching data found. Please try a different filter.</p>
+      <div className="w-full p-4 bg-white border rounded-md shadow-md flex justify-center items-center">
+        <p className=" text-gray-500 flex flex-col justify-center items-center gap-4 "> <img src={nodata} className='w-[150px] rounded-full '/>No matching data found. Please try a different filter.</p>
       </div>
     ):(
     <>
@@ -79,13 +92,13 @@ const filteredMatches = filters.length
         filteredMatches.map((livecard,id)=>(
         
       
-         <div key={id} className='w-full min-h-100vh  border-[1px] bg-[white]  border-[#bdbcbc] divide-y-[1px]  divide-[#c9c4c4] rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+        <Link to={`/score-match/${livecard.MatchID}`}><div key={id} className='w-full min-h-100vh  border-[1px] bg-[white]  border-[#bdbcbc] divide-y-[1px]  divide-[#c9c4c4] rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
             {/* Matchname */}
-             <p className=' w-full text-[11px] xl:text-[13px] md:text-[12px] flex justify-center font-medium py-2 text-[#272727] px-5'>{livecard.matchname}</p>
+             <p className=' w-full text-[12px] xl:text-[15px] md:text-[14px] flex justify-center font-medium py-2 text-[#272727] px-5'>{livecard.matchname}</p>
              <div className='w-full min-h-100vh flex flex-col justify-center items-center gap-[10px] px-[15px]  py-[10px]'>
                 <div className='w-full min-h-100vh flex justify-between gap-[10px]'>
                   {/* location */}
-             <p className='xl:text-[14px] md:text-[12px] text-[11px] font-medium text-[#494848]'>{livecard.locaion},</p>
+             <p className='xl:text-[14px] md:text-[12px] text-[11px] font-medium text-[#494848]'>{livecard.location},</p>
              {/* live btn */}
              <button className='h-[22px] lg:h-[23px] text-[13px] xl:text-[14px] md:text-[13px] flex justify-center font-semibold bg-[#4D28D4] text-[white]  pr-[7px] rounded-[8px] '><IoMdArrowDropright  className='md:text-[20px] text-[19px] lg:text-[22px] text-[white] animate-pulse ease-in-out duration-100'/> LIVE</button>
              </div>
@@ -98,20 +111,20 @@ const filteredMatches = filters.length
              {/* batting team name */}
              <div className='w-full flex justify-between items-center'>
              <p className=' text-[15px] xl:text-[16px] md:text-[15px] text-[#4D28D4] font-semibold'>{livecard.batteam}</p>
-             <h2 className='text-[15px] xl:text-[16px] md:text-[15px] flex gap-[4px] items-center text-[#4D28D4] font-semibold'>{livecard.score} <p className='text-[14px] font-semibold text-[black] '>{livecard.over}</p></h2>
+             <h2 className='text-[15px] xl:text-[16px] md:text-[15px] flex gap-[4px] items-center text-[#4D28D4] font-semibold'>{livecard.score} <p className='text-[14px] font-semibold text-[black] '>({livecard.over})</p></h2>
              </div>
              <div className='w-full flex justify-between'>
               {/* bowling team name */}
-             <p className=' text-[15px] xl:text-[16px] md:text-[15px] text-[#1b1b1b] font-semibold'>{livecard.bowling}</p>
+             <p className=' text-[15px] xl:text-[16px] md:text-[15px] text-[#1b1b1b] font-semibold'>{livecard.bowlingteam}</p>
             <h2 className='xl:text-[14px] md:text-[13px] text-[13px] text-[#222121] flex gap-[4px] font-semibold'>{livecard.bowlingstatus}</h2>
              </div>
              </div>
              {/* toss winning team */}
-             <p className=' w-full text-[13px] xl:text-[15px] md:text-[13px] px-[15px] py-2 '><span className='font-medium text-[#000000]'>{livecard.tosswin}</span> {livecard.tossstatus}</p>
+             <p className=' w-full text-[12px] xl:text-[14px] md:text-[12px] px-[15px] py-2 '><span className='font-medium text-[#000000]'>{livecard.tosswin}</span> {livecard.tossstatus}</p>
             </div>
                 
       
-      
+                </Link> 
     ))}
     </>)}</>
     )

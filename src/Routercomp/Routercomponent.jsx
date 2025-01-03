@@ -69,6 +69,7 @@ export const Routercomponent = () => {
         <Route path="/jobs" element={<Jobs/>}/>
         <Route path="/live-match" element={<Matchlocation/>}/>
         <Route path='/score-match' element={<Matchlive/>}/>
+        <Route path='/score-match/:id' element={<Matchlive/>}/>
         <Route path="/Faqs"element={<Faqs/>} />
         <Route path="/Market"element={<Market/>} />
         <Route path="/tournament"element={<FilterComponent/>} />

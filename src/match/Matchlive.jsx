@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { PiShareFat } from "react-icons/pi";
 import matchuser from "../Assests/match/user_profile.png"
-
-
+import axios from "axios";  
+import { toast } from "react-toastify";
 import {
   Accordion,
   AccordionItem,
@@ -15,7 +15,7 @@ import { LineChart  } from '@mui/x-charts';
 import { Gamehero } from './Matchplayer';
 import { Teamdet } from './Matchplayer';
 import { Gallery } from './Matchplayer';
-
+import { useParams } from 'react-router-dom';
 
 
 export const Matchlive = () => {
@@ -43,7 +43,7 @@ export const Matchlive = () => {
 
 const matchmain=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", location:"Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field", 
   matchdate:'19/12/2024', detaillocation:'Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad', updatedtime:'2024-12-19 at 10:17',matchoff:"Rahul sharma", bowlover:""}]
-const livescore=[{currentRR:'14.00', projected:140, overRR:"74/4", matchuserimg:matchuser, matchoff:"Rahul sharma", matchofficialrole:"Scorer" }]
+
 const batlivedata=[{battername:"Sawan Kumar*", R:20, B:10, four:2, six:2, SR:"100.00", status:"Not out", min:'30' },
   {battername:"Shewak", R:30, B:10, four:6, six:3, SR:"100.00", status:"Not out", min:'20' }]
 const bowllivedata=[{bowlername:"deepak", Over:1.3, med:0, Run:26, norun:4, four:2, six:1, WD:2, NB:0, wicket:1, ECO:"10.94"} ]
@@ -61,35 +61,48 @@ const matchnav=["SCORECARD", "COMMENTARY", "ANALYSIS", "GAMEHERO", "TEAMS", "GAL
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  const[match,setmatchdata]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchdata=async()=>{
+    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    .then((res)=>setmatchdata(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+
+useEffect(()=>{
+  Fetchmatchdata();
+},[])
     
     return (<>
-        { 
-            matchmain.map((maindata,id)=>(
-               
-      <div key={id} className='w-full min-h-100vh '>
+                
+      <div  className='w-full min-h-100vh  '>
         <div className='border-[1px] border-[#dfdede] pt-[15px] flex flex-col gap-[5px] rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_6px]'>
             
             <div className=' flex  justify-between px-[15px] gap-5'>
-             <p className='sm:text-[14px] text-[12px] text-[#4D28D4] font-medium'>{maindata.matchname} <span className='text-[#666565] italic'>({maindata.matchtype})</span></p>
+             <p className='sm:text-[14px] text-[12px] text-[#4D28D4] font-semibold'>{match.matchname} <span className='text-[#666565] italic'>({match.matchtype})</span></p>
              <p className='font-medium flex gap-[10px]'>
                  <button className=' h-[22px] lg:h-[23px] text-[12px] xl:text-[14px] md:text-[13px] flex justify-center items-center font-semibold bg-[#4D28D4] text-[white] px-3 rounded-[10px] '>LIVE</button> 
                  <PiShareFat className='text-[24px] text-[#888787] cursor-pointer' />
                  </p>
              </div>
              <div className='flex  justify-between px-[15px]'>
-                  <p className='sm:text-[14px] text-[12px] text-[#636262] font-medium'>{maindata.location}</p>
+                  <p className='sm:text-[14px] text-[12px] text-[#8d8c8c] font-semibold'>{match.location}{match.MatchDate} {match.Updatedtime}</p>
              </div>
              <div className='flex  justify-between px-[15px]'>
-                  <p className='sm:text-[14px] text-[12px] text-[#636262] font-medium'>Toss: {maindata.tosswin} {maindata.tossstatus}</p>
+                  <p className='sm:text-[14px] text-[12px] text-[#8b8b8b] font-semibold'>Toss: {match.tossstatus}</p>
              </div>
              <div className='w-full flex justify-between items-center px-[15px]'>
-             <p className=' text-[15px] xl:text-[18px] md:text-[17px] text-[#4D28D4] font-semibold'>{maindata.batteam}</p>
-             <h2 className='text-[15px] xl:text-[20px] md:text-[18px] flex gap-[4px] items-center text-[#4D28D4] font-semibold'>{maindata.score} <p className='text-[14px] font-semibold text-[black] '>{maindata.over}</p></h2>
+             <p className=' text-[15px] xl:text-[18px] md:text-[17px] text-[#4D28D4] font-semibold'>{match.batteam}</p>
+             <h2 className='text-[15px] xl:text-[20px] md:text-[18px] flex gap-[4px] items-center text-[#4D28D4] font-semibold'>{match.score} <p className='text-[14px] font-semibold text-[black] '>({match.over})</p></h2>
              </div>
              <div className='w-full flex justify-between px-[15px]'>
               {/* bowling team name */}
-             <p className=' text-[16px] xl:text-[18px] md:text-[17px] text-[#1b1b1b] font-semibold'>{maindata.bowling}</p>
-            <h2 className='xl:text-[14px] md:text-[13px] text-[13px] text-[#222121] flex gap-[4px] font-semibold'>{maindata.bowlingstatus}</h2>
+             <p className=' text-[16px] xl:text-[18px] md:text-[17px] text-[#1b1b1b] font-semibold'>{match.bowlingteam}</p>
+            <h2 className='xl:text-[14px] md:text-[13px] text-[13px] text-[#222121] flex gap-[4px] font-semibold'>{match.bowlingstatus}</h2>
              </div>
              
              <div className='px-[15px]  border-t-2 '>
@@ -119,14 +132,28 @@ const matchnav=["SCORECARD", "COMMENTARY", "ANALYSIS", "GAMEHERO", "TEAMS", "GAL
               {activeTab === "GALLERY" && <Gallery />}
             </div>
           </div>
-      ))}
+    
     </>
 )
   }
 
    
 export const Matchvideo = () => {
-  
+  const[matchlive,setmatchlive]=useState([])
+ 
+  const{id}=useParams();
+
+  const Fetchlivedata=async()=>{
+    await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+    .then((res)=>setmatchlive(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+
+useEffect(()=>{
+  Fetchlivedata();
+},[])
+
     return (
       <div className='w-full min-h-100vh py-[20px] border-[1px] border-[#dfdede] pt-[15px] flex flex-col gap-[5px] rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_6px]'> 
      <div className='w-full flex justify-center py-[3px]'>
@@ -135,13 +162,13 @@ export const Matchvideo = () => {
       <hr /> 
       {/* Live Score Details */}
       <div className="w-full flex justify-center">
-        {livescore.map((score, id) => (
-          <div key={id} className="w-[90%] flex items-center justify-between">
-            <p className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Current RR <span className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{score.currentRR}</span></p>
-            <h2 className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Projected <p className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{score.projected} <span className='sm:text-[13px] text-[11px] font-medium'>(at {score.currentRR} RPO)</span></p></h2>
-            <h2 className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Over RR <p className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{score.overRR} <span className='sm:text-[13px] text-[11px]  font-medium'>({score.currentRR})</span></p></h2>
+        
+          <div  className="w-[90%] flex items-center justify-between">
+            <p className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Current RR <span className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{matchlive.currentRR}</span></p>
+            <h2 className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Projected <p className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{matchlive.projected} <span className='sm:text-[13px] text-[11px] font-medium'>(at {matchlive.currentRR} RPO)</span></p></h2>
+            <h2 className='min-h-100vh flex flex-col text-center sm:text-[14px] text-[12px] font-semibold gap-1'>Over RR <p className=' sm:text-[16px] text-[13px] font-bold text-[#3a3939]'>{matchlive.overRR} <span className='sm:text-[13px] text-[11px]  font-medium'>({matchlive.currentRR})</span></p></h2>
           </div>
-))}
+
       </div>
       </div>
     )
@@ -149,58 +176,90 @@ export const Matchvideo = () => {
 
 
 export const Matchofficial = () => {
+  const[matchoff,setmatchoff]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchoffdata=async()=>{
+    await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+    .then((res)=>setmatchoff(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+
+useEffect(()=>{
+  Fetchmatchoffdata();
+},[])
   return (
     <div className='w-full min-h-100vh flex flex-col gap-[10px] border-2 py-[10px] rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_1px_4px]'>
       <h2 className='px-[15px] text-[16px] font-semibold'>Match Officials</h2>
       <hr />
-{
-  livescore.map((matchoffical,id)=>(
-   <div key={id} className='w-full min-h-100vh px-[15px] flex gap-[10px] items-center'>
-      <img src={matchoffical.matchuserimg}  className='w-[50px] h-[50px] rounded-full'/>
+
+  
+   <div className='w-full min-h-100vh px-[15px] flex gap-[10px] items-center'>
+      <img src={matchuser}  className='w-[50px] h-[50px] rounded-full'/>
       <h3 className='flex flex-col'>
-       <p className='text-[14px] font-semibold text-[#202020]'>{matchoffical.matchoff}</p> 
-       <p className='text-[12px] font-semibold text-[#5a5a5a]'> {matchoffical.matchofficialrole}</p>
+       <p className='text-[14px] font-semibold text-[#202020]'>{matchoff.matchofficial}</p> 
+       <p className='text-[13px] font-semibold text-[#5a5a5a]'> {matchoff.matchofficialrole}</p>
       </h3>
    </div>
 
 
-  ))
-}
+  
     </div>
   )
 }
 
 
 export const Matchdetails = () => {
+  const[matchdet,setmatchdet]=useState([])
+  const[matchoff,setmatchoff]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchdet=async()=>{
+    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    .then((res)=>setmatchdet(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+const Fetchmatchoffdata=async()=>{
+  await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+  .then((res)=>setmatchoff(res.data))
+  .catch((err)=> toast.error(err.res.data.message))
+  .finally()
+}
+
+useEffect(()=>{
+  Fetchmatchdet();
+  Fetchmatchoffdata();
+},[])
+  
+
   return (
     <div className='w-full min-h-100vh flex flex-col gap-[10px] border-2 py-[10px] rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_1px_4px]'>
       <h2 className='px-[15px] text-[16px] font-semibold'>Match Details</h2>
       <hr />
-{
-  matchmain.map((matchdet,id)=>(
-   <div key={id} className='w-full min-h-100vh px-[15px] flex flex-col gap-[10px] '>
+
+   <div  className='w-full min-h-100vh px-[15px] flex flex-col gap-[10px] '>
     
       <h3 className='flex flex-col'>
-        <p className='text-[14px] font-semibold text-[#131212]'>Series Name</p>
-       <p className='text-[12px] font-semibold text-[#4D28D4]'>{matchdet.matchname}</p> 
+        <p className='text-[14px] font-semibold text-[#464444]'>Series Name</p>
+       <p className='text-[14px] font-semibold text-[#4D28D4]'>{matchdet.matchname}</p> 
       </h3>
       <h3 className='flex flex-col'>
-        <p className='text-[14px] font-semibold text-[#131212]'>Match Date</p>
-       <p className='text-[12px] font-semibold text-[#121213]'>{matchdet.matchdate}</p> 
+        <p className='text-[14px] font-semibold text-[#464444]'>Match Date</p>
+       <p className='text-[14px] font-semibold text-[#98989b]'>{matchdet.MatchDate}</p> 
       </h3>
       <h3 className='flex flex-col'>
-        <p className='text-[14px] font-semibold text-[#131212]'>Location</p>
-       <p className='text-[12px] font-semibold text-[#4D28D4]'>{matchdet.detaillocation}</p> 
+        <p className='text-[14px] font-semibold text-[#464444]'>Location</p>
+       <p className='text-[14px] font-semibold text-[#4D28D4]'>{matchdet.detaillocation}</p> 
       </h3>
       <h3 className='flex flex-col'>
-        <p className='text-[14px] font-semibold text-[#131212]'>Last Updated</p>
-       <p className='text-[12px] font-semibold text-[#161616]'>{matchdet.matchoff} ({matchdet.updatedtime})</p> 
+        <p className='text-[14px] font-semibold text-[#464444]'>Last Updated</p>
+       <p className='text-[14px] font-semibold text-[#616060]'>{matchoff.matchofficial} ({matchdet.Updatedtime})</p> 
       </h3>
    </div>
-
-
-  ))
-}
     </div>
   )
 }
@@ -209,6 +268,28 @@ export const Matchdetails = () => {
 
 
 export const Team1Livedata = () => {
+  const[match,setmatchdata]=useState([])
+  const[matchbowling,setmatchbowling]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchdata=async()=>{
+    await axios.get(`http://localhost:7000/getBattingData1ById?MatchID=${id}`,)
+    .then((res)=>setmatchdata(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+const Fetchbowlingdata=async()=>{
+  await axios.get(`http://localhost:7000/getBowlingDataById?MatchID=${id}`,)
+  .then((res)=>setmatchbowling(res.data))
+  .catch((err)=> toast.error(err.res.data.message))
+  .finally()
+}
+
+useEffect(()=>{
+  Fetchmatchdata();
+  Fetchbowlingdata();
+},[])
   
   return (
     <div className='w-full min-h-100vh border-[1px]'>
@@ -226,25 +307,43 @@ export const Team1Livedata = () => {
        </ul>
        <div>
        {
-        batlivedata.map((batlive)=>(
+        match.map((batlive)=>(
           <div key={batlive.id}>
        <ul className='w-full flex justify-between sm:px-[20px] px-[10px] sm:text-[14px] text-[11px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
-        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.battername}</li>
-        <li>{batlive.status}</li>
+        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.BatterName1}</li>
+        <li>{batlive.Status1}</li>
         <h1 className='sm:w-[65%] w-[60%] flex justify-between px-1'>
-        <li>{batlive.R}</li>
-        <li>{batlive.B}</li>
-        <li>{batlive.four}</li>
-        <li>{batlive.six}</li>
-        <li>{batlive.SR}</li>
-        <li >{batlive.min}</li>
+        <li>{batlive.Run1}</li>
+        <li>{batlive.Ball1}</li>
+        <li>{batlive.Four1}</li>
+        <li>{batlive.Six1}</li>
+        <li>{batlive.SR1}</li>
+        <li >{batlive.Min1}</li>
         </h1>
        </ul>
        </div>
 ))}</div>
-        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Yet to Bat:</h1>
+<div>
+       {
+        match.map((batlive)=>(
+          <div key={batlive.id}>
+       <ul className='w-full flex justify-between sm:px-[20px] px-[10px] sm:text-[14px] text-[11px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
+        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.BatterName2}</li>
+        <li>{batlive.Status2}</li>
+        <h1 className='sm:w-[65%] w-[60%] flex justify-between px-1'>
+        <li>{batlive.Run2}</li>
+        <li>{batlive.Ball2}</li>
+        <li>{batlive.Four2}</li>
+        <li>{batlive.Six2}</li>
+        <li>{batlive.SR2}</li>
+        <li >{batlive.Min2}</li>
+        </h1>
+       </ul>
+       </div>
+))}</div>
+        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Yet to Bat:{match.Yettobat}</h1>
         <hr />
-        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Fall Of Wickets:</h1>
+        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Fall Of Wickets:{match.fallofwickets}</h1>
       </div>
       <div>
        <ul className='w-full flex justify-between px-[10px] sm:px-[20px] sm:text-[14px] text-[11px] py-[8px] bg-[#dfdede] font-semibold'>
@@ -255,23 +354,22 @@ export const Team1Livedata = () => {
         <li>R</li>
         <li>W</li>
         <li>WD</li>
-        <li>NB</li>
         <li>ECO</li>
         </h1>
        </ul>
        <div>
        {
-        bowllivedata.map((bowllive)=>(
+        matchbowling.map((bowllive)=>(
           <div key={bowllive.id}>
        <ul className='w-full flex justify-between sm:px-[20px] px-[10px] sm:text-[14px] text-[11px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
         <li className='text-[#4D28D4] font-semibold'>{bowllive.bowlername}</li>
         <h1 className='w-[75%] flex justify-between'>
-        <li>{bowllive.Over}</li>
+        <li>{bowllive.over}</li>
         <li>{bowllive.med}</li>
-        <li>{bowllive.Run}</li>
+        <li>{bowllive.run}</li>
         <li>{bowllive.wicket}</li>
-        <li>{bowllive.WD}</li>
-        <li>{bowllive.NB}</li>
+        <li>{bowllive.wide}</li>
+       
         <li>{bowllive.ECO}</li>
         </h1>
        </ul>
@@ -359,17 +457,30 @@ export const Team2Livedata = () => {
 }
 
 export const Scorecard=()=>{
+  const[match,setmatchdata]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchdata=async()=>{
+    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    .then((res)=>setmatchdata(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+  
+  useEffect(()=>{
+    Fetchmatchdata();
+  },[])
 
   return(<div className='w-full min-h-100vh flex flex-col gap-[20px]'>
-     { 
-            matchmain.map((maindata,id)=>(
+     
   
  <Accordion key={id} allowZeroExpanded className='w-full min-h-100vh border-[1px] rounded-lg ' >
       
         <AccordionItem className="w-full" allowZeroExpanded>
           <AccordionItemHeading>
             <AccordionItemButton>
-              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[14px] flex justify-between'><p className='hover:text-[#4D28D4]'>{maindata.batteam}</p> <p className='flex items-center gap-[5px] sm:text-[14px] text-[13px]'>{maindata.score} <span className='sm:text-[12px] text-[11px] text-[#3d3c3c]'>{maindata.over}</span> <TiArrowSortedDown className='text-[20px]' /></p></h2>
+              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[14px] flex justify-between'><p className='hover:text-[#4D28D4]'>{match.batteam}</p> <p className='flex items-center gap-[5px] sm:text-[16px] text-[13px]'>{match.score} <span className='sm:text-[12px] text-[11px] text-[#3d3c3c]'>({match.over})</span> <TiArrowSortedDown className='text-[20px]' /></p></h2>
              </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
@@ -380,7 +491,7 @@ export const Scorecard=()=>{
         <AccordionItem className="w-full" allowZeroExpanded>
           <AccordionItemHeading>
             <AccordionItemButton>
-              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[14px] flex justify-between'><p className='hover:text-[#4D28D4]'>{maindata.bowling}</p> <p className='flex items-center gap-[5px] sm:text-[14px] text-[13px]'>{maindata.bowlingstatus} <span className='sm:text-[12px] text-[11px] text-[#3d3c3c]'>{maindata.bowlover}</span> <TiArrowSortedDown className='text-[20px]' /></p></h2>
+              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[14px] flex justify-between'><p className='hover:text-[#4D28D4]'>{match.bowlingteam}</p> <p className='flex items-center gap-[5px] sm:text-[14px] text-[13px]'>{match.bowlingstatus} <span className='sm:text-[12px] text-[11px] text-[#3d3c3c]'>{match.bowlover}</span> <TiArrowSortedDown className='text-[20px]' /></p></h2>
              </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
@@ -388,7 +499,7 @@ export const Scorecard=()=>{
           </AccordionItemPanel>
         </AccordionItem>
     </Accordion>
-            ))}
+           
     </div>)
 }
 
@@ -396,61 +507,86 @@ export const Scorecard=()=>{
 
 
 export const Commentaryteam1=()=>{
-const commentteam1=[{over:'11.5', status:'6', msg:'JAGMOHAN UPADHYAY to Deepak Sancheti, 6'}, {over:'11.6', status:'4', msg:'JAGMOHAN UPADHYAY to Deepak Sancheti, 4',endover:'11', runandwkt:'(20 runs 1 wickets)' , overscore:'108/3'},{over:'12.1', status:'W', msg:'JAGMOHAN UPADHYAY to Deepak Sancheti, no run'}, {over:'12.2', status:'6', msg:'JAGMOHAN UPADHYAY to rahul, 6'}] 
+
+const[Comment1,setcomment1]=useState([])
+const{id}=useParams();
+
+
+const Fetchcomment1data=async()=>{
+  await axios.get(`http://localhost:7000/getCommentaryById?MatchID=${id}`,)
+  .then((res)=>setcomment1(res.data))
+  .catch((err)=> toast.error(err.res.data.message))
+  .finally()
+}
+
+useEffect(()=>{
+  Fetchcomment1data();
+},[])
+
+
 
 return(<div className='w-full min-h-100vh'>
-
-  {
-
-commentteam1.map((comment1,id)=>(
-  <Fragment key={id} >
+   { Comment1.map((Comment1, id)=>(
+    <Fragment key={id}>
     <div className='w-full flex flex-col gap-[5px] items-center text-[14px] border-[1px] '>
       
  <div className='w-full flex gap-[10px] items-center py-[5px] sm:px-[20px] px-[10px]'>
- <h2 className='font-bold text-[#858383] sm:text-[14px] text-[11px]'>{comment1.over} </h2>
- <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#00FFCF] sm:text-[14px] text-[12px]'>{comment1.status}</p>
- <p className='font-semibold sm:text-[14px] text-[12px]'>{comment1.msg}</p>
+ <h2 className='font-bold text-[#858383] sm:text-[14px] text-[11px]'>{Comment1.team1over} </h2>
+ <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#b6dbd4] sm:text-[14px] text-[12px]'>{Comment1.status1}</p>
+ <p className='font-semibold sm:text-[14px] text-[12px]'>{Comment1.message1}</p>
  </div>
  </div>
- <div className={`w-full flex justify-between text-[white] bg-[#4D28D4] py-[5px] sm:px-[20px] px-[10px] ${!comment1.endover ? "hidden":"visible"}`}>
+ <div className={`w-full flex justify-between text-[white] bg-[#4D28D4] py-[5px] sm:px-[20px] px-[10px] ${!Comment1.endover1 ? "hidden":"visible"}`}>
         <div className='w-full flex gap-2 sm:text-[14px] text-[12px]  '>
-       <p>END OF OVER: {comment1.endover}</p>
-       <p>{comment1.runandwkt}</p></div>
+       <p>END OF OVER: {Comment1.endover1}</p>
+       <p>{Comment1.runandwicket1}</p></div>
        <div>
-        <p className='sm:text-[15px] text-[13px] pl-[30px]'>{comment1.overscore}</p>
+        <p className='sm:text-[15px] text-[13px] pl-[30px]'>{Comment1.overallscore1}</p>
        </div>
 
-      </div>
- </Fragment>
- ))}
- 
-</div>
-
+      </div></Fragment>))}
+ </div> 
 )
 }
 
 export const Commentaryteam2=()=>{
-  const commentteam2=[{over:'0.0', status:'0', msg:'not yet start'}] 
+  const[Comment2,setcomment2]=useState([])
+const{id}=useParams();
+
+
+const Fetchcomment1data=async()=>{
+  await axios.get(`http://localhost:7000/getCommentaryById?MatchID=${id}`,)
+  .then((res)=>setcomment2(res.data))
+  .catch((err)=> toast.error(err.res.data.message))
+  .finally()
+}
+
+useEffect(()=>{
+  Fetchcomment1data();
+},[])
+
+
+ 
   
   return(<div className='w-full min-h-100vh'>
     
     {
-  commentteam2.map((comment2,id)=>(
+  Comment2.map((comment2,id)=>(
     <Fragment key={id} >
     <div className='w-full flex flex-col gap-[5px] items-center text-[14px] border-[1px] '>
       
  <div className='w-full flex gap-[10px] items-center py-[5px] sm:px-[20px] px-[10px]'>
- <h2 className='font-bold text-[#858383] sm:text-[14px] text-[11px]'>{comment2.over} </h2>
- <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#00FFCF] sm:text-[14px] text-[12px]'>{comment2.status}</p>
- <p className='font-semibold sm:text-[14px] text-[12px]'>{comment2.msg}</p>
+ <h2 className='font-bold text-[#858383] sm:text-[14px] text-[11px]'>{comment2.team2over} </h2>
+ <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#00FFCF] sm:text-[14px] text-[12px]'>{comment2.status2}</p>
+ <p className='font-semibold sm:text-[14px] text-[12px]'>{comment2.message2}</p>
  </div>
  </div>
- <div className={`w-full flex justify-between text-[white] bg-[#4D28D4] py-[5px] sm:px-[20px] px-[10px] ${!comment2.endover ? "hidden":"visible"}`}>
+ <div className={`w-full flex justify-between text-[white] bg-[#4D28D4] py-[5px] sm:px-[20px] px-[10px] ${!comment2.endover2 ? "hidden":"visible"}`}>
         <div className='w-full flex gap-2 sm:text-[14px] text-[12px]  '>
-       <p>END OF OVER: {comment2.endover}</p>
-       <p>{comment2.runandwkt}</p></div>
+       <p>END OF OVER: {comment2.endover2}</p>
+       <p>{comment2.runandwicket2}</p></div>
        <div>
-        <p className='sm:text-[15px] text-[13px] pl-[30px]'>{comment2.overscore}</p>
+        <p className='sm:text-[15px] text-[13px] pl-[30px]'>{comment2.overallscore2}</p>
        </div>
 
       </div>
@@ -466,6 +602,20 @@ export const Commentaryteam2=()=>{
 
 
 export const Commentarysec = () => {
+  const[match,setmatchdata]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchmatchdata=async()=>{
+    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    .then((res)=>setmatchdata(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+  
+  useEffect(()=>{
+    Fetchmatchdata();
+  },[])
   return (
     <div className='w-full min-h-100vh flex flex-col gap-[20px]'>
      { 
@@ -476,7 +626,7 @@ export const Commentarysec = () => {
         <AccordionItem className="w-full" allowZeroExpanded>
           <AccordionItemHeading>
             <AccordionItemButton>
-              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[13px] flex justify-between bg-[#f5f4f4]'><p className='hover:text-[#4D28D4]'>{maindata.batteam}</p>  <TiArrowSortedDown className='sm:text-[20px] text-[18px]' /></h2>
+              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[13px] flex justify-between bg-[#f5f4f4]'><p className='hover:text-[#4D28D4]'>{match.batteam}</p>  <TiArrowSortedDown className='sm:text-[20px] text-[18px]' /></h2>
              </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
@@ -487,7 +637,7 @@ export const Commentarysec = () => {
         <AccordionItem className="w-full" allowZeroExpanded>
           <AccordionItemHeading>
             <AccordionItemButton>
-              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[13px] flex justify-between bg-[#f5f4f4]'><p className='hover:text-[#4D28D4]'>{maindata.bowling}</p> <TiArrowSortedDown className='sm:text-[20px] text-[18px]' /></h2>
+              <h2 className='w-full sm:px-[20px] px-[10px] py-[5px] font-semibold sm:text-[16px] text-[13px] flex justify-between bg-[#f5f4f4]'><p className='hover:text-[#4D28D4]'>{match.bowlingteam}</p> <TiArrowSortedDown className='sm:text-[20px] text-[18px]' /></h2>
              </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>

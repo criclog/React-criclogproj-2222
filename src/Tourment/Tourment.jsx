@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";  
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import nodata from '../Assests/nodata.avif'
 
 
 const FilterComponent = () => {
@@ -112,6 +113,11 @@ useEffect(()=>{
      
       <div className="w-full md:w-[100%] ">
         <h4 className="sm:text-[20px] text-[14px] mb-4 text-[#7e7d7d]"> <span className=" font-bold">Leather Cricket Tournaments </span></h4>
+        {filteredData.length === 0 ? (
+          <div className="p-4 bg-white border rounded-md shadow-md">
+                   <p className=" text-gray-500 flex flex-col justify-center items-center gap-4 "> <img src={nodata} className='w-[150px] rounded-full '/>No matching data found. Please try a different filter.</p>
+          </div>
+        ) :(
         <ul className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
   {filteredData.map((item) => (
     <li
@@ -126,7 +132,7 @@ useEffect(()=>{
           />
       
     <div className="flex flex-col justify-center gap-2 py-1">
-    <h5 className="w-[30%] h-[25px] flex justify-center items-center  text-[white] rounded-full text-[15px] bg-[#4a2be0] ">{item.status}</h5> 
+    <h5 className="w-[90px] h-[25px] flex justify-center items-center  text-[white] rounded-full text-[15px] bg-[#4a2be0] ">{item.status}</h5> 
     <h5 className="text-[14px] font-semibold ">{item.name}</h5> 
       <p className="text-[14px] text-gray-500 ">{item.Date}</p> 
       <p className="text-[14px] text-gray-500 "> {item.location}</p>
@@ -135,7 +141,7 @@ useEffect(()=>{
      </Link>
     </li>
   ))}
-</ul>
+</ul>)}
 
 
       </div>
