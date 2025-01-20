@@ -22,7 +22,7 @@ export const Matchlive = () => {
   return (
     <div>
         <div className='w-full min-h-100vh flex lg:flex-row flex-col justify-center gap-[20px] px-[20px] xl:px-[70px] pt-[30px] pb-[20px]'>
-          <div className='lg:w-[60%] w-full min-h-100vh flex flex-col gap-[40px] ' >
+          <div className='lg:w-[60%] w-full min-h-100vh flex flex-col gap-[40px] font-serif' >
     <Maincard/>
     <h1 className='hidden'><Scorecard/></h1>
    <h1 className='hidden'> <Commentarysec/></h1>
@@ -43,13 +43,6 @@ export const Matchlive = () => {
 
 const matchmain=[{matchname:"8th Carpediem B.R Sharma Champions Trophy 2024-25", location:"Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad, 18-Dec-24, 40 Over,", matchtype:"Final", batteam:"Smashers", score:"4/2", over:"(1.0)", bowling:"Rangers", bowlingstatus:"yet to bat", tosswin:"Rangers", tossstatus:"won the toss and elected to field", 
   matchdate:'19/12/2024', detaillocation:'Jawaharlal Lal Nehru Cricket Stadium, Ghaziabad', updatedtime:'2024-12-19 at 10:17',matchoff:"Rahul sharma", bowlover:""}]
-
-const batlivedata=[{battername:"Sawan Kumar*", R:20, B:10, four:2, six:2, SR:"100.00", status:"Not out", min:'30' },
-  {battername:"Shewak", R:30, B:10, four:6, six:3, SR:"100.00", status:"Not out", min:'20' }]
-const bowllivedata=[{bowlername:"deepak", Over:1.3, med:0, Run:26, norun:4, four:2, six:1, WD:2, NB:0, wicket:1, ECO:"10.94"} ]
-const batlivedatat2=[{battername:"Parikshit Shah*", R:0, B:0, four:0, six:0, SR:"00.00", status:"", min:'0' },
-  {battername:"Lokesh", R:0, B:0, four:0, six:0, SR:"00.00", status:"", min:'0' }]
-const bowllivedatat2=[{bowlername:"nivas", Over:0, med:0, Run:0, WD:0, NB:0, wicket:0, ECO:"00.00"},{bowlername:"mugesh", Over:0, med:0, Run:0, wicket:0, WD:0, NB:0, ECO:"00.00"} ]
 
 
 
@@ -383,6 +376,29 @@ useEffect(()=>{
 
 
 export const Team2Livedata = () => {
+  const[match2,setmatch2data]=useState([])
+  const[matchbowling,setmatchbowling]=useState([])
+  const{id}=useParams();
+
+
+  const Fetchbat2data=async()=>{
+    await axios.get(`http://localhost:7000/getBattingData2ById?MatchID=${id}`,)
+    .then((res)=>setmatch2data(res.data))
+    .catch((err)=> toast.error(err.res.data.message))
+    .finally()
+}
+const Fetchbowling2data=async()=>{
+  await axios.get(`http://localhost:7000/getBowlingData2ById?MatchID=${id}`,)
+  .then((res)=>setmatchbowling(res.data))
+  .catch((err)=> toast.error(err.res.data.message))
+  .finally()
+}
+
+useEffect(()=>{
+  Fetchbat2data();
+  Fetchbowling2data();
+},[])
+  
   
   return (
     <div className='w-full min-h-100vh border-[1px]'>
@@ -400,23 +416,41 @@ export const Team2Livedata = () => {
        </ul>
        <div>
        {
-        batlivedatat2.map((batlive)=>(
+        match2.map((batlive)=>(
           <div key={batlive.id}>
        <ul className='w-full flex justify-between sm:px-[20px] px-[10px] sm:text-[14px] text-[12px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
-        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.battername}</li>
-        <li>{batlive.status}</li>
+        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.Team2BatterName1}</li>
+        <li>{batlive.Team2Status1}</li>
         <h1 className='sm:w-[65%] w-[58%]  flex justify-between px-1'>
-        <li>{batlive.R}</li>
-        <li>{batlive.B}</li>
-        <li>{batlive.four}</li>
-        <li>{batlive.six}</li>
-        <li>{batlive.SR}</li>
-        <li >{batlive.min}</li>
+        <li>{batlive.Team2Run1}</li>
+        <li>{batlive.Team2Ball1}</li>
+        <li>{batlive.Team2Four1}</li>
+        <li>{batlive.Team2Six1}</li>
+        <li>{batlive.Team2SR1}</li>
+        <li >{batlive.Team2Min1}</li>
         </h1>
        </ul>
        </div>
 ))}</div>
-        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Yet to Bat:</h1>
+ <div>
+       {
+        match2.map((batlive)=>(
+          <div key={batlive.id}>
+       <ul className='w-full flex justify-between sm:px-[20px] px-[10px] sm:text-[14px] text-[12px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
+        <li className='text-[#4D28D4] font-semibold px-1'>{batlive.Team2BatterName1}</li>
+        <li>{batlive.Team2Status1}</li>
+        <h1 className='sm:w-[65%] w-[58%]  flex justify-between px-1'>
+        <li>{batlive.Team2Run1}</li>
+        <li>{batlive.Team2Ball1}</li>
+        <li>{batlive.Team2Four1}</li>
+        <li>{batlive.Team2Six1}</li>
+        <li>{batlive.Team2SR1}</li>
+        <li >{batlive.Team2Min1}</li>
+        </h1>
+       </ul>
+       </div>
+))}</div>
+        <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Yet to Bat:{match2.Team2Yettobat}</h1>
         <hr />
         <h1 className='sm:text-[12px] text-[10px] py-[5px] px-[10px] sm:px-[20px]'>Fall Of Wickets:</h1>
       </div>
@@ -429,24 +463,22 @@ export const Team2Livedata = () => {
         <li>R</li>
         <li>W</li>
         <li>WD</li>
-        <li>NB</li>
         <li>ECO</li>
         </h1>
        </ul>
        <div>
        {
-        bowllivedatat2.map((bowllive)=>(
+        matchbowling.map((bowllive)=>(
           <div key={bowllive.id}>
        <ul className='w-full flex justify-between px-[10px] sm:px-[20px] sm:text-[14px] text-[11px] py-[8px] bg-[white] border-b-[1px] font-semibold'>
-        <li className='text-[#4D28D4] font-semibold'>{bowllive.bowlername}</li>
+        <li className='text-[#4D28D4] font-semibold'>{bowllive.bowlername2}</li>
         <h1 className='w-[75%] flex justify-between'>
-        <li>{bowllive.Over}</li>
-        <li>{bowllive.med}</li>
-        <li>{bowllive.Run}</li>
-        <li>{bowllive.wicket}</li>
-        <li>{bowllive.WD}</li>
-        <li>{bowllive.NB}</li>
-        <li>{bowllive.ECO}</li>
+        <li>{bowllive.over2}</li>
+        <li>{bowllive.med2}</li>
+        <li>{bowllive.run2}</li>
+        <li>{bowllive.wicket2}</li>
+        <li>{bowllive.wide2}</li>
+        <li>{bowllive.ECO2}</li>
         </h1>
        </ul>
        </div>
@@ -455,6 +487,8 @@ export const Team2Livedata = () => {
     </div>
   )
 }
+
+
 
 export const Scorecard=()=>{
   const[match,setmatchdata]=useState([])
@@ -577,7 +611,7 @@ useEffect(()=>{
       
  <div className='w-full flex gap-[10px] items-center py-[5px] sm:px-[20px] px-[10px]'>
  <h2 className='font-bold text-[#858383] sm:text-[14px] text-[11px]'>{comment2.team2over} </h2>
- <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#00FFCF] sm:text-[14px] text-[12px]'>{comment2.status2}</p>
+ <p className='sm:w-[30px] sm:h-[30px] w-[15px] h-[30px] px-[15px] font-semibold rounded-full flex items-center justify-center bg-[#b6dbd4] sm:text-[14px] text-[12px]'>{comment2.status2}</p>
  <p className='font-semibold sm:text-[14px] text-[12px]'>{comment2.message2}</p>
  </div>
  </div>

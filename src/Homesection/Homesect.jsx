@@ -50,9 +50,9 @@ export const Herosect = () => {
     return (
         <div className='relative'>
         <img src={heroimg} alt="" width="100%" className='m-0 h-[500px]'/>
-          <div className='w-full h-full flex flex-col justify-center lg:px-[150px] sm:px-[100px] px-[40px] lg:gap-[30px] gap-[25px] bg-[#4D28D4] opacity-90 absolute top-0'>
-            <p className='text-[white] lg:text-[55px] md:text-[40px]  sm:text-[30px] text-[24px]  '>Enhancing <span className='font-bold'>grassroots cricket</span>, one game at a time.</p>
-            <p className='text-[white] lg:text-[28px] md:text-[24px] sm:text-[20px] text-[18px]'>Download the app and start <span className='font-bold'>scoring for free.</span></p>
+          <div className='w-full h-full flex flex-col justify-center lg:px-[150px] sm:px-[100px] px-[40px] lg:gap-[30px] gap-[25px] bg-[#4D28D4] opacity-80 absolute top-0'>
+            <p className='text-[white] lg:text-[50px] md:text-[35px]  sm:text-[25px] text-[20px] font-normal  '>Enhancing <span className='font-medium'>grassroots cricket</span>, one game at a time.</p>
+            <p className='text-[white] lg:text-[26px] md:text-[24px] sm:text-[18px] text-[14px]'>Download the app and start <span className='font-semibold'>scoring for free.</span></p>
         
             <div className=" flex sm:gap-[20px] gap-[10px] cursor-pointer">
             <a href="https://play.google.com/store/apps/details?id=com.cricheroes.cricheroes.alpha"> <img src={heroplaystore} alt="couldn't load image" className="lg:w-[200px] sm:w-[170px] w-[115px]"/></a>
@@ -61,11 +61,11 @@ export const Herosect = () => {
           <div className="flex sm:gap-[40px] gap-[20px] items-center cursor-pointer">
             <p className="flex gap-[10px] items-center cursor-pointer"> 
                 <img src={editorchoice} className="lg:w-[60px] sm:w-[50px] w-[40px] "/>
-             <p className='text-[white] lg:text-[18px] sm:text:[17px] text-[13px] font-semibold'>4.5 Ratings <br />12M+ Downloads </p></p>
+             <p className='text-[white] lg:text-[18px] sm:text:[17px] text-[13px]'>4.5 Ratings <br />12M+ Downloads </p></p>
 
              <p className="flex gap-[10px] items-center cursor-pointer"> 
                 <img src={rating}  className="lg:w-[60px] sm:w-[50px] w-[40px]"/>
-             <p className='text-[white] lg:text-[18px] sm:text:[17px] text-[13px] font-semibold'>4.3 Ratings <br />2M+ Downloads </p></p>
+             <p className='text-[white] lg:text-[18px] sm:text:[17px] text-[13px] '>4.3 Ratings <br />2M+ Downloads </p></p>
           </div>
           </div>
           </div>
@@ -85,7 +85,7 @@ export const Herosect = () => {
    ]
     return (
         <div className='flex flex-col justify-center items-center py-[60px] gap-[40px]'>
-            <p className='font-medium md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] '>Why CricLog?</p>
+            <p className='font-medium md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] font-serif'>Why CricLog?</p>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
 
 <div className="flex flex-col items-center gap-5 px-[20px]">
@@ -132,7 +132,7 @@ export const Homedressroom = () => {
         <div className='w-full min-h-100vh bg-[black] flex md:flex-row flex-col justify-center items-center gap-[40px] md:gap-[150px] py-[50px] px-[50px]'>
            <div className='min-h-100vh flex flex-col justify-center items-center gap-[40px] text-[white]'>
             <img src={Dressinglogo} className="md:w-[180px] w-[150px]"/>
-            <p className='sm:text-[22px] text-[20px] font-semibold text-center'>A store by CricLog to celebrate <br />
+            <p className='sm:text-[22px] text-[20px] font-medium text-center'>A store by CricLog to celebrate <br />
             your passion for cricket.</p>
             <a href="https://tdr.cricheroes.com/?utm_source=cricheroes_website&utm_medium=cricheroes_tdr_icon&utm_campaign=the_dressing_room" target='Blank'> <button className='px-7 py-[5px] bg-[yellow] text-[black] font-semibold sm:text-[14px] text-[12px] rounded-md cursor-pointer'>EXPLORE NOW</button> </a>
            </div>
@@ -147,38 +147,38 @@ export const Homedressroom = () => {
 
 export const Homenumbersect = () => {
     return (
-      <div className="w-full min-h-[400px] bg-[#00FFCF] flex flex-col justify-center items-center gap-6 py-12 px-4">
-      <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-normal text-center">
+      <div className="w-full min-h-[400px] bg-[#ebeaf1] flex flex-col justify-center items-center  py-12 px-4 text-[black]">
+      <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-serif text-center py-[40px]">
         CricLog in Numbers
       </h2>
-      <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 divide-y-0 md:divide-y-0 md:divide-x divide-[#7b7b7c] py-4 text-[12px] sm:text-[14px] font-medium">
-        <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">15th</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">May 2019</span><br />
+      <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 md:divide-y-0 md:divide-x divide-[#bfbfc0]  text-[12px] sm:text-[14px] font-medium">
+        <p className="text-center md:px-6 py-[10px] ">
+          <span className="text-[20px] sm:text-[24px] md:text-[30px]  ">15th</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">May 2019</span><br />
           First Match Scored
         </p>
         <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">8M+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">MATCHES</span><br />
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">8M+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">MATCHES</span><br />
           Scored so far
         </p>
         <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">540K+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">TOURNAMENTS</span><br />
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">540K+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">TOURNAMENTS</span><br />
           Covered so far
         </p>
         <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">30M+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">PLAYERS</span><br />
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">30M+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">PLAYERS</span><br />
           Registered so far
         </p>
       </div>
-      <div className="w-[80%] sm:w-[90%] md:w-[75%] h-[1px] bg-[#7b7b7c]"></div>
+      <div className="w-[80%] sm:w-[90%] md:w-[75%] h-[1px] bg-[#bbbbbd] "></div>
       <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
-        <p className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-center">
+        <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
           Become a Part of the World's Biggest Cricket Network.
         </p>
-       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:bg-white hover:border-white hover:scale-105 hover:text-[#4D28D4] transition duration-200 ease-in-out">
+       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
           GET APP
         </button></Link>
       </div>
@@ -232,7 +232,7 @@ export const Homefeatured = () => {
   };
     return (
         <div className='w-full min-h-100vh text-[#4D28D4] flex flex-col justify-center items-center gap-[50px] py-[50px]'>
-          <p className='text-[30px] font-medium'>Featured In</p>
+          <p className='text-[30px] font-serif'>Featured In</p>
           
           <div className='sm:w-[70%] w-[55%] h-[100px] m-0'>
           <Slider {...settings}>
@@ -256,9 +256,9 @@ export const Homefeatured = () => {
   export const Homeuser = () => {
     const star = String.fromCodePoint(9733);
     const userarr=[{name:"SATHISH SHARMA", image:user1, para:" It is a leading cricket website and mobile app that focuses on delivering real-time updates, live scores,  and news related to cricket. "},
-      {name:"ABISHEK", image:user2,  para:" It provides ball-by-ball live updates with concise and engaging commentary. The scorecards are detailed, featuring partnerships, fall of wickets."},
+      {name:"ABISHEK", image:user2,  para:" It provides ball-by-ball live updates with concise and engaging commentary. The scorecards are detailed, featuring partnerships."},
       {name:"JOHNSON", image:user3, para:" A clear and user-friendly schedule section allows fans to track upcoming matches, team standings, and results."},
-      {name:"STEPHEN", image:user4, para:" Its app is one of the most downloaded cricket apps globally. It’s lightweight, fast, and offers excellent performance even on slower internet connections."}
+      {name:"STEPHEN", image:user4, para:" Its app is one of the most downloaded cricket apps globally. It’s fast, offers excellent performance even on slower internet connections."}
     ]
 
 
@@ -275,7 +275,7 @@ export const Homefeatured = () => {
    
     return (
         <div className='w-full min-h-100vh text-[white] bg-[#4D28D4] flex flex-col justify-center items-center gap-[40px] py-[70px]'>
-          <p className='md:text-[30px] text-[25px] font-medium'>User Love</p>
+          <p className='md:text-[30px] text-[25px] font-serif'>User Love</p>
          <div className='md:w-[35%] sm:w-[60%] w-[70%] min-h-100vh m-auto '>
           <Slider {...settings}>
           {
@@ -296,7 +296,7 @@ export const Homefeatured = () => {
   export const Homejointeam = () => {
     return (
         <div className='w-full min-h-100vh text-[#4D28D4] bg-[white] flex flex-col gap-[30px] justify-center items-center py-[50px]'>
-          <p className='md:text-[30px] text-[26px] font-medium'>Join Criclog Team</p>  
+          <p className='md:text-[30px] text-[26px] font-serif'>Join Criclog Team</p>  
           <div className='lg:w-[60%] md:w-[80%] w-[100%] flex lg:flex-row flex-col justify-center items-center md:gap-[50px] gap-[30px] text-[black] '>
             <img src={jointeam} alt="couldn't load image" className='lg:w-[220px] w-[280px] rounded-[20px] opacity-70' />
             <div className='w-[50%] min-h-100vh flex flex-col gap-[10px]'>
@@ -312,8 +312,8 @@ export const Homefeatured = () => {
   export const Homeupdate = () => {
     return (
         <div className='w-full min-h-100vh bg-[#e1e8f3] flex flex-col gap-[15px] justify-center items-center py-[20px]'>
-          <p className='sm:text-[15px] text-[13px] font-bold text-[#272727]'>For Current news and updates please</p>
-          <p className='sm:text-[28px] text-[22px] font-semibold text-[#4D28D4]'>Follows us on</p>
+          <p className='sm:text-[17px] text-[13px] font-semibold text-[#272727]'>For Current news and updates please</p>
+          <p className='sm:text-[28px] text-[22px] font-serif font-medium text-[#4D28D4]'>Follows us on</p>
           <div className='sm:w-[40px] w-[35px] flex justify-center items-center gap-[30px]'>
             <img src={facebook} alt=" couldn't load image"/>
             <img src={insta} alt="couldn't load image" />

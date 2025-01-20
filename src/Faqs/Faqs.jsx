@@ -154,7 +154,7 @@ const toggletour = (index) =>{
     <div className='w-full bg-gray-100 min-h-screen   '>
      
      <div className='w-full min-h-100vh bg-[#4D28D4] flex flex-col justify-center items-center gap-[20px] py-[50px] px-[50px]'>
-      <h2 className='text-[white] md:text-[32px] sm:text-[30px] text-[28px] font-medium text-center'>Frequently Asked Questions</h2>
+      <h2 className='text-[white] md:text-[30px] sm:text-[26px] text-[24px] text-center'>Frequently Asked Questions</h2>
       <p className='md:text-[18px] sm:text-[17px] text-[16px] text-[white]'>We Might Already Have An Answer For Your Question. Check Our FAQs And Relevant Answers Below.</p>
     </div>
 
@@ -176,7 +176,7 @@ const toggletour = (index) =>{
 
                         <span className='font-semibold text-gray-700'>{faq.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openfaq === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openfaq === index ?  <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -213,7 +213,7 @@ const toggletour = (index) =>{
                         {Gen.Question}
                         </span>  
                       <span className='text-gray-500'>
-                        {openGen === content ?<IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/> }
+                        {openGen === content ?<IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/>  }
                       </span>
                       </button>
 
@@ -249,7 +249,7 @@ const toggletour = (index) =>{
                         {score.Question}
                         </span>  
                       <span className='text-gray-500'>
-                        {openscore === content ?<IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/> }
+                        {openscore === content ?<IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/>   }
                       </span>
                       </button>
 
@@ -281,7 +281,7 @@ const toggletour = (index) =>{
 
                         <span className='font-semibold text-gray-700'>{tour.Detail}</span>   
                         <span className='text-gray-500'>
-                            {opentour === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {opentour === index ? <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/>  }
                             </span> 
 
                         </button>
@@ -297,8 +297,8 @@ const toggletour = (index) =>{
         </div>
 
         <div className=' flex flex-col justify-center items-center gap-3 py-[50px]'>
-               <h1 className='Text-2xl font-bold'>Do you have any query ?</h1>
-               <p className=''>Tell us more and we'll be happy to assist you</p>
+               <h1 className='Text-[24px] '>Do you have any query ?</h1>
+               <p className='text-[#585858]'>Tell us more and we'll be happy to assist you</p>
                <button className='w-[150px] h-[40px] bg-[#4A2EB0] rounded text-[white] text-[17px]'>Contact Us</button>
         </div>
 

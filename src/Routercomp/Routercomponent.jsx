@@ -55,7 +55,7 @@ import { Internationaldetails } from '../News/internationaldetails'
 import Crickettips from '../CricketTips/CricketTipscomponent'
 import { Profile } from '../Profile/Profile'
 import { Tournamentdashboard } from '../Tourment/Tournamentdashboard'
-
+    
 
 
 

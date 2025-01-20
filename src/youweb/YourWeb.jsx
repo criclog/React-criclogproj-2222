@@ -7,14 +7,14 @@ export const YourWeb = () => {
     <div>
       
       <div className=" min-h-100vh w-full bg-[#4A2EB0] py-[40px] md:py-[60px] text-white text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold">YOUR WEB FROM CRICSLOG</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl ">YOUR WEB FROM CRICSLOG</h1>
         <p className="mt-2 text-[18px]">Your League. Your Brand. Your Website</p>
       </div>
 
       
       <div className="px-4 md:px-6 lg:px-20">
         
-        <h1 className="text-[#4A2EB0] font-bold text-3xl md:text-2xl text-center py-8">
+        <h1 className="text-[#4A2EB0] font-medium text-3xl md:text-2xl text-center py-8">
           Introducing Your Web
         </h1>
 
@@ -33,18 +33,18 @@ export const YourWeb = () => {
             <img
               src={section.img}
               alt=""
-              className="h-[150px] w-[250px] sm:h-[100px] sm:w-[250px] md:w-[250px] lg:h-[200px] lg:w-[320px] hover:scale-110 transition-all duration-500 cursor-pointer"
+              className="h-[150px] w-[280px] sm:h-[150px] sm:w-[250px] md:w-[350px] md:h-[220px] lg:h-[240px] lg:w-[400px] hover:scale-105 transition-all duration-500 cursor-pointer"
             />
-            <div className="text-center md:text-left">
-              <h1 className="font-bold text-[18px] md:text-[16px] lg:text-[20px]">{section.title}</h1>
-              <h2 className="text-sm md:text-xs lg:text-base">{section.desc}</h2>
+            <div className="text-center md:text-left md:px-[100px]">
+              <h1 className=" text-[16px] md:text-[18px] lg:text-[20px]">{section.title}</h1>
+              <h2 className="text-sm md:text-[16px] lg:text-[18px] text-[#2e2d2d]">{section.desc}</h2>
             </div>
           </div>
         ))}
 
        
         <div className="flex flex-col justify-center items-center py-8">
-          <h1 className="text-3xl md:text-2xl lg:text-4xl font-bold text-[#4A2EB0]">Proud Partners</h1>
+          <h1 className="text-3xl md:text-2xl lg:text-4xl  text-[#4A2EB0]">Proud Partners</h1>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-5">
             {["https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/your_web_landing/wmcb.png?width=750&quality=75&format=auto", "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/your_web_landing/cricket-canada.png?width=750&quality=75&format=auto", "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/your_web_landing/gtcc.png?width=750&quality=75&format=auto"].map((partner, idx) => (
               <img key={idx} src={partner} alt="" className="h-[80px] w-[80px] md:h-[100px] md:w-[100px] lg:h-[150px] lg:w-[150px]" />

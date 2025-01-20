@@ -8,15 +8,15 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const Criclogpro = () => {
   return (
-    <div className="h-[250px] w-full bg-[#4A2EB0] py-10 text-white text-center">
-      <h1 className="text-xl sm:text-2xl md:text-4xl font-semibold">
+    <div className="h-[250px] w-full bg-[#4A2EB0] py-[30px] text-white text-center">
+      <h1 className="text-xl sm:text-2xl md:text-[34px] ">
         Criclog Pro
       </h1>
-      <p className="m-3 text-sm sm:text-base md:text-2xl font-light">
-        CricHeroes Pro is the only membership you need as a cricketer. It helps you
+      <p className="m-3 text-sm sm:text-base md:text-[20px] py-5 ">
+        Criclog Pro is the only membership you need as a cricketer. It helps you
         unlock your full potential and become a better version of yourself.
       </p>
-      <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border-[1px] hover:scale-110 transition-all duration-500 cursor-pointer">
+      <button className="text-[12px] sm:text-[14px] md:text-[16px]  p-2 border-[1px] hover:scale-100 transition-all duration-500 cursor-pointer">
         BECOME PRO TODAY
       </button>
     </div>
@@ -27,7 +27,7 @@ export const Criclogpro = () => {
 const ProPrivileges = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-4">
-      <h1 className="text-2xl sm:text-3xl font-bold text-[#4A2EB0] mb-8">Pro Privileges</h1>
+      <h1 className="text-2xl sm:text-3xl font-serif text-[#4A2EB0] mb-8">Pro Privileges</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl">
 
@@ -119,7 +119,7 @@ export const Whycriclogsect = () => {
   ]
   return (
     <div className="flex flex-col justify-center items-center py-10 gap-10">
-      <p className="font-semibold text-2xl sm:text-3xl lg:text-4xl text-[#4D28D4] text-center">Why CricLog?</p>
+      <p className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#4D28D4] text-center">Why CricLog?</p>
       <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
 
         <div className="flex flex-col items-center gap-5 px-[20px]">
@@ -214,7 +214,7 @@ const plans = [
 export const PricingTable = () => {
   return (
     <div className="max-w-4xl mx-auto mt-6 mb-6 px-4">
-      <h2 className="text-2xl font-bold text-center mb-6 text-[#4A2EB0]">
+      <h2 className="text-2xl font-serif text-center mb-6 text-[#4A2EB0]">
         Choose Your Plan
       </h2>
       <div className="overflow-x-auto">
@@ -325,7 +325,7 @@ export const Testimonials = () => {
 
   return (
     <div className="bg-[#4A2EB0] py-10 px-4">
-      <h2 className="text-center text-[white] text-2xl font-bold mb-8">Testimonials</h2>
+      <h2 className="text-center text-[white] text-2xl font-serif mb-8">Testimonials</h2>
       <div className="max-w-4xl mx-auto">
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
@@ -356,42 +356,42 @@ export const Testimonials = () => {
 
 export const CricNum = () => {
   return (
-    <div className="w-full min-h-[400px] bg-[#00FFCF] flex flex-col justify-center items-center gap-6 py-12 px-4">
-      <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-normal text-center">
-        CricLog in Numbers
-      </h2>
-      <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 divide-y-0 md:divide-y-0 md:divide-x divide-[#7b7b7c] py-4 text-[12px] sm:text-[14px] font-medium">
-        <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">15th</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">May 2019</span><br />
-          First Match Scored
-        </p>
-        <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">8M+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">MATCHES</span><br />
-          Scored so far
-        </p>
-        <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">540K+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">TOURNAMENTS</span><br />
-          Covered so far
-        </p>
-        <p className="text-center md:px-6">
-          <span className="text-[20px] sm:text-[24px] md:text-[30px] font-semibold">30M+</span><br />
-          <span className="text-[16px] sm:text-[18px] md:text-[22px] font-semibold">PLAYERS</span><br />
-          Registered so far
-        </p>
-      </div>
-      <div className="w-[80%] sm:w-[90%] md:w-[75%] h-[1px] bg-[#7b7b7c]"></div>
-      <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
-        <p className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-center">
-          Become a Part of the World's Biggest Cricket Network.
-        </p>
-        <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:bg-white hover:border-white hover:scale-105 hover:text-[#4D28D4] transition duration-200 ease-in-out">
-          BECOME PRO TODAY
-        </button>
-      </div>
+    <div className="w-full min-h-[400px] bg-[#ebeaf1] flex flex-col justify-center items-center  py-12 px-4 text-[black]">
+    <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-serif text-center py-[40px]">
+      CricLog in Numbers
+    </h2>
+    <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 md:divide-y-0 md:divide-x divide-[#bfbfc0]  text-[12px] sm:text-[14px] font-medium">
+      <p className="text-center md:px-6 py-[10px] ">
+        <span className="text-[20px] sm:text-[24px] md:text-[30px]  ">15th</span><br />
+        <span className="text-[16px] sm:text-[18px] md:text-[22px] ">May 2019</span><br />
+        First Match Scored
+      </p>
+      <p className="text-center md:px-6">
+        <span className="text-[20px] sm:text-[24px] md:text-[30px] ">8M+</span><br />
+        <span className="text-[16px] sm:text-[18px] md:text-[22px] ">MATCHES</span><br />
+        Scored so far
+      </p>
+      <p className="text-center md:px-6">
+        <span className="text-[20px] sm:text-[24px] md:text-[30px] ">540K+</span><br />
+        <span className="text-[16px] sm:text-[18px] md:text-[22px] ">TOURNAMENTS</span><br />
+        Covered so far
+      </p>
+      <p className="text-center md:px-6">
+        <span className="text-[20px] sm:text-[24px] md:text-[30px] ">30M+</span><br />
+        <span className="text-[16px] sm:text-[18px] md:text-[22px] ">PLAYERS</span><br />
+        Registered so far
+      </p>
     </div>
+    <div className="w-[80%] sm:w-[90%] md:w-[75%] h-[1px] bg-[#bbbbbd] "></div>
+    <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+      <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
+        Become a Part of the World's Biggest Cricket Network.
+      </p>
+     <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
+        BECOME PRO TODAY
+      </button>
+    </div>
+  </div>
 
   )
 }

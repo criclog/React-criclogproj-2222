@@ -245,7 +245,7 @@ const toggleBattingDrills= (index) =>{
     <div className='w-full bg-gray-100 min-h-100vh    '>
      
      <div className='w-full min-h-100vh bg-[#4D28D4] flex flex-col justify-center items-center gap-[20px] py-[50px] px-[50px]'>
-      <h2 className='text-[white] md:text-[32px] sm:text-[30px] text-[28px] font-medium text-center'>Cricket Tips</h2>
+      <h2 className='text-[white] md:text-[30px] sm:text-[26px] text-[24px]  text-center'>Cricket Tips</h2>
       <p className='md:text-[18px] sm:text-[17px] text-[16px] text-[white]'>From Better To Best! Improve Your Cricket Skills Using These Tips.</p>
     </div>
 
@@ -267,7 +267,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700 text-[14px]  sm:text-[18px]'>{faq.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openfaq === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openfaq === index ?  <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -296,7 +296,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Bowling.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBowling === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openBowling === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -326,7 +326,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Umpire.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openUmpire === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openUmpire === index ? <IoIosArrowDown className='rotate-180'/> :<IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -356,7 +356,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Fielding.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openFielding === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openFielding === index ?  <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -386,7 +386,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Basics.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBasics === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openBasics === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/>  }
                             </span> 
 
                         </button>
@@ -418,7 +418,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Drills.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openDrills === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openDrills === index ?  <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -449,7 +449,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Game.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openGame === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openGame === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -478,7 +478,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ YourBat.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openYourBat === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openYourBat === index ?  <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -507,7 +507,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Knock.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openKnock === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openKnock === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -537,7 +537,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Stumps.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openStumps=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openStumps=== index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -566,7 +566,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{ Introduction.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openIntroduction === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openIntroduction === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }
                             </span> 
 
                         </button>
@@ -595,7 +595,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{Batting.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBatting=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openBatting=== index ? <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/>  }
                             </span> 
 
                         </button>
@@ -624,7 +624,7 @@ const toggleBattingDrills= (index) =>{
 
                         <span className='font-semibold text-gray-700'>{BattingDrills.Detail}</span>   
                         <span className='text-gray-500'>
-                            {openBattingDrills=== index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}
+                            {openBattingDrills=== index ? <IoIosArrowDown className='rotate-180'/>:<IoIosArrowDown/> }
                             </span> 
 
                         </button>

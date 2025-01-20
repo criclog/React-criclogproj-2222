@@ -1,6 +1,7 @@
 import React from 'react';
 import ScoreTickerheder from './ScoretickerHeder';
 import imgaimation from '../Assests/Scoreticketer/fullscorecard5.gif'
+import { Link } from 'react-router-dom';
 
 export const ScoreTickerPage = () => {
   return (
@@ -56,7 +57,7 @@ export const ScoreTickerPage = () => {
 
       {/* Integration Section */}
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-[#4A2EB0]">
+        <h2 className="text-2xl font-medium text-[#4A2EB0]">
           How to integrate Score Ticker in your Live Stream software?
         </h2>
         <div className="mt-8 flex justify-center">
@@ -76,12 +77,12 @@ export const ScoreTickerPage = () => {
       {/* Footer Section */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="text-center">
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-xl font-medium">
             Purchase a Score Ticker today!
           </h3>
-          <button className="mt-4 px-6 py-2 bg-[#4A2EB0] font-semibold rounded-lg text-white text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
-            Contact Us
-          </button>
+         <Link to={'/Contact'}> <button className="mt-4 px-6 py-2 bg-[#4A2EB0]  rounded-lg text-white text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
+            Contact us
+          </button></Link>
         </div>
       </footer>
     </div>

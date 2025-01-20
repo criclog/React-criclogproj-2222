@@ -6,13 +6,13 @@ export const Powerpromote = () => {
     <div>
   
   <div className="h-[200px] w-full bg-[#4A2EB0] py-6 sm:py-10 text-white text-center">
-  <h1 className="text-xl sm:text-2xl md:text-4xl font-semibold">
+  <h1 className="text-xl sm:text-2xl md:text-4xl ">
     Power Promote From criclog
   </h1>
   <p className="mt-2 sm:mt-3 text-sm sm:text-lg md:text-2xl font-light px-4">
     The most powerful way to promote your Cricket Tournament or Brand.
   </p>
-  <Link to={'/super-sponsor/get-app'}><button className="mt-4 text-sm sm:text-base md:text-lg font-bold p-2 px-4 border-[1px] border-white rounded-md hover:scale-110 hover:bg-white hover:text-[#4A2EB0] transition-transform duration-300 cursor-pointer">
+  <Link to={'/super-sponsor/get-app'}><button className="mt-4 text-[13px] sm:text-[15px] md:text-[17px] py-1 px-4 border-[1px] border-white rounded-md hover:scale-105 hover:bg-white hover:text-[#4A2EB0] transition-transform duration-300 cursor-pointer">
     GET APP
   </button></Link>
 </div>
@@ -20,7 +20,7 @@ export const Powerpromote = () => {
 
     
       <div className="grid grid-cols-1 gap-[50px] mb-9">
-        <h1 className="text-[#4A2EB0] font-medium text-2xl md:text-4xl flex justify-center items-center py-9">
+        <h1 className="text-[#4A2EB0]  text-[22px] md:text-[28px] flex justify-center items-center py-9">
           Benefits of Power Promote
         </h1>
 
@@ -112,38 +112,43 @@ export const Powerpromote = () => {
       </div>
 
 
-      <div className="w-full min-h-[400px] bg-[#00FFCF] flex flex-col justify-center items-center gap-6 py-12">
-  <h2 className="text-[24px] md:text-[32px] font-normal text-center">CricLog in Numbers</h2>
-  <div className="w-full flex flex-wrap justify-center items-center gap-6 md:gap-8 divide-y-0 md:divide-y-0 md:divide-x divide-[#7b7b7c] py-4 text-[14px] font-medium">
-    <p className="text-center md:px-6">
-      <span className="text-[24px] md:text-[30px] font-semibold">15th</span><br />
-      <span className="text-[18px] md:text-[22px] font-semibold">May 2019</span><br />
-      First Match Scored
-    </p>
-    <p className="text-center md:px-6">
-      <span className="text-[24px] md:text-[30px] font-semibold">8M+</span><br />
-      <span className="text-[18px] md:text-[22px] font-semibold">MATCHES</span><br />
-      Scored so far
-    </p>
-    <p className="text-center md:px-6">
-      <span className="text-[24px] md:text-[30px] font-semibold">540K+</span><br />
-      <span className="text-[18px] md:text-[22px] font-semibold">TOURNAMENTS</span><br />
-      Covered so far
-    </p>
-    <p className="text-center md:px-6">
-      <span className="text-[24px] md:text-[30px] font-semibold">30M+</span><br />
-      <span className="text-[18px] md:text-[22px] font-semibold">PLAYERS</span><br />
-      Registered so far
-    </p>
-  </div>
-  <div className="w-[90%] md:w-[75%] h-[1px] bg-[#7b7b7c]"></div>
-  <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
-    <p className="text-[16px] md:text-[18px] font-semibold text-center">Become a Part of the World's Biggest Cricket Network.</p>
-    <Link to={'/super-sponsor/get-app'}><button className="text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:bg-white hover:border-white hover:scale-110 hover:text-[#4D28D4] transition duration-200 ease-in-out">
-      JOIN NOW
-    </button></Link>
-  </div>
-</div>
+      <div className="w-full min-h-[400px] bg-[#ebeaf1] flex flex-col justify-center items-center  py-12 px-4 text-[black]">
+      <h2 className="text-[20px] sm:text-[24px] md:text-[32px] font-serif text-center py-[40px]">
+        CricLog in Numbers
+      </h2>
+      <div className="w-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 md:divide-y-0 md:divide-x divide-[#bfbfc0]  text-[12px] sm:text-[14px] font-medium">
+        <p className="text-center md:px-6 py-[10px] ">
+          <span className="text-[20px] sm:text-[24px] md:text-[30px]  ">15th</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">May 2019</span><br />
+          First Match Scored
+        </p>
+        <p className="text-center md:px-6">
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">8M+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">MATCHES</span><br />
+          Scored so far
+        </p>
+        <p className="text-center md:px-6">
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">540K+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">TOURNAMENTS</span><br />
+          Covered so far
+        </p>
+        <p className="text-center md:px-6">
+          <span className="text-[20px] sm:text-[24px] md:text-[30px] ">30M+</span><br />
+          <span className="text-[16px] sm:text-[18px] md:text-[22px] ">PLAYERS</span><br />
+          Registered so far
+        </p>
+      </div>
+      <div className="w-[80%] sm:w-[90%] md:w-[75%] h-[1px] bg-[#bbbbbd] "></div>
+      <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+        <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
+          Become a Part of the World's Biggest Cricket Network.
+        </p>
+       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
+          JOIN NOW
+        </button></Link>
+      </div>
+    </div>
+
 
 
   

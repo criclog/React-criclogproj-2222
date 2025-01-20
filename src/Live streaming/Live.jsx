@@ -51,10 +51,10 @@ const LiveStreamingBanner = () => {
           alt="Cricket Stadium"
           className="w-full h-[300px] sm:h-[200px] object-cover "
         />
-        <div className="absolute top-0 w-full h-full bg-[#4A2EB0] bg-opacity-90 flex flex-col items-center justify-center text-white text-center gap-4 px-4">
-          <h1 className="text-4xl sm:text-3xl lg:text-6xl font-bold flex flex-col sm:flex-row items-center gap-4">
+        <div className="absolute top-0 w-full min-h-100vh bg-[#4A2EB0] bg-opacity-90 flex flex-col items-center justify-center text-white text-center gap-[21px] px-4 py-5" >
+          <h1 className="text-4xl sm:text-3xl lg:text-[30px] font flex flex-col sm:flex-row items-center gap-4">
             CRICLOG{" "}
-            <span className="w-[200px] h-[80px] sm:h-[70px] border border-black bg-black rounded flex justify-center items-center gap-4">
+            <span className="w-[120px] h-[50px] sm:h-[50px] border border-black bg-black rounded flex justify-center items-center gap-4">
               <img
                 src={live}
                 alt="Live Icon"
@@ -77,8 +77,8 @@ const LiveStreamingBanner = () => {
       </div>
 
       {/* Features Section */}
-      <div className="w-full min-h-screen flex flex-col gap-12 mt-10 px-4">
-        <h1 className="text-center text-2xl sm:text-xl lg:text-3xl text-[#4A2EB0] font-bold">
+      <div className="w-full min-h-screen flex flex-col gap-12 mt-10 px-10">
+        <h1 className="text-center text-2xl sm:text-xl lg:text-3xl text-[#4A2EB0] font-bmedium">
           What do you get in a CricLogs live stream?
         </h1>
         {features.map((feature, index) => (
@@ -94,10 +94,10 @@ const LiveStreamingBanner = () => {
               className="w-full lg:w-1/2 object-cover"
             />
             <div className="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start gap-4">
-              <h2 className="text-xl sm:text-lg lg:text-2xl font-semibold">
+              <h2 className="text-xl sm:text-lg lg:text-2xl ">
                 {feature.title}
               </h2>
-              <p className="text-sm sm:text-base text-gray-700">
+              <p className="text-[14px] sm:text-[16px] text-gray-700">
                 {feature.description}
               </p>
             </div>

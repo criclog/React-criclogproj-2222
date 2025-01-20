@@ -13,8 +13,8 @@ export const OrganizeTournment = () => {
       {/* Hero Section */}
       <div className="w-full min-h-100vh border border-blue-500 bg-[#4A2EB0] text-2xl py-[50px]">
         <div className="w-full h-full flex flex-col items-center justify-center text-white gap-5 px-4">
-          <h1 className="md:text-[30px] sm:text-[24px] text-[20px]  font-bold text-center">
-            Score Cricket Tournaments For FREE
+          <h1 className="md:text-[28px] sm:text-[24px] text-[20px]  font-semibold text-center">
+            Score Cricket Tournaments for FREE
           </h1>
           <p className="text-center md:text-[20px] sm:text-[16px] text-[14px] ">
             If You Are A Tournament Organiser, You Can Manage Your Entire
@@ -166,7 +166,7 @@ export const Testimonials = () => {
   
     return (
       <div className="bg-[#4A2EB0] py-10 px-4">
-        <h2 className="text-center text-[white] text-2xl font-bold mb-8">Testimonials</h2>
+        <h2 className="text-center text-[white] text-2xl  mb-8">Testimonials</h2>
         <div className="sm:w-[70%] w-[90%] mx-auto">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (

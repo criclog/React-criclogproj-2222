@@ -35,7 +35,7 @@ useEffect(()=>{
         {product.map((product) => (
           <div
             key={product._id}
-            className="bg-white rounded shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+            className="bg-white rounded shadow-md overflow-hidden hover:shadow-lg hover:shadow-[#7f72c2] transition-shadow duration-300 cursor-pointer"
           ><Link to={`/Marketdashboard/${product._id}`}>
           <Fragment>
             <h1 className="text-[14px] font-semibold text-[#797878] p-3">{product.productname}</h1>

@@ -67,12 +67,11 @@ const CricketCommunity = () => {
 
   return (
   <div>
-    <div className="bg-[#4A2EB0] text-white text-center p-10 flex items-center justify-center">
-      <div className="max-w-md">
-        <h1 className="text-4xl font-bold mb-5">Cricket Community</h1>
+    <div className="bg-[#4A2EB0] text-white text-center p-10 flex items-center justify-center font-serif">
+      <div className="w-full">
+        <h1 className="text-[30px]  mb-5">Cricket Community</h1>
         <p className="text-lg mb-8">
-          Explore and connect with the people, who make grassroots Cricket
-          possible.
+          Explore and connect with the people, who make grassroots Cricket possible.
         </p>
         <Link to={'/Contact'}><button className="bg-transparent text-white border-2 border-white px-6 py-2 text-lg hover:bg-white hover:text-[#4A2EB0] transition duration-300">
           REGISTER NOW
@@ -80,12 +79,12 @@ const CricketCommunity = () => {
       </div>
     </div>
 
-    <div className="bg-gray-100 py-10">
+    <div className="bg-gray-100 py-10 font-serif">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5 sm:px-10 md:px-[150px]">
         {services.map((service, index) => (
           <div
             key={index}
-            className="relative group bg-white shadow-md h-[200px] w-full max-w-[200px] mx-auto cursor-pointer rounded-lg overflow-hidden border-x-slate-950"
+            className="relative group bg-white shadow-md h-[200px] w-full max-w-[200px] mx-auto cursor-pointer rounded-lg overflow-hidden hover:shadow-md hover:shadow-[#8a7ec5] border-x-slate-950"
           >
             <img
               src={service.image}

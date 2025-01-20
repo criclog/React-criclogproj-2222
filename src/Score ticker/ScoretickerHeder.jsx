@@ -12,8 +12,8 @@ const ScoreTickerheder = () => {
   return (
     <div className="bg-gray-100 text-gray-800">
       {/* Hero Section */}
-      <div className="bg-[#4A2EB0] text-white py-16 text-center">
-        <h1 className="text-4xl font-bold">Score Ticker</h1>
+      <div className="bg-[#4A2EB0] text-white py-10 text-center">
+        <h1 className="text-4xl ">Score Ticker</h1>
         <p className="mt-4 text-lg">
           Beautiful score overlays for your live cricket matches.
         </p>
@@ -26,7 +26,7 @@ const ScoreTickerheder = () => {
     
 
       <div className="bg-gray-50 flex flex-col items-center py-12 px-4 md:px-8">
-      <h1 className="text-3xl font-bold text-[#4A2EB0] mb-6 text-center">
+      <h1 className="text-3xl font-medium text-[#4A2EB0] mb-6 text-center">
       What's included?
       </h1>
       <div className="flex flex-col md:flex-row items-center md:items-start">
@@ -63,7 +63,7 @@ const ScoreTickerheder = () => {
         </div>
 
         <div className="text-center md:text-left">
-        <h1 className="text-3xl font-bold text-black lg:pt-[80px] mb-6 ">
+        <h1 className="text-3xl  text-black lg:pt-[80px] mb-6 ">
       Full scorecard
       </h1>
           <p className="text-gray-600 text-xl lg:pt-] ">
@@ -76,7 +76,7 @@ const ScoreTickerheder = () => {
 
   <div className="flex flex-col md:flex-row items-center md:items-start">
     <div className="text-left md:mr-8 flex-1 py-12 ">
-    <h1 className="text-3xl font-bold text-black lg:self-start  md:self-start mb-6">
+    <h1 className="text-3xl  text-black lg:self-start  md:self-start mb-6">
     Animations
   </h1>
       <p className="text-gray-600 text-xl  ">
@@ -107,7 +107,7 @@ const ScoreTickerheder = () => {
         </div>
         {/* Content Section */}
         <div className="text-center md:text-left  ">
-        <h1 className="text-3xl font-bold text-black lg:pt-[80px] mb-6 ">
+        <h1 className="text-3xl  text-black lg:pt-[80px] mb-6 ">
       Themes
       </h1>
           <p className="text-gray-600 text-xl lg:pt-[2px] gap-20">
@@ -118,14 +118,14 @@ const ScoreTickerheder = () => {
     </div>
  
     <div className="bg-gray-50 flex flex-col items-center py-12 px-4 md:px-8">
-      <h1 className="text-3xl font-bold  text-[#4A2EB0] mb-6 lg:pt-[50px] text-center">
+      <h1 className="text-3xl   text-[#4A2EB0] mb-6 lg:pt-[50px] text-center">
       Why Score Ticker?
       </h1>
       <br />
       <div className="flex flex-col md:flex-row items-center md:items-start">
         {/* Content Section */}
         <div className="text-center md:text-left py-12 md:mr-8">
-          <h2 className="text-xl font-bold text-gray-800 text-center mb-4">
+          <h2 className="text-xl  text-gray-800 text-center mb-4">
           Drive fan engagement
           </h2>
           <p className="text-gray-600 text-xl mr-8 lg:pt-[2px] gap-20">

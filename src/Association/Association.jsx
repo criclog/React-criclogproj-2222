@@ -14,8 +14,8 @@ import image6 from "../Assests/association/img 6.png";
 
 export const Landimg = () => {
   return (
-    <div className="min-w-[100vh] min-h-100vh bg-[#4A2EB0] font-serif  flex flex-col py-[40px] gap-[10px] sm:px-[25px] px-[20px]">
-      <p className="font-extrabold text-white text-center md:text-[26px] text-[16px] sm:text-[18px]  lg:text-[32px] lg:pl-[20px]">
+    <div className="w-full min-h-100vh bg-[#4A2EB0]  flex flex-col py-[40px] gap-[10px] sm:px-[25px] px-[20px]">
+      <p className=" text-white text-center md:text-[26px] text-[16px] sm:text-[18px]  lg:text-[32px] lg:pl-[20px]">
         Ultimate Tech Platform for Cricket Associations
       </p>
       <p className="w-full font-light text-white text-center text-[12px] sm:text-[15px] lg:text-[18px]">
@@ -43,10 +43,10 @@ export const Scrollimg = () => {
   return (<>
     <div className="w-full bg-white font-serif">
       <div className="text-center pt-5 px-4">
-        <p className="font-serif font-semibold text-[16px] sm:text-[22px] md:text-[26px] lg:text-[30px]">
+        <p className="font-serif  text-[16px] sm:text-[22px] md:text-[26px] lg:text-[30px]">
           PROUD ASSOCIATIONS
         </p>
-        <div className="md:w-[15%] w-[20%] border-[3px] sm:border-[5px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
+        <div className="md:w-[15%] w-[20%] border-[3px] sm:border-[4px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
         <div className="w-[80%] sm:w-[70%] mx-auto my-10">
           <Slider {...settings}>
             {images.map((image, index) => (
@@ -64,7 +64,7 @@ export const Scrollimg = () => {
       <hr className="w-[90%] mx-auto my-6 border-t-[1px] border-gray-400" />
     </div>
     <div className="w-full flex flex-col items-center pt-5 px-4">
-    <p className="text-center font-serif font-semibold text-[22px] sm:text-[26px] md:text-[28px] lg:text-[30px]">
+    <p className="text-center font-serif font-medium text-[22px] sm:text-[26px] md:text-[28px] lg:text-[30px]">
       Stats don't lie!
     </p>
     <div className="w-[150px] sm:w-[120px]  border-[4px] border-[#4A2EB0] rounded-[6px] my-2 lg:w-[120px]"></div>
@@ -114,11 +114,9 @@ export const Adv = () => {
         alt=""
         className="w-full min-h-[100vh] flex justify-center items-center blur-[2px] opacity-80 overflow-hidden absolute md:h-[600px] "
       />
-      <p className="w-full flex flex-col justify-center items-center font-serif font-semibold absolute text-black text-[20px] sm:text-[24px]  px-[10px] text-center top-[10px] md:text-[28px] lg:text-[32px]">
+      <p className="w-full flex flex-col justify-center items-center font-serif  absolute text-black text-[20px] sm:text-[24px]  px-[10px] text-center top-[10px] md:text-[28px] lg:text-[32px]">
         One platform to rule them all
-      
-      <div className="md:w-[20%] w-[40%] border-[3px] sm:border-[4px] border-[white] rounded-[6px] mx-auto  z-10"></div>
-      </p>
+        </p>
       <p className="w-full flex justify-center items-center font-medium text-black text-[13px] my-[90px] px-4 absolute  md:text-[20px] sm:my-[70px] md:px-[120px] lg:my-[70px]  ">
         Criclog is the all-in-one solution for Cricket Associations,
         streamlining the management of leagues, clubs, teams, players, officials, and grounds.
@@ -212,10 +210,10 @@ export const Ourproduct = () => {
   return (
 
     <div className="w-full min-h-[100vh] font-serif">
-    <p className=" text-[16px] font-semibold text-center mx-auto sm:text-[20px] md:text-[24px] lg:text-[28px]">
+    <p className=" text-[16px] font-medium text-center mx-auto sm:text-[20px] md:text-[24px] lg:text-[28px]">
       OUR PRODUCTS
     </p>
-    <div className="md:w-[10%] w-[15%] border-[3px] sm:border-[5px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
+    <div className="md:w-[10%] w-[15%] border-[3px] sm:border-[4px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
 
   
     <div className="flex justify-center items-center my-8 ">
@@ -322,13 +320,13 @@ export const Details = () => {
   return (
 
     <div className="w-full min-h-[100vh] font-serif py-5">
-    <p className=" text-[16px] font-semibold text-center mx-auto  sm:text-[20px] md:text-[24px] lg:text-[28px]">
+    <p className=" text-[16px] font-medium text-center mx-auto  sm:text-[20px] md:text-[24px] lg:text-[28px]">
     Don't listen to us, listen to them!
     </p>
-    <div className="w-[15%] md:w-[10%]  border-[3px] sm:border-[5px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
+    <div className="w-[15%] md:w-[10%]  border-[3px] sm:border-[4px] border-[#4A2EB0] rounded-[6px] mx-auto my-2"></div>
 
-      <div className="w-[100%] flex justify-center px-[100px]">
-        <div className="w-[50%] sm:w-[50%] md:w-[60%] lg:w-[60%]  h-[350px] grid grid-cols-1 my-5 bg-white rounded-[4px] shadow-md text-center py-[20px] px-5 ">
+      <div className="w-full flex justify-center px-[30px] sm:px-[100px] ">
+        <div className="w-[100%] sm:w-[50%] md:w-[60%] lg:w-[60%]  min-h-[100vh] grid grid-cols-1 my-5 bg-white rounded-[4px] shadow-md text-center py-[20px] px-5 ">
           <Slider {...setting}>
             {details.map((det, id) => (
               <div

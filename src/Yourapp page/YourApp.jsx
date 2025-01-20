@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 const YourHeader = () => {
   return (
-    <div className="relative bg-[#4A2EB0] text-white text-center py-16">
+    <div className="relative bg-[#4A2EB0] text-white text-center py-10">
       <div
         className="absolute inset-0 opacity-20 bg-cover bg-center"
         style={{ backgroundImage: "url('your-background-image-path.jpg')" }}
       ></div>
       <div className="relative z-10">
-        <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-          Your <span className="text-white font-semibold">App</span> From CricLog
+        <h1 className="text-[26px] md:text-[32px]  mb-4">
+          Your <span className="text-white ">App</span> From CricLog
         </h1>
         <p className="text-lg md:text-xl px-4">
           Make your players, your followers with Your App.
@@ -40,7 +41,7 @@ const Features = () => {
       ]
        return (
            <div className='flex flex-col justify-center items-center py-[60px] gap-[40px]'>
-               <p className='font-semibold md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] '>Why CricLog?</p>
+               <p className=' md:text-[36px] sm:text-[30px] text-[24px] text-[#4D28D4] '>Why CricLog?</p>
                <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
     
     <div className="flex flex-col items-center gap-5 px-[20px]">
@@ -196,12 +197,12 @@ const Footer = () => {
   return (
     <div className="bg-gray-900 text-center py-6 sm:py-8">
       <p className="text-white text-sm sm:text-base md:text-lg mb-4">
-        Get your own <strong className="font-bold">Your App</strong> with your
+        Get your own <strong className="font-semibold">Your App</strong> with your
         own branding now!
       </p>
-      <button className="bg-[#4A2EB0] text-white font-bold text-sm sm:text-base py-2 px-4 rounded hover:bg-[#371d91] transition duration-300">
+     <Link to={'/Contact'}> <button className="bg-[#4A2EB0] text-white text-sm sm:text-base py-2 px-4 rounded hover:bg-[#371d91] transition duration-300">
         CONTACT US
-      </button>
+      </button></Link>
     </div>
   );
 };

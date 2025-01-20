@@ -21,7 +21,7 @@ export const Tournamentdashboard = () => {
   },[])
 
   return (
-    <div className="flex flex-col  min-h-100vh bg-gray-200 p-2 sm:p-4">
+    <div className="flex flex-col  min-h-100vh bg-gray-200 p-2 sm:p-4 font-serif">
     <div className=" w-full min-h-100vh flex flex-col  bg-white shadow-lg divide-y-2">
     <div className=" w-full min-h-100vh flex gap-[20px] md:flex-row flex-col md:justify-start items-centerrounded-lg overflow-hidden p-[20px]   sm:p-2 md:p-5">
       <img

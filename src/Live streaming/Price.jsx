@@ -8,7 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const MainCompontent = () => {
   return (
     <div className="relative w-full h-auto bg-black text-white py-10 px-4">
-      <h1 className="text-2xl sm:text-3xl flex justify-center font-bold mb-6">
+      <h1 className="text-2xl sm:text-3xl flex justify-center mb-6">
         Subscription Priced?
       </h1>
       <Price />
@@ -16,7 +16,7 @@ const MainCompontent = () => {
         *Stream unlimited matches in Daily, Monthly, Yearly Plans
       </h2>
       <div className="flex justify-center mt-8">
-        <button className="bg-[#4A2EB0] text-white font-semibold px-6 py-2 rounded hover:bg-white hover:text-black transition">
+        <button className="bg-[#4A2EB0] text-white font-medium px-6 py-2 rounded hover:bg-white hover:text-black transition">
           PURCHASE LIVE STREAM
         </button>
       </div>
@@ -143,7 +143,7 @@ export const FAQ = () => {
 
   return (
     <div className="bg-gray-100 py-12 px-4">
-      <h1 className="text-3xl font-bold text-center text-blue-700 mb-8">FAQ</h1>
+      <h1 className="text-3xl  text-center text-[#4a2be0] mb-8">FAQ</h1>
       <div className="max-w-3xl mx-auto space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="bg-white rounded shadow-md">
@@ -152,7 +152,7 @@ export const FAQ = () => {
               onClick={() => toggleFAQ(index)}
             >
               {faq.question}
-              <span>{openIndex === index ? <IoIosArrowDown/> : <IoIosArrowDown className='rotate-180'/>}</span>
+              <span>{openIndex === index ? <IoIosArrowDown className='rotate-180'/>: <IoIosArrowDown/> }</span>
             </button>
             {openIndex === index && (
               <div className="px-4 py-2 bg-gray-50 text-gray-600">

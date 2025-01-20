@@ -28,7 +28,7 @@ export const Jobs = () => {
 export const Jobhero = () => {
   return (
     <div className='w-full min-h-100vh bg-[#4D28D4] flex flex-col justify-center items-center gap-[20px] py-[50px] px-[50px]'>
-      <h2 className='text-[white] md:text-[32px] sm:text-[30px] text-[28px] font-medium text-center'>Join <span className='font-semibold md:text-[38px] sm:text-[36px] text-[34px]'>CricLog</span> Team</h2>
+      <h2 className='text-[white] md:text-[32px] sm:text-[30px] text-[28px] font-medium text-center'>Join <span className='md:text-[38px] sm:text-[36px] text-[34px]'>CricLog</span> Team</h2>
       <p className='md:text-[18px] sm:text-[17px] text-[16px] text-[white]'>Searching for a job you love? You’ve come to the right place!</p>
     </div>
   )
@@ -64,7 +64,7 @@ const [accord,setaccord]=useState(false)
   
     
     <div className='w-full  min-h-100vh flex flex-col justify-center items-center gap-[20px] py-[50px]'>
-             <h4 className='md:text-[28px] sm:text-[26px] font-bold text-[#222027] text-[22px]'>OPEN SPOTS</h4>
+             <h4 className='md:text-[28px] sm:text-[26px]  text-[#222027] text-[22px]'>OPEN SPOTS</h4>
 
               
              <Accordion allowZeroExpanded className='w-[80%] md-[75%] flex flex-col justify-center item-center' >
@@ -96,7 +96,7 @@ const [accord,setaccord]=useState(false)
 export const Jobteam = () => {
   return (
     <div className='w-full  min-h-100vh flex flex-col justify-center items-center gap-[30px] md:py-[40px] py-[20px]'>
-             <h4 className='md:text-[28px] sm:text-[26px] font-bold text-[#222027] text-[22px]'>OUR TEAM</h4>
+             <h4 className='md:text-[28px] sm:text-[26px]  text-[#222027] text-[22px]'>OUR TEAM</h4>
              <img src={groupimg} alt=" couldn't load image"  className='w-[80%] md:rounded-[20px] rounded-[10px]'/>
     </div>
   )
@@ -105,7 +105,7 @@ export const Jobteam = () => {
 export const Jobchase = () => {
   return (
     <div className='w-full  min-h-100vh flex flex-col justify-center items-center gap-[20px] py-[60px] px-[40px]'>
-             <h4 className='text-[22px] text-center sm:text-[26px] md:text-[28px] font-bold text-[#222027]'>Let’s pursue this together.</h4>
+             <h4 className='text-[22px] text-center sm:text-[26px] md:text-[28px]  text-[#222027]'>Let’s pursue this together.</h4>
              <p className='text-[14px] md:text-[16px] text-center font-medium text-[#2e2e2e]'>Be part of our team and revolutionize the game of cricket. Please send your resume to <span className='text-[#4D28D4]'>people@criclog.in.</span></p>
              
     </div>

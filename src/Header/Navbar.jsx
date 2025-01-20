@@ -39,13 +39,13 @@ const handleToggle =()=>{
    <div className='w-full h-[65px] shadow-lg shadow-[#00000038] bg-[white] flex flex-row justify-between items-center pl-[50px] fixed z-20'>
 
     
-        <div className='xl:w-[15%] w-[90%] flex items-center gap-4'>
+        <div className='xl:w-[15%] w-[90%] flex items-center gap-4 font-serif'>
 <p className='text-[28px] ml-[-15px] xl:hidden visible cursor-pointer ' onClick={handleToggle} ><MdMenu/></p>   
        <div className='w-full flex items-center justify-center gap-3'>
        <Link to={"/"}><img src={logo} alt="couldn't load image" className='sm:w-[50px] sm:h-[50px] w-[40px] h-[40px]'/></Link> 
        <Link to={"/"}><h3 className='font-bold sm:text-[18px] text-[14px] text-[#4D28D4] '>CRICLOG</h3></Link> 
        </div> </div>
-            <ul className='xl:w-[72%] w-full h-full xl:flex items-center xl:gap-[25px] gap-[25px] font-semibold text-[13px] cursor-pointer xl:visible hidden'>
+            <ul className='xl:w-[72%] w-full h-full xl:flex items-center xl:gap-[25px] gap-[25px] font-semibold font-serif text-[13px] cursor-pointer xl:visible hidden'>
                
                  <li className='flex flex-col items-center group'><p className='flex items-center gap-1 hover:text-[#4D28D4]'>LIVE SCORES <FaCaretDown className='text-[16px]' /> </p> 
                 <ul className=' min-w-100vw min-h-100vh grid flex-col bg-[white] absolute top-[65px] font-semibold rounded-md border invisible group-hover:visible ease-out delay-300'>
@@ -99,7 +99,7 @@ const handleToggle =()=>{
     </div>
 
     <div className={`${isChecked? 'w-[80%] h-screen py-[30px] bg-[#ffffff] fixed z-30 overflow-y-scroll':"hidden"}`}> 
-   <div className='w-full px-[40px] flex flex-col text-[14px] gap-5 '>
+   <div className='w-full px-[40px] flex flex-col text-[14px] gap-5 font-serif '>
    <p onClick={handlemenuclose} className='text-[20px]'><RxCross2/></p>
    {!checkValue?(<Link  to={"/Login"}><button className='w-[95%] py-[5px] mx-[10px] text-[14px]  border-[#4D28D4] border-[2px] rounded-md text-[black] hover:text-[white] hover:bg-[#4D28D4] ease-in-out duration-300'>SIGN IN</button> </Link>):(
                   <Link to={'/profile'}><p className='mt-[10px] flex flex-col items-center gap-[15px] '><FaCircleUser className='text-[34px] text-[#4a2eb0]' /><p className='text-[black] text-[14px] flex justify-center rounded-b-lg '>PROFILE</p></p></Link>

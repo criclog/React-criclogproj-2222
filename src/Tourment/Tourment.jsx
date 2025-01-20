@@ -44,7 +44,7 @@ useEffect(()=>{
   });
 
   return (
-    <div className="flex flex-col bg-[#F3F4F4] gap-6 p-4 md:flex-row md:p-8">
+    <div className="flex flex-col bg-[#F3F4F4] gap-6 p-4 md:flex-row md:p-8 font-serif">
       
       <div className="w-full md:w-[30%]  p-4 ml-[1%]">
         <h4 className="sm:text-[20px] text-[15px] font-semibold mb-4">Filter Options</h4>

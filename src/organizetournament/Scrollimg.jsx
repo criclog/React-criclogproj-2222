@@ -49,8 +49,8 @@ const Scrollimg = () => {
 
   return (
     <div className="w-full bg-white font-serif py-10">
-      <p className="text-center font-serif font-semibold text-3xl md:text-4xl mb-8">
-        BCCI Associations on CricHeroes
+      <p className="text-center font-serif text-[20px] sm:text-[30px] mb-8">
+        BCCI Associations on Criclog
       </p>
       <div className="w-full sm:px-[80px] px-[40px] lg:px-[150px]">
         <Slider {...settings}>

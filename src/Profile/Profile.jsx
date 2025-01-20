@@ -73,7 +73,7 @@ export const Profile = () => {
             <p className="w-full flex items-center gap-4 sm:text-[22px] text-[16px] text-white">
               <MdEmail className="sm:text-[25px] text-[20px] text-[#00FFCF]" /> {userData.email }
             </p>
-            <p className="w-full flex items-center gap-4 sm:text-[22px] text-[16px] text-white">
+            <p className="w-full flex items-center gap-4 sm:text-[22px] text-[16px] text-white font-sans">
               <IoCall className="sm:text-[25px] text-[20px] text-[#00FFCF]" /> {userData.mobileNo}
             </p>
             <div className='w-full flex justify-center'>

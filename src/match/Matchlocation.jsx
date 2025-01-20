@@ -23,7 +23,7 @@ export const Matchlocation = () => {
 
 
   return (
-    <div className="w-full min-h-100vh py-[40px] bg-[#ebebec] flex flex-col gap-[30px] justify-center items-center">
+    <div className="w-full min-h-100vh py-[40px] bg-[#ebebec] flex flex-col gap-[30px] justify-center items-center font-serif">
   {/* Title and Filter Toggle */}
   <p className="lg:text-[22px] text-[18px] font-semibold text-[#4d4d4d]">
     Live Cricket Matches In{" "}
