@@ -8,7 +8,7 @@ import { Matchlocation } from '../match/Matchlocation'
 import { Matchlive } from '../match/Matchlive'
 import Contact from '../Contact/Contact'
 import {YourWeb} from '../youweb/YourWeb'
-import {Powerpromote} from '../Powerpromote/Powerpromote'
+import {Powerpromote} from '../powerpromote/Powerpromote'
 import { Cricllog } from '../criclogpro/Cricllog'
 import { Forgot } from '../Authentication/Forgot'
 import CricketCommunity from "../Academy page/Cricketcommuntiy";
