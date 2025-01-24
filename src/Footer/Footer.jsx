@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   const copyright = String.fromCodePoint(169);
@@ -6,8 +7,8 @@ export const Footer = () => {
     <div className='w-full min-h-100vh bg-[#171827] py-[30px] flex flex-col items-center justify-center gap-[20px] px-[25px]'>
         <div className='w-full'>
             <ul className=' min-h-100vh flex flex-wrap justify-center items-center sm:gap-[22px] md:gap-[40px] gap-[12px] font-bold text-[#89898b] md:font-semibold md:text-[14px] sm:text-[12px] text-[11px] '>
-              <li>ABOUT</li>
-              <li>JOBS</li>
+              <Link to={'/Contact'}><li>ABOUT</li></Link>
+              <Link to={'/jobs'}> <li>JOBS</li></Link>
               <li>PRIVACY POLICY </li>
               <li>TERMS OF SERVICE</li>
               <li>PAID SERVICE TERMS</li>
