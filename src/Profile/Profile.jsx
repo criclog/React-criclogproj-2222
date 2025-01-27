@@ -35,7 +35,7 @@ export const Profile = () => {
     }
 
     try {
-        await axios.put("http://localhost:7000/v1/putuserdata", {
+        await axios.put("https://criclogbackendtest01.vercel.app/v1/putuserdata", {
         email: updatedData.email,
         updatedData
       })
