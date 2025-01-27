@@ -60,7 +60,7 @@ const matchnav=["SCORECARD", "COMMENTARY", "ANALYSIS", "GAMEHERO", "TEAMS", "GAL
 
 
   const Fetchmatchdata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchById?MatchID=${id}`,)
     .then((res)=>setmatchdata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -137,7 +137,7 @@ export const Matchvideo = () => {
   const{id}=useParams();
 
   const Fetchlivedata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchLiveById?MatchID=${id}`,)
     .then((res)=>setmatchlive(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -174,7 +174,7 @@ export const Matchofficial = () => {
 
 
   const Fetchmatchoffdata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchLiveById?MatchID=${id}`,)
     .then((res)=>setmatchoff(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -211,13 +211,13 @@ export const Matchdetails = () => {
 
 
   const Fetchmatchdet=async()=>{
-    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchById?MatchID=${id}`,)
     .then((res)=>setmatchdet(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
 }
 const Fetchmatchoffdata=async()=>{
-  await axios.get(`http://localhost:7000/getMatchLiveById?MatchID=${id}`,)
+  await axios.get(`https://criclogbackendtest01.vercel.app/getMatchLiveById?MatchID=${id}`,)
   .then((res)=>setmatchoff(res.data))
   .catch((err)=> toast.error(err.res.data.message))
   .finally()
@@ -267,13 +267,13 @@ export const Team1Livedata = () => {
 
 
   const Fetchmatchdata=async()=>{
-    await axios.get(`http://localhost:7000/getBattingData1ById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getBattingData1ById?MatchID=${id}`,)
     .then((res)=>setmatchdata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
 }
 const Fetchbowlingdata=async()=>{
-  await axios.get(`http://localhost:7000/getBowlingDataById?MatchID=${id}`,)
+  await axios.get(`https://criclogbackendtest01.vercel.app/getBowlingDataById?MatchID=${id}`,)
   .then((res)=>setmatchbowling(res.data))
   .catch((err)=> toast.error(err.res.data.message))
   .finally()
@@ -382,13 +382,13 @@ export const Team2Livedata = () => {
 
 
   const Fetchbat2data=async()=>{
-    await axios.get(`http://localhost:7000/getBattingData2ById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getBattingData2ById?MatchID=${id}`,)
     .then((res)=>setmatch2data(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
 }
 const Fetchbowling2data=async()=>{
-  await axios.get(`http://localhost:7000/getBowlingData2ById?MatchID=${id}`,)
+  await axios.get(`https://criclogbackendtest01.vercel.app/getBowlingData2ById?MatchID=${id}`,)
   .then((res)=>setmatchbowling(res.data))
   .catch((err)=> toast.error(err.res.data.message))
   .finally()
@@ -496,7 +496,7 @@ export const Scorecard=()=>{
 
 
   const Fetchmatchdata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchById?MatchID=${id}`,)
     .then((res)=>setmatchdata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -547,7 +547,7 @@ const{id}=useParams();
 
 
 const Fetchcomment1data=async()=>{
-  await axios.get(`http://localhost:7000/getCommentaryById?MatchID=${id}`,)
+  await axios.get(`https://criclogbackendtest01.vercel.app/getCommentaryById?MatchID=${id}`,)
   .then((res)=>setcomment1(res.data))
   .catch((err)=> toast.error(err.res.data.message))
   .finally()
@@ -589,7 +589,7 @@ const{id}=useParams();
 
 
 const Fetchcomment1data=async()=>{
-  await axios.get(`http://localhost:7000/getCommentaryById?MatchID=${id}`,)
+  await axios.get(`https://criclogbackendtest01.vercel.app/getCommentaryById?MatchID=${id}`,)
   .then((res)=>setcomment2(res.data))
   .catch((err)=> toast.error(err.res.data.message))
   .finally()
@@ -641,7 +641,7 @@ export const Commentarysec = () => {
 
 
   const Fetchmatchdata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchById?MatchID=${id}`,)
     .then((res)=>setmatchdata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()

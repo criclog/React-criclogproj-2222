@@ -13,7 +13,7 @@ export const Internationalnews = () => {
 
 
   const Fetchinternewsdata=async()=>{
-    await axios.get("http://localhost:7000/getAllInternationalData",)
+    await axios.get("https://criclogbackendtest01.vercel.app/getAllInternationalData",)
     .then((res)=>setinternews(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -36,7 +36,7 @@ useEffect(()=>{
           <Fragment>
             
             <img
-              src={`http://localhost:7000/view/${news.filename}`}
+              src={`https://criclogbackendtest01.vercel.app/view/${news.filename}`}
               alt='could not load image'
               className="w-full h-[200px] px-3"
             />

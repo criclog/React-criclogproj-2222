@@ -15,7 +15,7 @@ export const Gamehero = () => {
 
 
   const Fetchplayermatchdata=async()=>{
-    await axios.get(`http://localhost:7000/getPlayerMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getPlayerMatchById?MatchID=${id}`,)
     .then((res)=>setplayerofmatch(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -62,7 +62,7 @@ export const Teamdet = () => {
 
 
   const Fetchplayerdata=async()=>{
-    await axios.get(`http://localhost:7000/getMatchById?MatchID=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getMatchById?MatchID=${id}`,)
     .then((res)=>setplayers(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()

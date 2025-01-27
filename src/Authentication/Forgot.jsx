@@ -27,7 +27,7 @@ const handleSubmit = async (e) => {
 
     try {
         
-            await axios.put(`http://localhost:7000/v1/putpassword`, updatedata)
+            await axios.put(`https://criclogbackendtest01.vercel.app/v1/putpassword`, updatedata)
                 .then((res) => {
                     toast.success(res.data.message)
 

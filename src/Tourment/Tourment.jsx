@@ -9,7 +9,7 @@ const FilterComponent = () => {
   const[Tournament,setTournament]=useState([])
 
   const Fetchtournamentdata=async()=>{
-    await axios.get("http://localhost:7000/getallTournament",)
+    await axios.get("https://criclogbackendtest01.vercel.app/getallTournament",)
     .then((res)=>setTournament(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -126,7 +126,7 @@ useEffect(()=>{
     ><Link to={`/tournamentdashboard/${item._id}`}>
       <div className=" bg-white p-2 rounded-lg shadow hover:shadow-lg flex flex-row items-start gap-3">
           <img
-            src={`http://localhost:7000/view/${item.filename}`}
+            src={`https://criclogbackendtest01.vercel.app/view/${item.filename}`}
             alt={`${item.name} logo`}
             className="w-[70px] h-[70px] object-cover rounded-xl border  transition-all duration-300 hover:scale-105 my-2"
           />

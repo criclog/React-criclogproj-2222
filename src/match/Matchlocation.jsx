@@ -63,7 +63,7 @@ const[matchcarddata,setmatchcarddata]=useState([])
 
 
   const Fetchmatchdata=async()=>{
-    await axios.get("http://localhost:7000/getAllMatches",)
+    await axios.get("https://criclogbackendtest01.vercel.app/getAllMatches",)
     .then((res)=>setmatchcarddata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()

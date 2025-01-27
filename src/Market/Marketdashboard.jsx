@@ -13,7 +13,7 @@ const Marketdashboard = () => {
   
   
     const Fetchprogramdata=async()=>{
-      await axios.get(`http://localhost:7000/getMarketById?objectid=${id}`,)
+      await axios.get(`https://criclogbackendtest01.vercel.app/getMarketById?objectid=${id}`,)
       .then((res)=>setprductdata(res.data))
       .catch((err)=> toast.error(err.res.data.message))
       .finally()
@@ -28,7 +28,7 @@ const Marketdashboard = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-200 p-4 sm:p-6">
     <div className="max-w-md sm:max-w-lg lg:max-w-xl w-full bg-white shadow-lg rounded-lg overflow-hidden p-1 sm:p-2 md:p-3 lg:p-3">
       <img
-        src={`http://localhost:7000/view/${productdata.filename}`}
+        src={`https://criclogbackendtest01.vercel.app/view/${productdata.filename}`}
         className="w-full min-h-[90vh] object-cover rounded-md"
       />
       <div className="p-4">

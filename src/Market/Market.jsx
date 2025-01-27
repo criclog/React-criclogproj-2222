@@ -12,7 +12,7 @@ const Market = () => {
 
 
   const Fetchprogramdata=async()=>{
-    await axios.get("http://localhost:7000/getallData",)
+    await axios.get("https://criclogbackendtest01.vercel.app/getallData",)
     .then((res)=>setprduct(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -40,7 +40,7 @@ useEffect(()=>{
           <Fragment>
             <h1 className="text-[14px] font-semibold text-[#797878] p-3">{product.productname}</h1>
             <img
-              src={`http://localhost:7000/view/${product.filename}`}
+              src={`https://criclogbackendtest01.vercel.app/view/${product.filename}`}
               alt='could not load image'
               className="w-[420px] h-[350px] object-contain bg-black"
             />

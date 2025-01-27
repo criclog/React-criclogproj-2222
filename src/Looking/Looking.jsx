@@ -23,7 +23,7 @@ const LocationFilter = () => {
 
 
   const Fetchprogramdata=async()=>{
-    await axios.get("http://localhost:7000/getlooking",)
+    await axios.get("https://criclogbackendtest01.vercel.app/getlooking",)
     .then((res)=>setlooking(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -81,7 +81,7 @@ useEffect(()=>{
             <div
               key={item.id}
               className="p-4 bg-white border-l-4 border-blue-500 rounded-md shadow-md hover:shadow-[#8579be]">
-              <p className="text-[14px] text-gray-700 py-4 px-3 flex gap-4"><img src={`http://localhost:7000/view/${item.filename}`} className="w-[70px] h-[70px] rounded-full "/>{item.Description}</p>
+              <p className="text-[14px] text-gray-700 py-4 px-3 flex gap-4"><img src={`https://criclogbackendtest01.vercel.app/view/${item.filename}`} className="w-[70px] h-[70px] rounded-full "/>{item.Description}</p>
               <p className=" text-xs text-gray-500 px-5">{item.createdAt}</p>
             </div>          ))}
         </div>)}

@@ -10,7 +10,7 @@ export const Tournamentdashboard = () => {
   
   
     const Fetchtournamentdata=async()=>{
-      await axios.get(`http://localhost:7000/getidTournament?objectid=${id}`,)
+      await axios.get(`https://criclogbackendtest01.vercel.app/getidTournament?objectid=${id}`,)
       .then((res)=>setTournament(res.data))
       .catch((err)=> toast.error(err.res.data.message))
       .finally()
@@ -25,7 +25,7 @@ export const Tournamentdashboard = () => {
     <div className=" w-full min-h-100vh flex flex-col  bg-white shadow-lg divide-y-2">
     <div className=" w-full min-h-100vh flex gap-[20px] md:flex-row flex-col md:justify-start items-centerrounded-lg overflow-hidden p-[20px]   sm:p-2 md:p-5">
       <img
-        src={`http://localhost:7000/view/${Tournament.filename}`}
+        src={`https://criclogbackendtest01.vercel.app/view/${Tournament.filename}`}
         className="sm:w-[170px] sm:h-[170px] w-[130px] h-[130px]  object-cover rounded-lg"
       />
       <div className="flex flex-col gap-[10px]">

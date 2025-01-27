@@ -11,7 +11,7 @@ export const Localdetails = () => {
 
 
   const Fetchlocaldata=async()=>{
-    await axios.get(`http://localhost:7000/getnewsById?objectid=${id}`,)
+    await axios.get(`https://criclogbackendtest01.vercel.app/getnewsById?objectid=${id}`,)
     .then((res)=>setlocalnewsdata(res.data))
     .catch((err)=> toast.error(err.res.data.message))
     .finally()
@@ -25,7 +25,7 @@ useEffect(()=>{
         <div className="w-full flex justify-center items-center min-h-100vh bg-gray-200 p-4 sm:p-6">
         <div className=" w-full bg-white shadow-lg rounded-lg  p-1 sm:p-2 md:p-3 lg:p-3">
           <p className='w-full flex justify-center'><img
-            src={`http://localhost:7000/view/${localnewsdata.filename}`}
+            src={`https://criclogbackendtest01.vercel.app/view/${localnewsdata.filename}`}
             className="w-[300px] h-[200px] flex justify-center items-center"
           /></p>
           <div className="p-4">
