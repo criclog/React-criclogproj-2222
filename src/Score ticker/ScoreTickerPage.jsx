@@ -1,6 +1,6 @@
 import React from 'react';
 import ScoreTickerheder from './ScoretickerHeder';
-import imgaimation from '../Assests/Scoreticketer/fullscorecard5.gif'
+import imgaimation from '../Assests/Scoreticketer/hq720.jpg'
 import { Link } from 'react-router-dom';
 
 export const ScoreTickerPage = () => {
@@ -64,7 +64,7 @@ export const ScoreTickerPage = () => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/sample-video"
+            src="https://www.youtube.com/embed/pGvp5Q-1Yag?si=B1R3UPVjfSLw2EvT"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

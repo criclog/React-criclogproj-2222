@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import live from "../Assests/livestreamingicon.png";
 import crc from "../Assests/photo-cricket-team-stadium-icc-man-world-cup-2023-match-generative-ai_742418-6219.jpg";
-import Vimg from "../Assests/Screenshot 2024-12-17 120220.png";
+import Vimg from "../Assests/cricvid-live-cricket-tv-hd-screenshot.avif";
 import { Icons, Video, FAQ } from "../Live streaming/Price";
 import MainComponent from "../Live streaming/Price";
 import Footer from "../Live streaming/Footer";

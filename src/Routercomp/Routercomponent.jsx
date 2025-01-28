@@ -8,7 +8,7 @@ import { Matchlocation } from '../match/Matchlocation'
 import { Matchlive } from '../match/Matchlive'
 import Contact from '../Contact/Contact'
 import {YourWeb} from '../youweb/YourWeb'
-import {Powerpromote} from '../powerpromote/Powerpromote'
+import {Powerpromote} from '../Powerpromote/Powerpromote'
 import { Cricllog } from '../criclogpro/Cricllog'
 import { Forgot } from '../Authentication/Forgot'
 import CricketCommunity from "../Academy page/Cricketcommuntiy";
@@ -33,21 +33,13 @@ import Market from '../Market/Market'
 import FilterComponent from '../Tourment/Tourment'
 import { ScoreTickerPage } from '../Score ticker/ScoreTickerPage'
 import Association from '../Association/Association'
-import MemberAssociation from '../Association/MemberAssociation'
-import IccAssoication from '../Association/IccAssociation'
-import StateAssoication from '../Association/StateCricket'
 
-
-import DistrictAssoication from '../Association/DistrictAssociation'
-import ClubAssoication from '../Association/CricketClub'
-import OthersAssoication from '../Association/OthersAssociation'
 import Marketdashboard from '../Market/Marketdashboard'
 
 import { ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import {OrganizeTournment} from '../organizetournament/Organizetournament'
-import SuperSponsor from '../Super Sponosr/SuperSponsor'
-import CricketAppPromo from '../Super Sponosr/Getapp'
+import CricketAppPromo from '../Getapp/Getapp'
 import LocationFilter from '../Looking/Looking'
 import { Newsnavbar } from '../News/Local'
 import { Localdetails } from '../News/Localdetails'
@@ -100,12 +92,7 @@ export const Routercomponent = () => {
 <Route path="/cricket/coach/:id" element={<CricketCoach />} />
 <Route path="/cricket/indoor-nets/:id" element={<CricketIndoorNets />} />
 {/* Association */}
-<Route path='/assoication/member-assoication' element={<MemberAssociation/>}/>
-       <Route path='/icc' element={<IccAssoication/>}/>
-       <Route path='/state' element={<StateAssoication/>}/>
-       <Route path='/district' element={<DistrictAssoication/>}/>
-       <Route path='/club' element={<ClubAssoication/>}/>
-       <Route path='/other' element={<OthersAssoication/>}/>
+
   
 
 
@@ -121,7 +108,8 @@ export const Routercomponent = () => {
      <Route path="/scoreticker"element={<ScoreTickerPage/>} />
      <Route path='/association' element={<Association/>}/>
      <Route path='/organizetournament' element={<OrganizeTournment/>}/>
-     <Route path='/supersponsor' element={<SuperSponsor/>}/>
+      
+
      </Route>
 
 
@@ -129,7 +117,7 @@ export const Routercomponent = () => {
       <Route path='/Login' element={<Login/>}/>
       <Route path='/forgot' element={<Forgot/>}/>
       <Route path='/profile' element={<Profile/>}/>
-      <Route path='/super-sponsor/get-app' element={<CricketAppPromo/>}/>
+      <Route path='/get-app' element={<CricketAppPromo/>}/>
       </Routes>
       <ToastContainer/>
     </>

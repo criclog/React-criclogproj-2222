@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 
 
@@ -299,7 +300,7 @@ const toggletour = (index) =>{
         <div className=' flex flex-col justify-center items-center gap-3 py-[50px]'>
                <h1 className='Text-[24px] '>Do you have any query ?</h1>
                <p className='text-[#585858]'>Tell us more and we'll be happy to assist you</p>
-               <button className='w-[150px] h-[40px] bg-[#4A2EB0] rounded text-[white] text-[17px]'>Contact Us</button>
+               <Link to={'/contact'}><button className='w-[150px] h-[40px] bg-[#4A2EB0] rounded text-[white] text-[17px]'>Contact Us</button> </Link>
         </div>
 
     </div>

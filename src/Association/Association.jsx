@@ -95,10 +95,6 @@ export const Scrollimg = () => {
         </p>
       </div>
     </div>
-
-    <Link to={"/icc"}><button className="w-[250px]  bg-[#4A2EB0] my-8  text-white text-[14px] md:text-[16px] lg:text-[18px] lg:w-[350px] lg:py-3 rounded-[5px] px-3 py-4 cursor-pointer">
-      VIEW ALL ASSOCIATIONS
-    </button></Link>
   </div>
 </>
   );
@@ -264,9 +260,9 @@ export const Ourproduct = () => {
       </table>
     </div>
   
-    <p className="w-[40%] h-[50px] sm:w-[50%] sm:text-[16px] md:w-[40%]  lg:w-[30%]  bg-[#4A2EB0] text-center mx-auto my-6 py-3 text-white text-[12px] rounded-[5px]  cursor-pointer ">
+    <Link to={'/Contact'}> <p className="w-[40%] h-[50px] sm:w-[50%] sm:text-[16px] md:w-[40%]  lg:w-[30%]  bg-[#4A2EB0] text-center mx-auto my-6 py-3 text-white text-[12px] rounded-[5px]  cursor-pointer ">
       CONTACT US TO KNOW MORE
-    </p>
+    </p></Link>
   </div>
   
   
@@ -352,11 +348,6 @@ export const Details = () => {
         </div>
       </div>
 
-      <Link to={"/assoication/member-assoication"}>
-      <p className="w-[20%] h-[40px] sm:w-[20%] sm:text-[16px] md:w-[15%]  lg:w-[10%]  bg-[#4A2EB0] text-center mx-auto my-[50px] py-2 text-white text-[14px] rounded-[5px]  cursor-pointer ">
- READ
-    </p>
-      </Link>
     </div>
   );
 };
@@ -368,9 +359,9 @@ export const Lastus = () => {
   <p className=" text-[16px] text-white  text-center mx-auto  sm:text-[20px] md:text-[24px] lg:text-[28px]">
   Let's make Cricket better for everyone.
     </p>
-  <p className="w-[25%] h-[40px] sm:w-[20%] sm:text-[16px] md:w-[15%]  lg:w-[13%]  bg-[#4A2EB0] text-center mx-auto my-6 py-2 text-white text-[14px] rounded-[5px]  cursor-pointer ">
+  <Link to={'/Contact'}> <p className="w-[35%] h-[40px] sm:w-[20%] sm:text-[16px] md:w-[15%]  lg:w-[13%]  bg-[#4A2EB0] text-center mx-auto my-6 py-2 text-white text-[14px] rounded-[5px]  cursor-pointer ">
   CONTACT US
-    </p>
+    </p></Link>
 </div>
 
   

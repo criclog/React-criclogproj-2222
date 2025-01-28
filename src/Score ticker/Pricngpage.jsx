@@ -1,5 +1,6 @@
 // src/App.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PricingPage = () => {
   return (
@@ -36,9 +37,9 @@ const PricingPage = () => {
           <p className="text-sm mt-2">*For unlimited Matches</p>
         </div>
       </div>
-      <button className="mt-8 px-6 py-3 bg-[#4A2EB0] text-white rounded-lg hover:bg-blue-500">
-        PURCHASE SCORE TICKER
-      </button>
+      <Link to={'/Login'}><button className="bg-[#4A2EB0] text-white font-medium px-6 py-2 mt-10 rounded hover:bg-white hover:text-black transition">
+          PURCHASE LIVE STREAM
+        </button></Link>
     </div>
   );
 };

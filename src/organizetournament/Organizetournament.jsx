@@ -1,11 +1,12 @@
 import React from "react";
-import cric from "../Assests/organization/tournaments-1.jpg";
+import cric from "../Assests/whycrichome.jpg";
 import QR from "../Assests/organization/getAppQr.png";
 import Scrollimg from "./Scrollimg";
 import { Homenumbersect } from "../Homesection/Homesect";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export const OrganizeTournment = () => {
   return (
@@ -18,11 +19,11 @@ export const OrganizeTournment = () => {
           </h1>
           <p className="text-center md:text-[20px] sm:text-[16px] text-[14px] ">
             If You Are A Tournament Organiser, You Can Manage Your Entire
-            Tournament On The CricHeroes App Absolutely Free!
+            Tournament On The Criclog App Absolutely Free!
           </p>
-          <p className="text-xs border border-white w-[150px] h-[40px] flex items-center justify-center rounded cursor-pointer hover:bg-white hover:text-black">
+          <Link to={'/Login'}><p className="text-xs border border-white w-[150px] h-[40px] flex items-center justify-center rounded cursor-pointer hover:bg-white hover:text-black">
             REGISTER NOW
-          </p>
+          </p></Link>
         </div>
       </div>
 
@@ -41,9 +42,9 @@ export const OrganizeTournment = () => {
         <p className="text-lg font-semibold">
           Follow all the associations on our App.
         </p>
-        <button className="text-md font-bold p-2 border border-[#4A2EB0] rounded-md text-[black] hover:bg-[#4A2EB0] hover:text-[white] transition duration-200">
+       <Link to={'/get-app'}> <button className="text-md font-bold p-2 border border-[#4A2EB0] rounded-md text-[black] hover:bg-[#4A2EB0] hover:text-[white] transition duration-200">
           GET APP
-        </button>
+        </button></Link>
       </div>
 
       {/* Final Section */}
@@ -117,18 +118,18 @@ export const Testimonials = () => {
     const testimonials = [
       {
         name: "Khuram Barvi ",
-        video:"https://www.youtube.com/embed/ZCiLUbm_cJI?si=Kf5hRHFIPXCmN0Qb"
+        video:"https://www.youtube.com/embed/pGvp5Q-1Yag?si=B1R3UPVjfSLw2EvT"
         
     },
   
     {
         name: "Asgar khan ",
-        video:"https://www.youtube.com/embed/pWuZ6Jg0kSw?si=tBweXaZRnfh5gqe2"
+        video:"https://www.youtube.com/embed/pGvp5Q-1Yag?si=B1R3UPVjfSLw2EvT"
         
     },
     {
         name: "Uday B chabhad ",
-        video:"https://www.youtube.com/embed/wANQ8L9kwxI?si=iqqcerPjWV10ugvs"
+        video:"https://www.youtube.com/embed/pGvp5Q-1Yag?si=B1R3UPVjfSLw2EvT"
         
     },
 

@@ -178,7 +178,7 @@ export const Homenumbersect = () => {
         <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
           Become a Part of the World's Biggest Cricket Network.
         </p>
-       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
+       <Link to={'/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
           GET APP
         </button></Link>
       </div>
@@ -196,7 +196,7 @@ export const Hometaginesect = () => {
                   <div className='w-full h-full absolute top-0 flex flex-col justify-center items-center gap-[30px] px-[30px]'>
                     <p className='md:text-[20px] text-[18px] '>Every cricket story resonates deeply with us, which is why</p>
                     <p className='md:text-[24px] text-[22px] font-semibold'>Your Cricket Matters</p>
-                    <iframe className="md:w-[500px] md:h-[300px] sm:w-[400px] sm:h-[250px] w-[280px] h-[220px]" src="https://www.youtube.com/embed/-1TdUlp4adE?si=ji4KjRAEjwuTO11Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe className="md:w-[500px] md:h-[300px] sm:w-[400px] sm:h-[250px] w-[280px] h-[220px]" src="https://www.youtube.com/embed/pGvp5Q-1Yag?si=B1R3UPVjfSLw2EvT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <p className='text-[16px]'>Presenting our brand-new tagline</p>
                     </div>
           </div>

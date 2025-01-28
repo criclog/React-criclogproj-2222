@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import img1 from "../Assests/Scoreticketer/workswithall.png"
 import PricingPage from './Pricngpage';
-import  img2 from '../Assests/Scoreticketer/fullscorecard1.gif'
-import  img3 from '../Assests/Scoreticketer/fullscorecard2.gif'
-import  img4 from '../Assests/Scoreticketer/fullscorecard3.gif'
-import  img5 from '../Assests/Scoreticketer/fullscorecard4.gif'
+import  img2 from '../Assests/Scoreticketer/fullscorcard1.jpg'
+import  img3 from '../Assests/Scoreticketer/hq720.jpg'
+import  img4 from '../Assests/Scoreticketer/live-cricket-tv-match-hd-screenshot.avif'
+import  img5 from '../Assests/Scoreticketer/images (1).jpg'
 
 
 const ScoreTickerheder = () => {
+const sectionRef = useRef(null);
+  const handleScroll = () => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="bg-gray-100 text-gray-800">
       {/* Hero Section */}
@@ -17,7 +24,7 @@ const ScoreTickerheder = () => {
         <p className="mt-4 text-lg">
           Beautiful score overlays for your live cricket matches.
         </p>
-        <button className="mt-8 px-6 py-2 border border-white w-[200px]  bg-[#4A2EB0] text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-[#4A2EB0] transition duration-300">
+        <button onClick={handleScroll} className="mt-8 px-6 py-2 border border-white w-[200px]  bg-[#4A2EB0] text-white font-semibold rounded-lg shadow-md hover:bg-white hover:text-[#4A2EB0] transition duration-300">
           VIEW PRICING
         </button>
       </div>
@@ -143,9 +150,9 @@ const ScoreTickerheder = () => {
     </div>
 
   
-
+    <section ref={sectionRef}>
       <PricingPage/>
-      
+      </section>
     </div>
   );
 };

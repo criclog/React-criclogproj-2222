@@ -4,6 +4,7 @@ import wifi from "../Assests/4gwifi.png";
 import powerbank from "../Assests/powerbank.png";
 import tripod from "../Assests/tripod.png";
 import { IoIosArrowDown } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const MainCompontent = () => {
   return (
@@ -16,9 +17,9 @@ const MainCompontent = () => {
         *Stream unlimited matches in Daily, Monthly, Yearly Plans
       </h2>
       <div className="flex justify-center mt-8">
-        <button className="bg-[#4A2EB0] text-white font-medium px-6 py-2 rounded hover:bg-white hover:text-black transition">
+        <Link to={'/Login'}><button className="bg-[#4A2EB0] text-white font-medium px-6 py-2 rounded hover:bg-white hover:text-black transition">
           PURCHASE LIVE STREAM
-        </button>
+        </button></Link>
       </div>
     </div>
   );

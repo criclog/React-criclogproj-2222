@@ -2,7 +2,7 @@ import React from 'react'
 import axios from "axios";  
 import { toast } from "react-toastify";
 import {useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export const Localdetails = () => {
@@ -59,9 +59,9 @@ useEffect(()=>{
               </p>
             </div>
             <div className="py-5 flex justify-center">
-             <button className="bg-[#4A2EB0] text-white py-2 px-4 rounded-lg hover:bg-[#5331cf] text-[14px] sm:text-base">
+            <Link to={"/tournament"}><button className="bg-[#4A2EB0] text-white py-2 px-4 rounded-lg hover:bg-[#5331cf] text-[14px] sm:text-base">
                 TOURNAMENT
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

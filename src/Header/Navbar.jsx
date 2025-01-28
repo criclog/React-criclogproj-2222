@@ -70,8 +70,7 @@ const handleToggle =()=>{
                     <Link to={'/yourapp'}><li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>YOUR APP</li></Link>
                     <Link to={"/YourWeb"}> <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>YOUR WEB</li></Link>
                     <Link to={"/powerpromote"}> <li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>POWER PROMOTE</li></Link> 
-                    <Link to={'/supersponsor'}><li className='px-[15px] py-[10px] hover:text-[#4D28D4] hover:bg-[#f0f2f5]'>SUPER SPONSOR</li></Link> 
-                </ul>                
+                                   </ul>                
                 </li>
                 <li className='flex flex-col items-center group'><p className='flex items-center gap-1 hover:text-[#4D28D4]'>MORE <FaCaretDown className='text-[16px]' /> </p> 
                 <ul className=' min-w-100vw min-h-100vh grid flex-col bg-[white] absolute top-[65px] font-semibold rounded-md border invisible group-hover:visible ease-out delay-300'>
@@ -152,7 +151,6 @@ const handleToggle =()=>{
               <Link to={'/yourapp'}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>YOUR APP</p></Link>
               <Link to={"/YourWeb"}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>YOUR WEB</p></Link>
               <Link to={"/powerpromote"}><p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>POWER PROMOTE</p></Link>
-             <Link to={'/supersponsor'}> <p className='hover:bg-[#00000010] p-1 hover:text-[#4D28D4]'>SUPER SPONSOR</p></Link>
               </div>
               </AccordionItemPanel>
             </AccordionItem>

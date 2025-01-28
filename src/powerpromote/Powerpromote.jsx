@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img1 from "../Assests/powerpromote/power1.JPG"
+import img2 from "../Assests/powerpromote/images (1).jpeg"
+import img3 from "../Assests/powerpromote/power3.webp"
 
 export const Powerpromote = () => {
   return (
@@ -12,7 +15,7 @@ export const Powerpromote = () => {
   <p className="mt-2 sm:mt-3 text-sm sm:text-lg md:text-2xl font-light px-4">
     The most powerful way to promote your Cricket Tournament or Brand.
   </p>
-  <Link to={'/super-sponsor/get-app'}><button className="mt-4 text-[13px] sm:text-[15px] md:text-[17px] py-1 px-4 border-[1px] border-white rounded-md hover:scale-105 hover:bg-white hover:text-[#4A2EB0] transition-transform duration-300 cursor-pointer">
+  <Link to={'/get-app'}><button className="mt-4 text-[13px] sm:text-[15px] md:text-[17px] py-1 px-4 border-[1px] border-white rounded-md hover:scale-105 hover:bg-white hover:text-[#4A2EB0] transition-transform duration-300 cursor-pointer">
     GET APP
   </button></Link>
 </div>
@@ -27,9 +30,9 @@ export const Powerpromote = () => {
      
         <div className="flex flex-col lg:flex-row justify-center items-center gap-[20px] lg:gap-[350px] px-[20px]">
           <img
-            src="https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/power_promote/power-promote-benefit-1.png?width=1920&quality=75&format=auto"
+            src= {img1}
             alt=""
-            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer"
+            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer rounded-xl"
           />
           <div>
             <h1 className="text-[#CFCFCF] font-normal text-[30px] md:text-[40px]">01.</h1>
@@ -47,18 +50,18 @@ export const Powerpromote = () => {
             </p>
           </div>
           <img
-            src="https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/power_promote/power-promote-benefit-2.png?width=1920&quality=75&format=auto"
+            src={img1}
             alt=""
-            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer"
+            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer rounded-xl"
           />
         </div>
 
 
         <div className="flex flex-col lg:flex-row justify-center items-center gap-[20px] lg:gap-[350px] px-[20px]">
           <img
-            src="https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/power_promote/power-promote-benefit-3.png?width=1920&quality=75&format=auto"
+            src={img2}
             alt=""
-            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer"
+            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer rounded-xl"
           />
           <div>
             <h1 className="text-[#CFCFCF] font-normal text-[30px] md:text-[40px]">03.</h1>
@@ -77,7 +80,7 @@ export const Powerpromote = () => {
             </p>
           </div>
           <img
-            src="https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/power_promote/power-promote-benefit-4.png?width=1920&quality=75&format=auto"
+            src={img3}
             alt=""
             className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer"
           />
@@ -86,9 +89,9 @@ export const Powerpromote = () => {
        
         <div className="flex flex-col lg:flex-row justify-center items-center gap-[20px] lg:gap-[350px] px-[20px]">
           <img
-            src="https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/server_images/power_promote/power-promote-benefit-5.png?width=1920&quality=75&format=auto"
+            src={img2}
             alt=""
-            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer"
+            className="h-[250px] md:h-[350px] hover:scale-110 transition-all duration-500 cursor-pointer rounded-xl"
           />
           <div>
             <h1 className="text-[#CFCFCF] font-normal text-[30px] md:text-[40px]">05.</h1>
@@ -104,9 +107,9 @@ export const Powerpromote = () => {
             <h1>
               Power Promote starts from <b>₹4999 </b> only.
             </h1>
-            <button className="bg-[#4A2EB0] text-white px-4 py-2 rounded-md w-[150px] ml-5">
+           <Link to={'/contact'}> <button className="bg-[#4A2EB0] text-white px-4 py-2 rounded-md w-[150px] ml-5">
               Contact us
-            </button>
+            </button></Link>
           </p>
         </div>
       </div>
@@ -143,7 +146,7 @@ export const Powerpromote = () => {
         <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
           Become a Part of the World's Biggest Cricket Network.
         </p>
-       <Link to={'/super-sponsor/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
+       <Link to={'/get-app'}> <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold py-1 px-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
           JOIN NOW
         </button></Link>
       </div>

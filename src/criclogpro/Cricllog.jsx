@@ -1,9 +1,13 @@
 import React from 'react';
 import { MdCurrencyRupee } from "react-icons/md";
 import cricketimg from "../Assests/cricket-match-with-player_23-2151702188.avif"
+import img1 from "../Assests/cricpro/img1.jpg"
+import img3 from "../Assests/cricpro/img3.jpg"
+import img2 from "../Assests/cricpro/img2.png"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 
 
 export const Criclogpro = () => {
@@ -16,9 +20,9 @@ export const Criclogpro = () => {
         Criclog Pro is the only membership you need as a cricketer. It helps you
         unlock your full potential and become a better version of yourself.
       </p>
-      <button className="text-[12px] sm:text-[14px] md:text-[16px]  p-2 border-[1px] hover:scale-100 transition-all duration-500 cursor-pointer">
+     <Link to={'/Cricllog'}><button className="text-[12px] sm:text-[14px] md:text-[16px]  p-2 border-[1px] hover:scale-100 transition-all duration-500 cursor-pointer">
         BECOME PRO TODAY
-      </button>
+      </button></Link> 
     </div>
   );
 };
@@ -35,38 +39,38 @@ const ProPrivileges = () => {
           {
             title: "CricInsights",
             description: "Improve your game like a PRO with the help of world-class insights.",
-            imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/cricinsights.jpg?width=1920&quality=75&format=auto",
+            imgSrc: img1,
             imgAlt: "Image showcasing CricInsights feature",
           },
           {
             title: "Customized Themes",
-            description: "Add your vibe to CricHeroes with unique themes.",
+            description: "Add your vibe to Criclog with unique themes.",
             imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/themes.jpg?width=1920&quality=75&format=auto",
             imgAlt: "Image showcasing customized themes feature",
           },
           {
             title: "Pro Club",
-            description: "A club designed especially for CricHeroes Pro members.",
+            description: "A club designed especially for Criclog Pro members.",
             imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/pro_club.jpg?width=1920&quality=75&format=auto",
             imgAlt: "Image showcasing Pro Club feature",
           },
           {
             title: "Store Discount",
-            description: "Unlock an exclusive discount on CricHeroes store products. Go shop for your favourite jerseys now.",
+            description: "Unlock an exclusive discount on Criclog store products. Go shop for your favourite jerseys now.",
             imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/tdr.jpg?width=1920&quality=75&format=auto",
             imgAlt: "Image showcasing store discount feature",
-            footnote: "Exclusive discount on CricHeroes store products.",
+            footnote: "Exclusive discount on Criclog store products.",
           },
           {
             title: "No Ads",
-            description: "No interruptions. Just you and your cricket. Browse the CricHeroes app and web ad-free.",
-            imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/tdr.jpg?width=1920&quality=75&format=auto",
+            description: "No interruptions. Just you and your cricket. Browse the Criclog app and web ad-free.",
+            imgSrc: img2,
             imgAlt: "Image showcasing ad-free experience",
           },
           {
             title: "Live Streams",
             description: "FREE for 5 matches with Pro Infinity.",
-            imgSrc: "https://cricheroes-media-mumbai.s3.ap-south-1.amazonaws.com/cricheroes_website_new/pro_page/live_stream.jpg?width=1920&quality=75&format=auto",
+            imgSrc: img3,
             imgAlt: "Image showcasing live streams feature",
 
           },
@@ -387,9 +391,9 @@ export const CricNum = () => {
       <p className="text-[14px] sm:text-[16px] md:text-[18px] font-medium text-center py-[40px]">
         Become a Part of the World's Biggest Cricket Network.
       </p>
-     <button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
+      <Link to={'/Cricllog'}><button className="text-[12px] sm:text-[14px] md:text-[16px] font-bold p-2 border border-black rounded-md hover:text-[#4D28D4] transition duration-200 ease-in-out">
         BECOME PRO TODAY
-      </button>
+      </button></Link>
     </div>
   </div>
 
